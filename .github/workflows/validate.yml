@@ -1,0 +1,26 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Valida i file JSON
+        run: |
+          set -e
+          for f in public/data/*.json public/manifest.webmanifest; do
+            python3 -m json.tool "$f" > /dev/null && echo "OK $f"
+          done
+
+      - name: Controlla la sintassi JavaScript
+        run: |
+          set -e
+          for f in public/js/*.js public/sw.js; do
+            node --check "$f" && echo "OK $f"
+          done
