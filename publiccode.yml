@@ -1,0 +1,81 @@
+# publiccode.yml — descrittore standard del software per la PA italiana.
+# Prima dell'inserimento nel catalogo Developers Italia, validare con:
+# https://publiccode-editor.developers.italia.it
+publiccodeYmlVersion: "0.4"
+name: Positano.app
+url: "https://github.com/crescenzospoken/positano.app"
+landingURL: "https://positano.app"
+softwareType: standalone/web
+platforms:
+  - web
+categories:
+  - communications
+developmentStatus: development
+releaseDate: "2026-07-13"
+logo: public/icons/icon.svg
+description:
+  it:
+    genericName: App civica comunale
+    shortDescription: >-
+      App civica open source di Positano: numeri utili, trasporti, rifiuti,
+      spiagge, sentieri ed eventi, per cittadini e visitatori.
+    longDescription: >-
+      Positano.app è un'applicazione web progressiva (PWA) open source pensata
+      come bene comune digitale per la comunità di Positano. Raccoglie in un
+      unico punto, in italiano e in inglese, le informazioni utili della vita
+      quotidiana — numeri di emergenza e servizi locali, orari dei bus e dei
+      collegamenti marittimi, calendario della raccolta differenziata con
+      glossario dei rifiuti, avvisi — e le informazioni per i visitatori:
+      spiagge, sentieri, eventi, parcheggi e punti di interesse. Funziona
+      offline, si installa dalla schermata Home, non richiede registrazione e
+      non traccia gli utenti. Il progetto nasce dalla società civile ed è
+      progettato per essere adottato formalmente dall'amministrazione comunale
+      ai sensi degli articoli 68 e 69 del Codice dell'Amministrazione Digitale,
+      nonché per essere riusato da altri comuni con caratteristiche simili,
+      in particolare i piccoli comuni a vocazione turistica.
+    features:
+      - Numeri utili ed emergenze con chiamata diretta
+      - Trasporti (bus, collegamenti via mare, parcheggi, taxi)
+      - Calendario raccolta differenziata e glossario dei rifiuti
+      - Spiagge e sentieri con informazioni pratiche
+      - Eventi della comunità
+      - Bilingue italiano/inglese, offline-first, installabile (PWA)
+  en:
+    genericName: Municipal civic app
+    shortDescription: >-
+      Open source civic app for Positano: emergency numbers, transport, waste,
+      beaches, trails and events, for residents and visitors.
+    longDescription: >-
+      Positano.app is an open source progressive web app (PWA) conceived as a
+      digital commons for the community of Positano, Italy. It gathers in one
+      place, in Italian and English, everyday information — emergency numbers
+      and local services, bus and ferry schedules, the separate waste
+      collection calendar with a sorting glossary, public notices — and visitor
+      information: beaches, trails, events, parking and points of interest.
+      It works offline, can be installed to the home screen, requires no
+      registration and does not track users. Born as a civic initiative, it is
+      designed for formal adoption by the municipal administration under
+      articles 68 and 69 of the Italian Digital Administration Code, and for
+      reuse by other municipalities with similar characteristics, particularly
+      small tourist towns.
+    features:
+      - Emergency and useful numbers with one-tap calling
+      - Transport (buses, sea connections, parking, taxi)
+      - Waste collection calendar and sorting glossary
+      - Beaches and trails with practical information
+      - Community events
+      - Italian/English, offline-first, installable (PWA)
+legal:
+  license: EUPL-1.2
+maintenance:
+  type: community
+  contacts:
+    - name: Crescenzo (maintainer)
+      email: crescy@gmail.com
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - it
+    - en
+it:
+  countryExtensionVersion: "0.2"
