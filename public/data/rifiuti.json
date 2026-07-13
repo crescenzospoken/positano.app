@@ -1,0 +1,20 @@
+{
+  "aggiornato": "2026-07-13",
+  "avviso": {
+    "it": "Il calendario ufficiale della raccolta porta a porta per zona è in verifica con l'Ufficio Ambiente e sarà pubblicato qui. Il glossario qui sotto è indicativo: in caso di dubbio fa fede il regolamento comunale.",
+    "en": "The official door-to-door collection calendar by area is being verified with the Environment Office and will be published here. The glossary below is indicative: in case of doubt, municipal rules apply."
+  },
+  "zone": [],
+  "glossario": [
+    { "voce": { "it": "Bottiglia di plastica", "en": "Plastic bottle" }, "dove": { "it": "Plastica e metalli (svuotata e schiacciata)", "en": "Plastic and metals (empty and crushed)" } },
+    { "voce": { "it": "Lattina", "en": "Can" }, "dove": { "it": "Plastica e metalli", "en": "Plastic and metals" } },
+    { "voce": { "it": "Bottiglia o barattolo di vetro", "en": "Glass bottle or jar" }, "dove": { "it": "Vetro", "en": "Glass" } },
+    { "voce": { "it": "Scontrino (carta termica)", "en": "Receipt (thermal paper)" }, "dove": { "it": "Indifferenziato", "en": "General waste" } },
+    { "voce": { "it": "Tovagliolo di carta sporco di cibo", "en": "Food-soiled paper napkin" }, "dove": { "it": "Organico", "en": "Organic waste" } },
+    { "voce": { "it": "Cartone della pizza", "en": "Pizza box" }, "dove": { "it": "Pulito: carta. Molto unto: organico/indifferenziato secondo le regole locali", "en": "Clean: paper. Very greasy: organic/general waste according to local rules" } },
+    { "voce": { "it": "Pile e batterie", "en": "Batteries" }, "dove": { "it": "Contenitori dedicati (mai nei sacchi)", "en": "Dedicated bins (never in regular bags)" } },
+    { "voce": { "it": "Farmaci scaduti", "en": "Expired medicines" }, "dove": { "it": "Contenitore presso la farmacia", "en": "Bin at the pharmacy" } },
+    { "voce": { "it": "Olio da cucina usato", "en": "Used cooking oil" }, "dove": { "it": "Punto di raccolta dedicato (mai nel lavandino)", "en": "Dedicated collection point (never down the drain)" } },
+    { "voce": { "it": "Ingombranti", "en": "Bulky items" }, "dove": { "it": "Ritiro su prenotazione — contatti in verifica", "en": "Collection by appointment — contacts being verified" } }
+  ]
+}

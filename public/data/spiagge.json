@@ -1,0 +1,34 @@
+{
+  "aggiornato": "2026-07-13",
+  "spiagge": [
+    {
+      "nome": { "it": "Spiaggia Grande", "en": "Spiaggia Grande (Main Beach)" },
+      "accesso": { "it": "Nel centro del paese, a piedi dalla zona dei Mulini.", "en": "In the town centre, on foot from the Mulini area." },
+      "nota": { "it": "Aree libere e stabilimenti. Dettagli su servizi e accessibilità in preparazione.", "en": "Free areas and beach clubs. Details on services and accessibility in preparation." },
+      "verificato": true
+    },
+    {
+      "nome": { "it": "Fornillo", "en": "Fornillo" },
+      "accesso": { "it": "A piedi da Via Positanesi d'America, il sentiero sul mare dal porto.", "en": "On foot via Via Positanesi d'America, the seaside path from the pier." },
+      "nota": { "it": "Più tranquilla della Spiaggia Grande. Dettagli in preparazione.", "en": "Quieter than the main beach. Details in preparation." },
+      "verificato": true
+    },
+    {
+      "nome": { "it": "Arienzo", "en": "Arienzo" },
+      "accesso": { "it": "Scalinata dalla SS163 (circa 300 gradini) o via mare.", "en": "Stairway from the SS163 road (about 300 steps) or by sea." },
+      "nota": { "it": "Numero di gradini e servizi in verifica.", "en": "Number of steps and services being verified." },
+      "verificato": false
+    },
+    {
+      "nome": { "it": "Laurito", "en": "Laurito" },
+      "accesso": { "it": "Via mare o scalinata dalla SS163.", "en": "By sea or stairway from the SS163 road." },
+      "nota": { "it": "Dettagli in verifica.", "en": "Details being verified." },
+      "verificato": false
+    },
+    {
+      "nome": { "it": "Remmese", "en": "Remmese" },
+      "accesso": { "it": "Informazioni sull'accesso in verifica.", "en": "Access information being verified." },
+      "verificato": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "aggiornato": "2026-07-13",
+  "gruppi": [
+    {
+      "titolo": { "it": "Emergenze nazionali", "en": "National emergency numbers" },
+      "voci": [
+        { "nome": { "it": "Numero Unico di Emergenza", "en": "Single Emergency Number" }, "tel": "112", "verificato": true },
+        { "nome": { "it": "Polizia di Stato", "en": "State Police" }, "tel": "113", "verificato": true },
+        { "nome": { "it": "Vigili del Fuoco", "en": "Fire Brigade" }, "tel": "115", "verificato": true },
+        { "nome": { "it": "Emergenza sanitaria", "en": "Medical emergency" }, "tel": "118", "verificato": true },
+        { "nome": { "it": "Guardia Costiera — emergenze in mare", "en": "Coast Guard — emergencies at sea" }, "tel": "1530", "verificato": true },
+        { "nome": { "it": "Antiviolenza e stalking", "en": "Anti-violence and stalking helpline" }, "tel": "1522", "verificato": true }
+      ]
+    },
+    {
+      "titolo": { "it": "Servizi locali", "en": "Local services" },
+      "voci": [
+        { "nome": { "it": "Comune di Positano — centralino", "en": "Positano Town Hall — switchboard" }, "tel": "", "nota": { "it": "Numero in fase di verifica.", "en": "Number being verified." }, "verificato": false },
+        { "nome": { "it": "Polizia Municipale", "en": "Municipal Police" }, "tel": "", "nota": { "it": "Numero in fase di verifica.", "en": "Number being verified." }, "verificato": false },
+        { "nome": { "it": "Guardia Medica (continuità assistenziale)", "en": "Out-of-hours medical service" }, "tel": "", "nota": { "it": "Numero e orari in fase di verifica.", "en": "Number and hours being verified." }, "verificato": false },
+        { "nome": { "it": "Farmacia", "en": "Pharmacy" }, "tel": "", "nota": { "it": "Contatti e turni in fase di verifica.", "en": "Contacts and duty rota being verified." }, "verificato": false }
+      ]
+    },
+    {
+      "titolo": { "it": "Defibrillatori (DAE)", "en": "Defibrillators (AED)" },
+      "voci": [
+        { "nome": { "it": "Mappa dei DAE — censimento in corso", "en": "AED map — survey in progress" }, "tel": "", "nota": { "it": "Le posizioni dei defibrillatori pubblici sono in raccolta con il 118 e le associazioni locali.", "en": "Public defibrillator locations are being collected with local EMS and associations." }, "verificato": false }
+      ]
+    }
+  ]
+}

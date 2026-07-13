@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Positano.app — la guida civica di Positano</title>
+  <meta name="description" content="Numeri utili, trasporti, rifiuti, spiagge, sentieri ed eventi di Positano. App civica open source, senza pubblicità e senza tracciamento.">
+  <meta name="theme-color" content="#0b4f8a">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:title" content="Positano.app">
+  <meta property="og:description" content="La guida civica di Positano: emergenze, trasporti, rifiuti, spiagge, sentieri, eventi.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Salta al contenuto</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="icons/icon.svg" alt="" width="34" height="34">
+      <div>
+        <strong>Positano.app</strong>
+        <small data-i18n="app.tagline">La guida civica di Positano</small>
+      </div>
+    </div>
+    <div class="lang" role="group" aria-label="Lingua / Language">
+      <button type="button" id="lang-it" aria-pressed="true">IT</button>
+      <button type="button" id="lang-en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div id="install-banner" hidden>
+      <span data-i18n="install.hint">Puoi installare questa app sul telefono.</span>
+      <a href="#info" data-i18n="install.how">Come fare</a>
+      <button type="button" id="install-dismiss" aria-label="Chiudi">&times;</button>
+    </div>
+
+    <section id="home">
+      <h1 data-i18n="home.title">Benvenuti</h1>
+      <p data-i18n="home.intro">Tutto quello che serve per vivere e visitare Positano, in un unico posto. Gratuita, senza pubblicità, senza tracciamento.</p>
+      <div class="cards" id="home-cards"></div>
+      <p class="note" id="home-status"></p>
+    </section>
+
+    <section id="emergenze" hidden>
+      <h2 data-i18n="sec.emergenze">Emergenze e numeri utili</h2>
+      <div id="list-emergenze" class="list"></div>
+    </section>
+
+    <section id="trasporti" hidden>
+      <h2 data-i18n="sec.trasporti">Trasporti e parcheggi</h2>
+      <div id="list-trasporti" class="list"></div>
+    </section>
+
+    <section id="rifiuti" hidden>
+      <h2 data-i18n="sec.rifiuti">Rifiuti e raccolta differenziata</h2>
+      <div id="rifiuti-avviso" class="note"></div>
+      <h3 data-i18n="rifiuti.glossario">Dove lo butto?</h3>
+      <input type="search" id="rifiuti-search" placeholder="Cerca un rifiuto…" aria-label="Cerca un rifiuto">
+      <div id="list-glossario" class="list"></div>
+    </section>
+
+    <section id="mare" hidden>
+      <h2 data-i18n="sec.mare">Spiagge</h2>
+      <div id="list-spiagge" class="list"></div>
+    </section>
+
+    <section id="sentieri" hidden>
+      <h2 data-i18n="sec.sentieri">Sentieri</h2>
+      <div id="list-sentieri" class="list"></div>
+    </section>
+
+    <section id="eventi" hidden>
+      <h2 data-i18n="sec.eventi">Eventi</h2>
+      <div id="list-eventi" class="list"></div>
+    </section>
+
+    <section id="info" hidden>
+      <h2 data-i18n="sec.info">Il progetto</h2>
+      <p data-i18n="info.text">Positano.app è un bene comune digitale: un progetto civico open source, indipendente e senza scopo di lucro. I dati sono curati da volontari e ogni scheda indica la data di aggiornamento. Il codice è pubblico e chiunque può contribuire.</p>
+      <h3 data-i18n="install.title">Installa l'app</h3>
+      <p data-i18n="install.ios">iPhone/iPad: apri questa pagina in Safari, tocca il tasto Condividi e poi “Aggiungi alla schermata Home”.</p>
+      <p data-i18n="install.android">Android: apri il menu del browser (⋮) e scegli “Installa app” o “Aggiungi a schermata Home”.</p>
+      <h3 data-i18n="info.privacy.title">Privacy</h3>
+      <p data-i18n="info.privacy">Questa app non richiede registrazione, non usa cookie di profilazione e non traccia gli utenti.</p>
+      <p class="note">
+        <span data-i18n="info.version">Versione</span> <span id="app-version">0.1.0</span> ·
+        <a id="repo-link" href="https://github.com/crescenzospoken/positano.app" rel="noopener">Codice sorgente (EUPL-1.2)</a>
+      </p>
+    </section>
+  </main>
+
+  <nav class="bottomnav" aria-label="Sezioni">
+    <button type="button" data-nav="home"><span aria-hidden="true">🏠</span><span data-i18n="nav.home">Home</span></button>
+    <button type="button" data-nav="emergenze"><span aria-hidden="true">🚨</span><span data-i18n="nav.emergenze">Emergenze</span></button>
+    <button type="button" data-nav="trasporti"><span aria-hidden="true">🚌</span><span data-i18n="nav.trasporti">Trasporti</span></button>
+    <button type="button" data-nav="rifiuti"><span aria-hidden="true">♻️</span><span data-i18n="nav.rifiuti">Rifiuti</span></button>
+    <button type="button" data-nav="eventi"><span aria-hidden="true">📅</span><span data-i18n="nav.eventi">Eventi</span></button>
+  </nav>
+
+  <noscript><p class="note" style="padding:1rem">Questa app richiede JavaScript. / This app requires JavaScript.</p></noscript>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

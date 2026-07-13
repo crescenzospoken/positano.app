@@ -1,0 +1,20 @@
+{
+  "aggiornato": "2026-07-13",
+  "eventi": [
+    {
+      "titolo": { "it": "Festa di Santa Maria Assunta — patrona di Positano", "en": "Feast of Santa Maria Assunta — patron saint of Positano" },
+      "data": "2026-08-15",
+      "luogo": { "it": "Chiesa Madre e Spiaggia Grande", "en": "Main Church and Spiaggia Grande" },
+      "ricorrente": true,
+      "nota": { "it": "Programma dettagliato in aggiornamento.", "en": "Detailed programme being updated." },
+      "verificato": true
+    },
+    {
+      "titolo": { "it": "Evento di esempio — sarà sostituito dal calendario reale", "en": "Sample event — will be replaced by the real calendar" },
+      "data": "2026-07-25",
+      "luogo": { "it": "Positano", "en": "Positano" },
+      "esempio": true,
+      "nota": { "it": "Questa voce mostra come appariranno gli eventi nell'app.", "en": "This entry shows how events will look in the app." }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "aggiornato": "2026-07-13",
+  "sentieri": [
+    {
+      "nome": { "it": "Sentiero degli Dei", "en": "Path of the Gods (Sentiero degli Dei)" },
+      "da": { "it": "Bomerano (Agerola)", "en": "Bomerano (Agerola)" },
+      "a": { "it": "Nocelle (Positano)", "en": "Nocelle (Positano)" },
+      "lunghezza": "~7,8 km",
+      "durata": "~3h30",
+      "difficolta": "E (escursionistico)",
+      "nota": { "it": "Porta acqua e scarpe adatte; in estate evita le ore centrali. Da Nocelle si scende a Positano a piedi (lunga scalinata) o con la navetta. Dati tecnici in verifica; traccia GPX in preparazione.", "en": "Bring water and proper shoes; in summer avoid midday hours. From Nocelle, reach Positano on foot (long stairway) or by shuttle bus. Technical data being verified; GPX track in preparation." },
+      "verificato": false
+    },
+    {
+      "nome": { "it": "Scalinata Nocelle–Arienzo–SS163", "en": "Nocelle–Arienzo–SS163 stairway" },
+      "da": { "it": "Nocelle", "en": "Nocelle" },
+      "a": { "it": "SS163 / Arienzo", "en": "SS163 road / Arienzo" },
+      "nota": { "it": "Lunga scalinata panoramica (oltre mille gradini). Numero esatto e stato di manutenzione in verifica.", "en": "Long panoramic stairway (over a thousand steps). Exact count and maintenance status being verified." },
+      "verificato": false
+    },
+    {
+      "nome": { "it": "Positano–Montepertuso", "en": "Positano–Montepertuso" },
+      "da": { "it": "Positano centro", "en": "Positano centre" },
+      "a": { "it": "Montepertuso", "en": "Montepertuso" },
+      "nota": { "it": "Salita a gradini tra le case e i terrazzamenti. Dettagli in preparazione.", "en": "Stepped climb through houses and terraces. Details in preparation." },
+      "verificato": false
+    }
+  ]
+}

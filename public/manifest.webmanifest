@@ -1,0 +1,25 @@
+{
+  "name": "Positano.app — la guida civica di Positano",
+  "short_name": "Positano",
+  "description": "Numeri utili, trasporti, rifiuti, spiagge, sentieri ed eventi di Positano. App civica open source.",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fa",
+  "theme_color": "#0b4f8a",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

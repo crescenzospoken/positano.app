@@ -1,0 +1,63 @@
+{
+  "aggiornato": "2026-07-13",
+  "sezioni": [
+    {
+      "titolo": { "it": "Bus", "en": "Buses" },
+      "voci": [
+        {
+          "nome": { "it": "SITA Sud — collegamenti Costiera Amalfitana e Sorrento", "en": "SITA Sud — Amalfi Coast and Sorrento connections" },
+          "link": "https://www.sitasudtrasporti.it",
+          "nota": { "it": "Gli orari cambiano con la stagione: verifica sempre sul sito ufficiale. Orari strutturati in arrivo nell'app.", "en": "Timetables change seasonally: always check the official website. Structured timetables coming to the app." },
+          "verificato": true
+        },
+        {
+          "nome": { "it": "Navetta interna (Positano centro–Montepertuso–Nocelle)", "en": "Local shuttle bus (Positano centre–Montepertuso–Nocelle)" },
+          "nota": { "it": "Gestore, fermate e orari in fase di censimento.", "en": "Operator, stops and timetable being surveyed." },
+          "verificato": false
+        }
+      ]
+    },
+    {
+      "titolo": { "it": "Collegamenti via mare", "en": "Sea connections" },
+      "voci": [
+        {
+          "nome": { "it": "Travelmar", "en": "Travelmar" },
+          "link": "https://www.travelmar.it",
+          "nota": { "it": "Collegamenti stagionali con Amalfi, Salerno e altre località.", "en": "Seasonal connections to Amalfi, Salerno and other destinations." },
+          "verificato": true
+        },
+        {
+          "nome": { "it": "Alicost", "en": "Alicost" },
+          "link": "https://www.alicost.it",
+          "nota": { "it": "Collegamenti stagionali in Costiera e con le isole.", "en": "Seasonal connections along the coast and to the islands." },
+          "verificato": true
+        },
+        {
+          "nome": { "it": "Altri operatori e biglietterie della banchina", "en": "Other operators and pier ticket offices" },
+          "nota": { "it": "Elenco completo in fase di censimento.", "en": "Full list being surveyed." },
+          "verificato": false
+        }
+      ]
+    },
+    {
+      "titolo": { "it": "Parcheggi", "en": "Parking" },
+      "voci": [
+        {
+          "nome": { "it": "Censimento parcheggi e tariffe", "en": "Parking survey and rates" },
+          "nota": { "it": "Elenco dei parcheggi pubblici e privati con tariffe in preparazione.", "en": "List of public and private car parks with rates in preparation." },
+          "verificato": false
+        }
+      ]
+    },
+    {
+      "titolo": { "it": "Taxi e NCC", "en": "Taxi and private hire" },
+      "voci": [
+        {
+          "nome": { "it": "Tariffe ufficiali e contatti", "en": "Official rates and contacts" },
+          "nota": { "it": "In raccolta dalle delibere comunali vigenti.", "en": "Being collected from current municipal resolutions." },
+          "verificato": false
+        }
+      ]
+    }
+  ]
+}
