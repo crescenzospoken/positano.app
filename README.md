@@ -2,6 +2,8 @@
 
 **La guida civica di Positano** — un bene comune digitale, open source, per chi a Positano vive e per chi la visita.
 
+🌐 **App online:** [positano-app.crescy.workers.dev](https://positano-app.crescy.workers.dev) *(in attesa del dominio positano.app)*
+
 > 🇬🇧 *Positano.app is an open source civic Progressive Web App for the town of Positano (Amalfi Coast, Italy): emergency numbers, transport, waste collection, beaches, trails and events, in Italian and English, offline-first, with no ads and no tracking. Licensed under EUPL-1.2. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).*
 
 ## Cos'è
@@ -33,31 +35,27 @@ python3 -m http.server 8080
 # apri http://localhost:8080
 ```
 
-## Deploy (gratuito)
+## Deploy
 
-Vedi [docs/deploy-cloudflare.md](docs/deploy-cloudflare.md) — Cloudflare Pages, banda illimitata sul piano free, build command nessuno, output directory `public`.
+L'app è servita come **asset statici su Cloudflare Workers** (piano gratuito): la configurazione è in `public/wrangler.jsonc` e **ogni push su `main` va online automaticamente**. Guida e dominio personalizzato: [docs/deploy-cloudflare.md](docs/deploy-cloudflare.md).
 
 ## Struttura
 
 ```
 public/           l'app (HTML/CSS/JS puro, nessuna build)
   data/           i contenuti in JSON bilingue — il cuore del progetto
-  icons/          icone (aggiungere icon-192.png, icon-512.png, apple-touch-icon.png)
+  icons/          icone dell'app (SVG + PNG)
+  wrangler.jsonc  configurazione deploy Cloudflare Workers
 docs/             roadmap, deploy, fonti dei dati
 publiccode.yml    descrittore standard per il riuso nella PA italiana
 ```
 
 ## Da fare subito (v0 → v1)
 
-- [ ] Caricare le icone PNG già pronte (`icon-192.png`, `icon-512.png`, `apple-touch-icon.png`) in `public/icons/` — da GitHub: *Add file → Upload files* — e aggiungere al `manifest.webmanifest`:
-  ```json
-  { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-  { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
-  ```
 - [ ] Verificare sul campo i numeri locali (`public/data/numeri-utili.json`)
 - [ ] Calendario rifiuti per zona dall'Ufficio Ambiente
 - [ ] Orari bus/traghetti strutturati (accordo con i gestori)
-- [ ] Migrazione UI a [Bootstrap Italia](https://italia.github.io/bootstrap-italia/) (design system della PA)
+- [ ] Adottare il Design system .italia con [Dev Kit Italia](https://italia.github.io/dev-kit-italia) (Web Components nativi, senza bundler) quando uscirà dalla beta — vedi [#2](../../issues/2)
 - [ ] Traccia GPX Sentiero degli Dei
 
 ## Contribuire
