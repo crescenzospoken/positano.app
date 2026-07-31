@@ -8,7 +8,7 @@ Repository pubblico, licenza EUPL-1.2, publiccode.yml, scheletro PWA bilingue of
 - Calendario rifiuti per zona + notifica promemoria
 - Orari bus e collegamenti marittimi strutturati (accordi con i gestori)
 - Icone PNG definitive e identità visiva
-- Migrazione UI a Bootstrap Italia (design system PA, accessibilità WCAG 2.1 AA)
+- Adozione del Design system .italia tramite [Dev Kit Italia](https://italia.github.io/dev-kit-italia) (Web Components nativi, senza bundler — in beta da luglio 2026, migrazione a v1 stabile: vedi issue #2)
 - Censimento parcheggi con tariffe; tariffe taxi ufficiali
 - Beta chiusa con 30–50 utenti locali; lancio pubblico
 
@@ -20,7 +20,7 @@ Repository pubblico, licenza EUPL-1.2, publiccode.yml, scheletro PWA bilingue of
 
 ## Fase 3 — Adozione istituzionale
 - Valutazione comparativa ex art. 68 CAD e delibera di adozione da parte del Comune
-- Pubblicazione nel catalogo del riuso di Developers Italia
+- Pubblicazione nel catalogo del riuso di Developers Italia (sito rinnovato a luglio 2026)
 - Integrazione con i servizi nazionali (App IO / PagoPA per pagamenti e comunicazioni formali)
 - Store nativi (wrapper PWA) con account istituzionali
 
