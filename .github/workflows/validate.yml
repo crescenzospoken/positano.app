@@ -11,6 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Valida i file JSON
         run: |
           set -e
@@ -24,3 +28,6 @@ jobs:
           for f in public/js/*.js public/sw.js; do
             node --check "$f" && echo "OK $f"
           done
+
+      - name: Test (funzioni del tempo e dati bilingui)
+        run: node --test tests/*.test.mjs

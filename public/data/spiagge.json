@@ -1,34 +1,261 @@
 {
-  "aggiornato": "2026-07-13",
-  "spiagge": [
+  "aggiornato": "2026-10-08",
+  "intro": {
+    "it": "Quattro spiagge con Bandiera Blu 2026 e acqua eccellente nei controlli ARPAC. Quasi tutte si raggiungono a piedi, spesso con molti gradini.",
+    "en": "Four beaches with a 2026 Blue Flag and excellent water in ARPAC tests. Almost all are reached on foot, often down many steps."
+  },
+  "gruppi": [
     {
-      "nome": { "it": "Spiaggia Grande", "en": "Spiaggia Grande (Main Beach)" },
-      "accesso": { "it": "Nel centro del paese, a piedi dalla zona dei Mulini.", "en": "In the town centre, on foot from the Mulini area." },
-      "nota": { "it": "Aree libere e stabilimenti. Dettagli su servizi e accessibilità in preparazione.", "en": "Free areas and beach clubs. Details on services and accessibility in preparation." },
-      "verificato": true
+      "id": "spiagge",
+      "titolo": {
+        "it": "Le spiagge",
+        "en": "The beaches"
+      },
+      "voci": [
+        {
+          "id": "spiaggia-grande",
+          "nome": {
+            "it": "Spiaggia Grande",
+            "en": "Spiaggia Grande (Main Beach)"
+          },
+          "sottotitolo": {
+            "it": "Il cuore del paese, accanto al molo",
+            "en": "The heart of town, next to the pier"
+          },
+          "dettagli": [
+            {
+              "it": "Bandiera Blu 2026",
+              "en": "Blue Flag 2026"
+            },
+            {
+              "it": "Acqua eccellente (ARPAC)",
+              "en": "Excellent water (ARPAC)"
+            },
+            {
+              "it": "Tratti liberi e stabilimenti",
+              "en": "Free areas and beach clubs"
+            },
+            {
+              "it": "Senza gradini dal centro",
+              "en": "No steps from the centre"
+            }
+          ],
+          "nota": {
+            "it": "Si arriva a piedi da Piazza dei Mulini scendendo via dei Mulini. Bagni pubblici in via del Brigantino. Qui lasciare libera una fascia di 5 metri dalla riva.",
+            "en": "Walk down from Piazza dei Mulini along Via dei Mulini. Public toilets in Via del Brigantino. Here keep a 5-metre strip free from the shoreline."
+          },
+          "coord": [
+            40.62763,
+            14.48774
+          ],
+          "cerca": "spiaggia grande marina grande molo centro",
+          "fonte": {
+            "nome": "Comune di Positano (accessi, schede 2024); Bandiera Blu 2026 (FEE, cerimonia del 18/7/2026); ARPAC",
+            "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/bellezza-naturale/spiaggia-di-marina-grande",
+            "data": "2024-03-03"
+          },
+          "verificato": true
+        },
+        {
+          "id": "fornillo",
+          "nome": {
+            "it": "Fornillo",
+            "en": "Fornillo"
+          },
+          "sottotitolo": {
+            "it": "Più tranquilla, a ovest del centro",
+            "en": "Quieter, west of the centre"
+          },
+          "dettagli": [
+            {
+              "it": "Bandiera Blu 2026",
+              "en": "Blue Flag 2026"
+            },
+            {
+              "it": "Acqua eccellente (ARPAC)",
+              "en": "Excellent water (ARPAC)"
+            },
+            {
+              "it": "Tratti di spiaggia libera",
+              "en": "Free beach areas"
+            },
+            {
+              "it": "10-15 minuti a piedi",
+              "en": "10-15 min walk"
+            }
+          ],
+          "nota": {
+            "it": "Dalla Spiaggia Grande per via Positanesi d'America, la passeggiata sul mare sotto la Torre Trasita, con qualche scala. Dall'alto si scende anche dalla fermata Chiesa Nuova.",
+            "en": "From Spiaggia Grande along Via Positanesi d'America, the seaside path below Torre Trasita, with a few steps. From above you can also walk down from the Chiesa Nuova bus stop."
+          },
+          "coord": [
+            40.62604,
+            14.48077
+          ],
+          "cerca": "fornillo spiaggia libera",
+          "fonte": {
+            "nome": "Comune di Positano (accessi, schede 2024); Bandiera Blu 2026 (FEE, cerimonia del 18/7/2026); ARPAC",
+            "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/bellezza-naturale/spiaggia-di-fornillo",
+            "data": "2024-03-03"
+          },
+          "verificato": true
+        },
+        {
+          "id": "arienzo",
+          "nome": {
+            "it": "Arienzo",
+            "en": "Arienzo"
+          },
+          "sottotitolo": {
+            "it": "La «spiaggia dei 300 gradini», verso Praiano",
+            "en": "The “300-step beach”, towards Praiano"
+          },
+          "dettagli": [
+            {
+              "it": "Bandiera Blu 2026",
+              "en": "Blue Flag 2026"
+            },
+            {
+              "it": "Acqua eccellente (ARPAC)",
+              "en": "Excellent water (ARPAC)"
+            },
+            {
+              "it": "Circa 300 gradini",
+              "en": "About 300 steps"
+            },
+            {
+              "it": "Anche via mare in estate",
+              "en": "Also by boat in summer"
+            }
+          ],
+          "nota": {
+            "it": "Scalinata dalla SS163 a circa 800 metri dal centro in direzione Amalfi (fermata SITA vicina). Al tramonto il sole se ne va presto. Tratti liberi da verificare.",
+            "en": "Stairway from the SS163 about 800 m from the centre towards Amalfi (SITA stop nearby). The sun leaves early in the afternoon. Free areas to be verified."
+          },
+          "coord": [
+            40.62684,
+            14.49584
+          ],
+          "cerca": "arienzo scalinata gradini",
+          "fonte": {
+            "nome": "Comune di Positano (accessi, schede 2024); Bandiera Blu 2026 (FEE, cerimonia del 18/7/2026); ARPAC",
+            "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/bellezza-naturale/spiaggia-di-arienzo",
+            "data": "2024-03-03"
+          },
+          "verificato": true
+        },
+        {
+          "id": "laurito",
+          "nome": {
+            "it": "Laurito",
+            "en": "Laurito"
+          },
+          "sottotitolo": {
+            "it": "Piccola baia verso Praiano",
+            "en": "Small bay towards Praiano"
+          },
+          "dettagli": [
+            {
+              "it": "Bandiera Blu 2026",
+              "en": "Blue Flag 2026"
+            },
+            {
+              "it": "Scalinata ripida",
+              "en": "Steep stairway"
+            },
+            {
+              "it": "Barca dal molo in estate",
+              "en": "Boat from the pier in summer"
+            }
+          ],
+          "nota": {
+            "it": "Scalinata ripida dalla SS163, circa 1 km dal centro verso Amalfi; d'estate ci sono barche dal molo della Spiaggia Grande. Il 29 giugno qui si festeggia San Pietro.",
+            "en": "Steep stairway from the SS163, about 1 km from the centre towards Amalfi; in summer boats run from the Spiaggia Grande pier. San Pietro is celebrated here on 29 June."
+          },
+          "coord": [
+            40.62236,
+            14.50715
+          ],
+          "cerca": "laurito baia",
+          "fonte": {
+            "nome": "Comune di Positano (accessi, schede 2024); Bandiera Blu 2026 (FEE, cerimonia del 18/7/2026); ARPAC",
+            "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/bellezza-naturale/spiaggia-di-laurito",
+            "data": "2024-03-03"
+          },
+          "verificato": true
+        },
+        {
+          "id": "la-porta",
+          "nome": {
+            "it": "La Porta e Fiumicello",
+            "en": "La Porta and Fiumicello"
+          },
+          "sottotitolo": {
+            "it": "Piccole cale a est della Spiaggia Grande",
+            "en": "Small coves east of Spiaggia Grande"
+          },
+          "nota": {
+            "it": "Sopra La Porta c'è la grotta abitata già nel Paleolitico. Accessi e servizi in verifica.",
+            "en": "Above La Porta is a cave already inhabited in the Palaeolithic. Access and facilities being verified."
+          },
+          "coord": [
+            40.62746,
+            14.49222
+          ],
+          "cerca": "la porta fiumicello ciumicello grotta",
+          "verificato": false
+        }
+      ]
     },
     {
-      "nome": { "it": "Fornillo", "en": "Fornillo" },
-      "accesso": { "it": "A piedi da Via Positanesi d'America, il sentiero sul mare dal porto.", "en": "On foot via Via Positanesi d'America, the seaside path from the pier." },
-      "nota": { "it": "Più tranquilla della Spiaggia Grande. Dettagli in preparazione.", "en": "Quieter than the main beach. Details in preparation." },
-      "verificato": true
-    },
-    {
-      "nome": { "it": "Arienzo", "en": "Arienzo" },
-      "accesso": { "it": "Scalinata dalla SS163 (circa 300 gradini) o via mare.", "en": "Stairway from the SS163 road (about 300 steps) or by sea." },
-      "nota": { "it": "Numero di gradini e servizi in verifica.", "en": "Number of steps and services being verified." },
-      "verificato": false
-    },
-    {
-      "nome": { "it": "Laurito", "en": "Laurito" },
-      "accesso": { "it": "Via mare o scalinata dalla SS163.", "en": "By sea or stairway from the SS163 road." },
-      "nota": { "it": "Dettagli in verifica.", "en": "Details being verified." },
-      "verificato": false
-    },
-    {
-      "nome": { "it": "Remmese", "en": "Remmese" },
-      "accesso": { "it": "Informazioni sull'accesso in verifica.", "en": "Access information being verified." },
-      "verificato": false
+      "id": "sicurezza-mare",
+      "titolo": {
+        "it": "Sicurezza in acqua",
+        "en": "Safety in the water"
+      },
+      "voci": [
+        {
+          "id": "consigli-mare",
+          "nome": {
+            "it": "Prima di fare il bagno",
+            "en": "Before you swim"
+          },
+          "punti": [
+            {
+              "it": "La stagione balneare va dalla terza settimana di maggio alla terza di settembre: fuori stagione non c'è il bagnino.",
+              "en": "The bathing season runs from the third week of May to the third week of September: outside it there are no lifeguards."
+            },
+            {
+              "it": "Le boe rosse indicano il limite per chi non sa nuotare (circa 1,60 m di profondità).",
+              "en": "Red buoys mark the limit for non-swimmers (about 1.6 m deep)."
+            },
+            {
+              "it": "Non sostare sotto le pareti di roccia: alcune zone sono interdette per caduta massi.",
+              "en": "Do not stay below rock faces: some areas are closed due to falling rocks."
+            },
+            {
+              "it": "Emergenza in mare: 1530 (Guardia Costiera) o 112.",
+              "en": "Emergency at sea: 1530 (Coast Guard) or 112."
+            }
+          ],
+          "tel": [
+            {
+              "n": "1530"
+            }
+          ],
+          "web": "https://portale.arpacampania.it/mappa-interattiva",
+          "webLabel": {
+            "it": "Qualità dell'acqua (ARPAC)",
+            "en": "Water quality (ARPAC)"
+          },
+          "cerca": "bagnino sicurezza nuoto boe acqua qualita arpac",
+          "fonte": {
+            "nome": "Ordinanza balneare 2025 e ARPAC",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        }
+      ]
     }
   ]
 }

@@ -1,20 +1,385 @@
 {
-  "aggiornato": "2026-07-13",
+  "aggiornato": "2026-10-08",
+  "intro": {
+    "it": "Feste, ricorrenze e appuntamenti pubblici. Le feste che tornano ogni anno mostrano la data dell'ultima edizione finché non arriva il programma nuovo.",
+    "en": "Festivals, traditions and public events. Annual feasts show last year's date until the new programme is out."
+  },
   "eventi": [
     {
-      "titolo": { "it": "Festa di Santa Maria Assunta — patrona di Positano", "en": "Feast of Santa Maria Assunta — patron saint of Positano" },
-      "data": "2026-08-15",
-      "luogo": { "it": "Chiesa Madre e Spiaggia Grande", "en": "Main Church and Spiaggia Grande" },
-      "ricorrente": true,
-      "nota": { "it": "Programma dettagliato in aggiornamento.", "en": "Detailed programme being updated." },
+      "id": "manovra-per-la-vita",
+      "titolo": {
+        "it": "Una manovra per la vita: corso di primo soccorso pediatrico",
+        "en": "A manoeuvre for life: paediatric first-aid course"
+      },
+      "data": "2026-10-10",
+      "orario": {
+        "it": "14:00-17:00",
+        "en": "2-5pm"
+      },
+      "luogo": {
+        "it": "Piazza Flavio Gioia",
+        "en": "Piazza Flavio Gioia"
+      },
+      "nota": {
+        "it": "Corso gratuito sulle manovre salvavita per neonati e bambini, con Croce Rossa e SIMEUP.",
+        "en": "Free course on life-saving manoeuvres for infants and children, with the Red Cross and SIMEUP."
+      },
+      "coord": [
+        40.6283,
+        14.48702
+      ],
+      "fonte": {
+        "nome": "Positanonews, 7/10/2026",
+        "url": "https://www.positanonews.it/2026/10/positano-una-manovra-per-la-vita-in-piazza-flavio-gioia-il-corso-sulle-tecniche-salvavita-pediatriche/3859766"
+      },
       "verificato": true
     },
     {
-      "titolo": { "it": "Evento di esempio — sarà sostituito dal calendario reale", "en": "Sample event — will be replaced by the real calendar" },
+      "id": "santa-caterina",
+      "titolo": {
+        "it": "Festa di Santa Caterina d'Alessandria",
+        "en": "Feast of St Catherine of Alexandria"
+      },
+      "data": "2026-11-25",
+      "luogo": {
+        "it": "Chiesa Nuova",
+        "en": "Chiesa Nuova"
+      },
+      "ricorrente": "annuale",
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "luci-natale",
+      "titolo": {
+        "it": "Si accendono le luci del Natale",
+        "en": "Christmas lights switch-on"
+      },
+      "data": "2025-12-07",
+      "luogo": {
+        "it": "Piazza dei Mulini e Spiaggia Grande",
+        "en": "Piazza dei Mulini and Spiaggia Grande"
+      },
+      "nota": {
+        "it": "Accensione dell'albero, mercatini, banda e fuochi sulla spiaggia. Programma 2026 non ancora pubblicato.",
+        "en": "Tree lighting, Christmas market, band and fireworks on the beach. 2026 programme not yet published."
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.62988,
+        14.48614
+      ],
+      "fonte": {
+        "nome": "Comune di Positano, edizione 2025",
+        "url": "https://comune.positano.sa.it/vivere-il-comune/eventi/manifestazione-artistica/si-accendono-le-luci-del-natale"
+      },
+      "verificato": false
+    },
+    {
+      "id": "festa-primavera",
+      "titolo": {
+        "it": "Festa della Primavera",
+        "en": "Spring Festival"
+      },
+      "data": "2026-03-28",
+      "nota": {
+        "it": "Organizzata con il Forum dei Giovani.",
+        "en": "Organised with the Youth Forum."
+      },
+      "ricorrente": "annuale",
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": false
+    },
+    {
+      "id": "sant-antonio",
+      "titolo": {
+        "it": "Sant'Antonio",
+        "en": "St Anthony"
+      },
+      "data": "2026-06-13",
+      "luogo": {
+        "it": "Montepertuso",
+        "en": "Montepertuso"
+      },
+      "ricorrente": "annuale",
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "san-vito",
+      "titolo": {
+        "it": "San Vito, patrono di Positano",
+        "en": "St Vitus, patron saint of Positano"
+      },
+      "data": "2026-06-14",
+      "fine": "2026-06-15",
+      "luogo": {
+        "it": "Chiesa Madre e Piazza Flavio Gioia",
+        "en": "Mother Church and Piazza Flavio Gioia"
+      },
+      "nota": {
+        "it": "Processione con il busto del santo e, a mezzogiorno del 15, la benedizione dei cani in piazza.",
+        "en": "Procession with the saint's bust and, at noon on the 15th, the blessing of dogs in the square."
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.6283,
+        14.48702
+      ],
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "san-pietro-laurito",
+      "titolo": {
+        "it": "Santi Pietro e Paolo",
+        "en": "Saints Peter and Paul"
+      },
+      "data": "2026-06-29",
+      "luogo": {
+        "it": "Laurito",
+        "en": "Laurito"
+      },
+      "ricorrente": "annuale",
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "madonna-grazie",
+      "titolo": {
+        "it": "Madonna delle Grazie",
+        "en": "Our Lady of Graces"
+      },
+      "data": "2026-07-01",
+      "fine": "2026-07-02",
+      "luogo": {
+        "it": "Montepertuso",
+        "en": "Montepertuso"
+      },
+      "nota": {
+        "it": "La festa più sentita delle frazioni: processione e, alle 23 del 2 luglio, la rievocazione della leggenda della Madonna e del diavolo al «pertuso». Navette notturne.",
+        "en": "The most heartfelt feast of the hamlets: procession and, at 11pm on 2 July, the re-enactment of the legend of the Virgin and the devil at the “pertuso”. Night shuttle buses."
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.63193,
+        14.49348
+      ],
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "carmelo-nocelle",
+      "titolo": {
+        "it": "Madonna del Carmelo",
+        "en": "Our Lady of Mount Carmel"
+      },
+      "data": "2026-07-16",
+      "luogo": {
+        "it": "Nocelle",
+        "en": "Nocelle"
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.62841,
+        14.50325
+      ],
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "santa-margherita",
+      "titolo": {
+        "it": "Santa Margherita",
+        "en": "St Margaret"
+      },
+      "data": "2026-07-20",
+      "luogo": {
+        "it": "Fornillo",
+        "en": "Fornillo"
+      },
+      "ricorrente": "annuale",
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "san-giacomo",
+      "titolo": {
+        "it": "San Giacomo",
+        "en": "St James"
+      },
       "data": "2026-07-25",
-      "luogo": { "it": "Positano", "en": "Positano" },
-      "esempio": true,
-      "nota": { "it": "Questa voce mostra come appariranno gli eventi nell'app.", "en": "This entry shows how events will look in the app." }
+      "luogo": {
+        "it": "Liparlati",
+        "en": "Liparlati"
+      },
+      "nota": {
+        "it": "Processione: possibili chiusure al traffico.",
+        "en": "Procession: possible road closures."
+      },
+      "ricorrente": "annuale",
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "concerto-alba",
+      "titolo": {
+        "it": "Concerto all'alba",
+        "en": "Dawn concert"
+      },
+      "data": "2026-08-10",
+      "luogo": {
+        "it": "Rotonda della Spiaggia Grande",
+        "en": "Spiaggia Grande promenade"
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.62763,
+        14.48774
+      ],
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "assunta",
+      "titolo": {
+        "it": "Santa Maria Assunta",
+        "en": "Feast of the Assumption"
+      },
+      "data": "2026-08-14",
+      "fine": "2026-08-15",
+      "luogo": {
+        "it": "Chiesa Madre e Spiaggia Grande",
+        "en": "Mother Church and Spiaggia Grande"
+      },
+      "nota": {
+        "it": "La festa grande del paese: la vigilia l'«alzata del quadro», il 15 messe dall'alba, processione fino al mare con le barche in rada e fuochi sul mare a mezzanotte. Strade chiuse e paese pienissimo.",
+        "en": "The town's great feast: on the eve the “raising of the painting”, on the 15th Masses from dawn, a procession to the sea with boats in the bay and fireworks over the water at midnight. Roads closed and very crowded."
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.6283,
+        14.48702
+      ],
+      "fonte": {
+        "nome": "Comune di Positano",
+        "url": "https://comune.positano.sa.it/vivere-il-comune/eventi/festival/ferragosto-positano"
+      },
+      "verificato": true
+    },
+    {
+      "id": "premio-massine",
+      "titolo": {
+        "it": "Positano Premia la Danza, Premio Léonide Massine",
+        "en": "Positano Dance Award, Léonide Massine Prize"
+      },
+      "data": "2026-09-05",
+      "luogo": {
+        "it": "Spiaggia Grande",
+        "en": "Spiaggia Grande"
+      },
+      "nota": {
+        "it": "Gala di danza all'aperto, nato nel 1969. Ingresso libero.",
+        "en": "Open-air dance gala, founded in 1969. Free entry."
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.62763,
+        14.48774
+      ],
+      "fonte": {
+        "nome": "Comune di Positano",
+        "url": "https://comune.positano.sa.it/vivere-il-comune/eventi/concorso-e-cerimonia/positano-premia-la-danza"
+      },
+      "verificato": true
+    },
+    {
+      "id": "santa-croce-nocelle",
+      "titolo": {
+        "it": "Santa Croce, «Festa a lù paese»",
+        "en": "Holy Cross, village feast"
+      },
+      "data": "2026-09-14",
+      "luogo": {
+        "it": "Nocelle, Piazza Santa Croce",
+        "en": "Nocelle, Piazza Santa Croce"
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.62841,
+        14.50325
+      ],
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "teatro-festival",
+      "titolo": {
+        "it": "Positano Teatro Festival, Premio Annibale Ruccello",
+        "en": "Positano Theatre Festival, Annibale Ruccello Prize"
+      },
+      "data": "2026-09-21",
+      "fine": "2026-09-25",
+      "luogo": {
+        "it": "Piazza Flavio Gioia e Montepertuso",
+        "en": "Piazza Flavio Gioia and Montepertuso"
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.6283,
+        14.48702
+      ],
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
+    },
+    {
+      "id": "rosario",
+      "titolo": {
+        "it": "Madonna del Rosario",
+        "en": "Our Lady of the Rosary"
+      },
+      "data": "2026-10-07",
+      "luogo": {
+        "it": "Piazza dei Mulini",
+        "en": "Piazza dei Mulini"
+      },
+      "nota": {
+        "it": "Processione serale: divieto di sosta e traffico sospeso in Piazza dei Mulini.",
+        "en": "Evening procession: no parking and traffic suspended in Piazza dei Mulini."
+      },
+      "ricorrente": "annuale",
+      "coord": [
+        40.62988,
+        14.48614
+      ],
+      "fonte": {
+        "nome": "Calendario feste del Comune e delle parrocchie"
+      },
+      "verificato": true
     }
   ]
 }

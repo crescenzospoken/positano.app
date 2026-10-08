@@ -1,0 +1,256 @@
+{
+  "aggiornato": "2026-10-08",
+  "intro": {
+    "it": "Luoghi pubblici e di interesse storico. Niente classifiche e niente pubblicità: solo quello che c'è.",
+    "en": "Public and historic places. No rankings and no advertising: just what is there."
+  },
+  "gruppi": [
+    {
+      "id": "vedere",
+      "titolo": {
+        "it": "Da vedere",
+        "en": "Things to see"
+      },
+      "voci": [
+        {
+          "id": "assunta",
+          "nome": {
+            "it": "Chiesa di Santa Maria Assunta",
+            "en": "Church of Santa Maria Assunta"
+          },
+          "sottotitolo": {
+            "it": "La cupola di maiolica sopra la spiaggia",
+            "en": "The majolica dome above the beach"
+          },
+          "nota": {
+            "it": "Abbazia benedettina già nel X secolo, ricostruita fra il 1777 e il 1782. Sull'altare l'icona bizantina della Madonna nera che, secondo la tradizione, diede il nome al paese. Ingresso libero.",
+            "en": "A Benedictine abbey as early as the 10th century, rebuilt in 1777-1782. On the altar is the Byzantine icon of the Black Madonna which, according to tradition, gave the town its name. Free entry."
+          },
+          "orari": {
+            "it": "8:00-12:00 e 16:00-20:00",
+            "en": "8am-12pm and 4-8pm"
+          },
+          "indirizzo": "Piazza Flavio Gioia",
+          "coord": [
+            40.6283,
+            14.48702
+          ],
+          "web": "https://chiesapositano.it/",
+          "webLabel": {
+            "it": "Parrocchia e messe",
+            "en": "Parish and Mass times"
+          },
+          "cerca": "chiesa madre duomo assunta cupola messa",
+          "fonte": {
+            "nome": "Comune di Positano; parrocchia",
+            "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/edificio-di-culto/chiesa-di-santa-maria-assunta",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        },
+        {
+          "id": "mar",
+          "nome": {
+            "it": "MAR, Museo Archeologico Romano",
+            "en": "MAR, Roman Archaeological Museum"
+          },
+          "sottotitolo": {
+            "it": "La villa romana sotto la piazza",
+            "en": "The Roman villa under the square"
+          },
+          "nota": {
+            "it": "Un tratto della villa marittima romana sepolta dal Vesuvio nel 79 d.C., con affreschi in condizioni eccezionali. Visita guidata a orario; biglietto solo con carta. Dentro fa fresco.",
+            "en": "Part of a Roman seaside villa buried by Vesuvius in AD 79, with exceptionally preserved frescoes. Guided tours at set times; card payment only. It is cool inside."
+          },
+          "periodo": {
+            "dal": "04-01",
+            "al": "10-31",
+            "testo": {
+              "it": "orario estivo 9-21",
+              "en": "summer hours 9am-9pm"
+            }
+          },
+          "orari": {
+            "it": "1/4-31/10: 9-21 · 1/11-31/3: 10-16",
+            "en": "1 Apr-31 Oct: 9am-9pm · 1 Nov-31 Mar: 10am-4pm"
+          },
+          "indirizzo": "Piazza Flavio Gioia 7",
+          "coord": [
+            40.6285,
+            14.48689
+          ],
+          "web": "https://marpositano.it/web/",
+          "webLabel": {
+            "it": "Biglietti",
+            "en": "Tickets"
+          },
+          "cerca": "museo villa romana archeologia affreschi mar",
+          "fonte": {
+            "nome": "Sito del MAR; Comune di Positano",
+            "url": "https://marpositano.it/web/",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        },
+        {
+          "id": "montepertuso",
+          "nome": {
+            "it": "Montepertuso",
+            "en": "Montepertuso"
+          },
+          "sottotitolo": {
+            "it": "Il borgo sotto la montagna forata",
+            "en": "The village under the pierced mountain"
+          },
+          "nota": {
+            "it": "La frazione più popolosa. Il «pertuso» è il foro nella roccia sopra il paese: secondo la leggenda lo aprì la Madonna vincendo il diavolo, che vi lasciò l'impronta. La festa è il 2 luglio.",
+            "en": "The most populous hamlet. The “pertuso” is the hole in the rock above the village: legend says the Virgin opened it while defeating the devil, who left his footprint. The feast is on 2 July."
+          },
+          "coord": [
+            40.6315,
+            14.49345
+          ],
+          "cerca": "montepertuso frazione pertuso leggenda",
+          "fonte": {
+            "nome": "Comune di Positano, schede luoghi",
+            "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/bellezza-naturale/frazione-di-montepertuso",
+            "data": "2024-03-03"
+          },
+          "verificato": true
+        },
+        {
+          "id": "nocelle",
+          "nome": {
+            "it": "Nocelle",
+            "en": "Nocelle"
+          },
+          "sottotitolo": {
+            "it": "Il borgo più alto, arrivo del Sentiero degli Dei",
+            "en": "The highest hamlet, end of the Path of the Gods"
+          },
+          "nota": {
+            "it": "Il nome viene dal latino «nova cella», nuova dimora. Vista aperta su Capri e piazzetta di Santa Croce. Si arriva in bus interno o a piedi.",
+            "en": "Its name comes from the Latin “nova cella”, new dwelling. Wide views to Capri and the little Santa Croce square. Reached by local bus or on foot."
+          },
+          "coord": [
+            40.62841,
+            14.50325
+          ],
+          "cerca": "nocelle frazione santa croce",
+          "fonte": {
+            "nome": "Comune di Positano, schede luoghi",
+            "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/bellezza-naturale/frazione-di-nocelle",
+            "data": "2024-03-03"
+          },
+          "verificato": true
+        },
+        {
+          "id": "torri",
+          "nome": {
+            "it": "Le torri di avvistamento",
+            "en": "The watchtowers"
+          },
+          "nota": {
+            "it": "Torre della Sponda, Torre Trasita, Torre di Fornillo: costruite per avvistare le incursioni dal mare. Si vedono dall'esterno, sono in gran parte private.",
+            "en": "Sponda, Trasita and Fornillo towers were built to spot raids from the sea. Seen from outside; most are private."
+          },
+          "coord": [
+            40.62673,
+            14.48423
+          ],
+          "cerca": "torre trasita sponda fornillo saraceni",
+          "fonte": {
+            "nome": "Wikipedia, Positano",
+            "url": "https://it.wikipedia.org/wiki/Positano",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        },
+        {
+          "id": "li-galli",
+          "nome": {
+            "it": "Li Galli",
+            "en": "Li Galli"
+          },
+          "nota": {
+            "it": "Le isolette delle sirene nel mito, poi rifugio dei grandi della danza Léonide Massine e Rudolf Nureyev. Sono private: si vedono dal mare e dal Sentiero degli Dei.",
+            "en": "The islands of the Sirens in myth, later a retreat for dance legends Léonide Massine and Rudolf Nureyev. Privately owned: seen from the sea and from the Path of the Gods."
+          },
+          "cerca": "li galli isole sirene massine nureyev",
+          "fonte": {
+            "nome": "Wikipedia, Li Galli",
+            "url": "https://it.wikipedia.org/wiki/Li_Galli",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "conosci",
+      "titolo": {
+        "it": "Conosci Positano",
+        "en": "Get to know Positano"
+      },
+      "voci": [
+        {
+          "id": "storia",
+          "nome": {
+            "it": "Positano in sette date",
+            "en": "Positano in seven dates"
+          },
+          "punti": [
+            {
+              "it": "Paleolitico: la grotta La Porta è già abitata.",
+              "en": "Palaeolithic: La Porta cave is already inhabited."
+            },
+            {
+              "it": "79 d.C.: l'eruzione del Vesuvio seppellisce la villa romana della baia, oggi visitabile al MAR.",
+              "en": "AD 79: the eruption of Vesuvius buries the Roman villa in the bay, now open at the MAR."
+            },
+            {
+              "it": "X secolo: un'abbazia benedettina di Santa Maria; Positano gravita sulla Repubblica di Amalfi.",
+              "en": "10th century: a Benedictine abbey of Santa Maria; Positano is in the orbit of the Republic of Amalfi."
+            },
+            {
+              "it": "Il nome: per la tradizione dal grido «Posa, posa!» udito dai marinai che portavano l'icona della Madonna; un'altra ipotesi lo lega a Posides, liberto dell'imperatore Claudio.",
+              "en": "The name: tradition says it comes from the cry “Posa, posa!” (“put it down”) heard by sailors carrying the icon of the Virgin; another theory links it to Posides, a freedman of Emperor Claudius."
+            },
+            {
+              "it": "Settecento: armatori e mercanti, anni di prosperità; la chiesa madre viene ricostruita.",
+              "en": "18th century: shipowners and merchants, years of prosperity; the mother church is rebuilt."
+            },
+            {
+              "it": "Dopo l'Unità: molti emigrano in America. Nel Novecento arrivano artisti e intellettuali, poi il turismo del dopoguerra.",
+              "en": "After Italian unification many emigrate to America. In the 20th century artists and intellectuals arrive, then post-war tourism."
+            },
+            {
+              "it": "1997: la Costiera Amalfitana diventa Patrimonio dell'Umanità UNESCO.",
+              "en": "1997: the Amalfi Coast becomes a UNESCO World Heritage Site."
+            }
+          ],
+          "dettagli": [
+            {
+              "it": "3.643 abitanti (2026)",
+              "en": "3,643 residents (2026)"
+            },
+            {
+              "it": "8,7 km²",
+              "en": "8.7 km²"
+            },
+            {
+              "it": "Patrono: San Vito, 15 giugno",
+              "en": "Patron saint: St Vitus, 15 June"
+            }
+          ],
+          "cerca": "storia nome origine unesco abitanti",
+          "fonte": {
+            "nome": "Comune di Positano; Wikipedia; ISTAT",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,61 +1,518 @@
 {
-  "aggiornato": "2026-07-13",
-  "sezioni": [
+  "aggiornato": "2026-10-08",
+  "intro": {
+    "it": "Positano si gira a piedi e a scale. Per arrivare e ripartire: bus, traghetto, taxi. L'auto è l'ultima scelta.",
+    "en": "Positano is explored on foot and up steps. To arrive and leave: bus, ferry, taxi. A car is the last resort."
+  },
+  "partenze": [
     {
-      "titolo": { "it": "Bus", "en": "Buses" },
+      "id": "travelmar-amalfi-salerno",
+      "nome": {
+        "it": "Traghetto per Amalfi e Salerno",
+        "en": "Ferry to Amalfi and Salerno"
+      },
+      "da": {
+        "it": "molo della Spiaggia Grande",
+        "en": "Spiaggia Grande pier"
+      },
+      "orari": [
+        "09:55",
+        "11:30",
+        "12:00",
+        "13:30",
+        "15:30",
+        "17:00",
+        "18:30"
+      ],
+      "dal": "2026-10-01",
+      "al": "2026-10-31",
+      "link": "#muoversi/travelmar",
+      "fonte": {
+        "nome": "Travelmar, orario dal 1° ottobre",
+        "url": "https://www.travelmar.it/_download/orari-travelmar-dal-1-ottobre_896.pdf",
+        "data": "2026-10-01"
+      },
+      "verificato": true
+    },
+    {
+      "id": "sita-sorrento",
+      "nome": {
+        "it": "Ultimo bus SITA per Sorrento",
+        "en": "Last SITA bus to Sorrento"
+      },
+      "da": {
+        "it": "fermata Chiesa Nuova",
+        "en": "Chiesa Nuova stop"
+      },
+      "orari": [
+        "22:20"
+      ],
+      "soloUltima": true,
+      "dal": "2026-09-14",
+      "al": "2026-10-31",
+      "link": "#muoversi/sita",
+      "fonte": {
+        "nome": "SITA Sud, orario dal 14/9/2026",
+        "url": "https://sitasudtrasporti.it/campania/orari",
+        "data": "2026-09-14"
+      },
+      "verificato": true
+    }
+  ],
+  "targhe": {
+    "orario": "10:00-18:00",
+    "giorni": [
+      "2026-10-10",
+      "2026-10-11",
+      "2026-10-17",
+      "2026-10-18",
+      "2026-10-24",
+      "2026-10-25",
+      "2026-10-31",
+      "2026-11-01"
+    ],
+    "verificato": false,
+    "fonte": {
+      "nome": "Ordinanza ANAS e stampa locale (calendario 2026)",
+      "url": "https://www.salernonotizie.it/2026/03/31/costiera-amalfitana-tornano-le-targhe-alterne-regole-e-calendario-2026/",
+      "data": "2026-03-31"
+    }
+  },
+  "gruppi": [
+    {
+      "id": "arrivare",
+      "titolo": {
+        "it": "Arrivare a Positano",
+        "en": "Getting to Positano"
+      },
       "voci": [
         {
-          "nome": { "it": "SITA Sud — collegamenti Costiera Amalfitana e Sorrento", "en": "SITA Sud — Amalfi Coast and Sorrento connections" },
-          "link": "https://www.sitasudtrasporti.it",
-          "nota": { "it": "Gli orari cambiano con la stagione: verifica sempre sul sito ufficiale. Orari strutturati in arrivo nell'app.", "en": "Timetables change seasonally: always check the official website. Structured timetables coming to the app." },
+          "id": "da-napoli",
+          "nome": {
+            "it": "Dall'aeroporto o dalla stazione di Napoli",
+            "en": "From Naples airport or station"
+          },
+          "punti": [
+            {
+              "it": "Bus dall'aeroporto per Sorrento (circa 1 ora e mezza), poi bus SITA per Positano (circa 40 minuti).",
+              "en": "Bus from the airport to Sorrento (about 1h30), then SITA bus to Positano (about 40 min)."
+            },
+            {
+              "it": "Treno Circumvesuviana da Napoli a Sorrento (circa 1 ora e 15), poi bus SITA.",
+              "en": "Circumvesuviana train from Naples to Sorrento (about 1h15), then SITA bus."
+            },
+            {
+              "it": "Da aprile a ottobre traghetti diretti dal Molo Beverello.",
+              "en": "From April to October, direct ferries from Molo Beverello."
+            },
+            {
+              "it": "Taxi a tariffa fissa: 250 € fino a 4 persone.",
+              "en": "Fixed-fare taxi: €250 up to 4 people."
+            }
+          ],
+          "cerca": "napoli aeroporto capodichino circumvesuviana sorrento",
+          "fonte": {
+            "nome": "Siti dei gestori e tariffe taxi del Comune",
+            "consultata": "2026-10-08"
+          },
           "verificato": true
         },
         {
-          "nome": { "it": "Navetta interna (Positano centro–Montepertuso–Nocelle)", "en": "Local shuttle bus (Positano centre–Montepertuso–Nocelle)" },
-          "nota": { "it": "Gestore, fermate e orari in fase di censimento.", "en": "Operator, stops and timetable being surveyed." },
+          "id": "da-salerno",
+          "nome": {
+            "it": "Da Salerno (treni alta velocità e aeroporto)",
+            "en": "From Salerno (high-speed trains and airport)"
+          },
+          "punti": [
+            {
+              "it": "Traghetto Travelmar da Piazza Concordia: il modo più comodo, tutto l'anno.",
+              "en": "Travelmar ferry from Piazza Concordia: the easiest way, all year round."
+            },
+            {
+              "it": "Bus SITA per Amalfi, poi cambio per Positano.",
+              "en": "SITA bus to Amalfi, then change for Positano."
+            }
+          ],
+          "cerca": "salerno treno stazione aeroporto pontecagnano",
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "bus",
+      "titolo": {
+        "it": "Bus",
+        "en": "Buses"
+      },
+      "voci": [
+        {
+          "id": "sita",
+          "nome": {
+            "it": "SITA: Amalfi, Positano, Sorrento",
+            "en": "SITA: Amalfi, Positano, Sorrento"
+          },
+          "sottotitolo": {
+            "it": "Fermate a Positano: Sponda e Chiesa Nuova",
+            "en": "Stops in Positano: Sponda and Chiesa Nuova"
+          },
+          "dettagli": [
+            {
+              "it": "Ogni 15-30 min nelle ore centrali",
+              "en": "Every 15-30 min in the daytime"
+            },
+            {
+              "it": "Per Sorrento: 7:10-22:20",
+              "en": "To Sorrento: 7:10am-10:20pm"
+            },
+            {
+              "it": "Per Amalfi: dalle 6:25, ultimo verso le 20:25",
+              "en": "To Amalfi: from 6:25am, last around 8:25pm"
+            }
+          ],
+          "punti": [
+            {
+              "it": "Il biglietto si compra prima di salire: tabacchi, bar o app UnicoCampania. A bordo costa di più.",
+              "en": "Buy your ticket before boarding: tobacconists, cafés or the UnicoCampania app. It costs more on board."
+            },
+            {
+              "it": "COSTIERASITA: 10 €, vale 24 ore su tutta la Costiera e la penisola sorrentina.",
+              "en": "COSTIERASITA: €10, valid 24 hours on the whole Amalfi Coast and Sorrento peninsula."
+            },
+            {
+              "it": "Dal 1° ottobre 2026 nuove tariffe regionali; i biglietti vecchi valgono fino al 31 dicembre.",
+              "en": "New regional fares since 1 October 2026; old tickets are valid until 31 December."
+            },
+            {
+              "it": "In estate i bus partono spesso pieni: conviene salire al capolinea o partire presto.",
+              "en": "In summer buses often leave full: board at the terminus or set off early."
+            }
+          ],
+          "web": "https://sitasudtrasporti.it/campania/orari",
+          "webLabel": {
+            "it": "Orari completi",
+            "en": "Full timetable"
+          },
+          "coord": [
+            40.62881,
+            14.48873
+          ],
+          "cerca": "bus pullman sita amalfi sorrento biglietto unicocampania costierasita",
+          "fonte": {
+            "nome": "SITA Sud, orario dal 14/9/2026",
+            "url": "https://sitasudtrasporti.it/campania/orari",
+            "data": "2026-09-14"
+          },
+          "verificato": true
+        },
+        {
+          "id": "bus-interno",
+          "nome": {
+            "it": "Bus interno: Positano, Montepertuso, Nocelle",
+            "en": "Local bus: Positano, Montepertuso, Nocelle"
+          },
+          "sottotitolo": {
+            "it": "Mobility Amalfi Coast · capolinea Piazza dei Mulini",
+            "en": "Mobility Amalfi Coast · terminus Piazza dei Mulini"
+          },
+          "dettagli": [
+            {
+              "it": "Biglietto 0,90 €",
+              "en": "Ticket €0.90"
+            },
+            {
+              "it": "Mensile 29 €",
+              "en": "Monthly pass €29"
+            }
+          ],
+          "nota": {
+            "it": "È anche il bus per chi finisce il Sentiero degli Dei a Nocelle. Orari invernali da confermare: chiedi al capolinea o sulla pagina del gestore.",
+            "en": "It is also the bus for hikers finishing the Path of the Gods in Nocelle. Winter timetable to be confirmed: ask at the terminus or on the operator's page."
+          },
+          "punti": [
+            {
+              "it": "Per anziani e invalidi residenti il Comune prevede abbonamenti gratuiti o agevolati.",
+              "en": "Free or reduced passes for elderly and disabled residents are funded by the Town Hall."
+            }
+          ],
+          "web": "https://www.facebook.com/Mobilityamalficoast",
+          "webLabel": {
+            "it": "Pagina del gestore",
+            "en": "Operator's page"
+          },
+          "coord": [
+            40.62988,
+            14.48614
+          ],
+          "cerca": "navetta bus interno montepertuso nocelle flavio gioia mobility",
+          "fonte": {
+            "nome": "Avvisi del Comune 2025",
+            "url": "https://comune.positano.sa.it/novita/avvisi/avviso-abbonamento-bus-anziani",
+            "data": "2025-09-01"
+          },
           "verificato": false
         }
       ]
     },
     {
-      "titolo": { "it": "Collegamenti via mare", "en": "Sea connections" },
+      "id": "mare",
+      "titolo": {
+        "it": "Traghetti",
+        "en": "Ferries"
+      },
+      "nota": {
+        "it": "Tutti partono dal molo accanto alla Spiaggia Grande, dove ci sono le biglietterie. Col mare mosso le corse possono saltare.",
+        "en": "All leave from the pier by Spiaggia Grande, where the ticket offices are. In rough seas sailings may be cancelled."
+      },
       "voci": [
         {
-          "nome": { "it": "Travelmar", "en": "Travelmar" },
-          "link": "https://www.travelmar.it",
-          "nota": { "it": "Collegamenti stagionali con Amalfi, Salerno e altre località.", "en": "Seasonal connections to Amalfi, Salerno and other destinations." },
+          "id": "travelmar",
+          "nome": {
+            "it": "Travelmar: Amalfi e Salerno",
+            "en": "Travelmar: Amalfi and Salerno"
+          },
+          "periodo": {
+            "dal": "01-01",
+            "al": "12-31",
+            "testo": {
+              "it": "tutto l'anno, con orario ridotto d'inverno",
+              "en": "all year, reduced timetable in winter"
+            }
+          },
+          "dettagli": [
+            {
+              "it": "Amalfi 10 €",
+              "en": "Amalfi €10"
+            },
+            {
+              "it": "Salerno 17 €",
+              "en": "Salerno €17"
+            }
+          ],
+          "nota": {
+            "it": "In ottobre da Positano: 9:55, 11:30, 12:00, 13:30, 15:30, 17:00, 18:30. Per Minori, Maiori, Cetara e Vietri con cambio.",
+            "en": "In October from Positano: 9:55, 11:30, 12:00, 13:30, 15:30, 17:00, 18:30. Minori, Maiori, Cetara and Vietri with a change."
+          },
+          "tel": [
+            {
+              "n": "089 872950"
+            }
+          ],
+          "web": "https://www.travelmar.it",
+          "coord": [
+            40.62791,
+            14.4875
+          ],
+          "cerca": "traghetto aliscafo amalfi salerno battello",
+          "fonte": {
+            "nome": "Travelmar, orario dal 1° ottobre",
+            "url": "https://www.travelmar.it/_download/orari-travelmar-dal-1-ottobre_896.pdf",
+            "data": "2026-10-01"
+          },
           "verificato": true
         },
         {
-          "nome": { "it": "Alicost", "en": "Alicost" },
-          "link": "https://www.alicost.it",
-          "nota": { "it": "Collegamenti stagionali in Costiera e con le isole.", "en": "Seasonal connections along the coast and to the islands." },
-          "verificato": true
-        },
-        {
-          "nome": { "it": "Altri operatori e biglietterie della banchina", "en": "Other operators and pier ticket offices" },
-          "nota": { "it": "Elenco completo in fase di censimento.", "en": "Full list being surveyed." },
+          "id": "capri-napoli",
+          "nome": {
+            "it": "Capri, Sorrento, Napoli",
+            "en": "Capri, Sorrento, Naples"
+          },
+          "periodo": {
+            "dal": "04-01",
+            "al": "10-31",
+            "testo": {
+              "it": "stagionale, circa da aprile a ottobre",
+              "en": "seasonal, roughly April to October"
+            }
+          },
+          "nota": {
+            "it": "Più compagnie (Positano Jet, NLG, Alicost): orari e fine stagione cambiano ogni anno, controlla sul sito della compagnia prima di partire.",
+            "en": "Several companies (Positano Jet, NLG, Alicost): timetables and end of season change every year, check the company website before you go."
+          },
+          "tel": [
+            {
+              "n": "089 811040",
+              "label": {
+                "it": "Positano Jet",
+                "en": "Positano Jet"
+              }
+            }
+          ],
+          "cerca": "capri napoli sorrento ischia aliscafo jet nlg alicost",
+          "fonte": {
+            "nome": "Siti delle compagnie",
+            "consultata": "2026-10-08"
+          },
           "verificato": false
         }
       ]
     },
     {
-      "titolo": { "it": "Parcheggi", "en": "Parking" },
+      "id": "taxi",
+      "titolo": {
+        "it": "Taxi",
+        "en": "Taxis"
+      },
       "voci": [
         {
-          "nome": { "it": "Censimento parcheggi e tariffe", "en": "Parking survey and rates" },
-          "nota": { "it": "Elenco dei parcheggi pubblici e privati con tariffe in preparazione.", "en": "List of public and private car parks with rates in preparation." },
-          "verificato": false
+          "id": "taxi-tariffe",
+          "nome": {
+            "it": "Tariffe fisse dei taxi",
+            "en": "Fixed taxi fares"
+          },
+          "nota": {
+            "it": "Prezzi tutto compreso fissati dal Comune, fino a 4 persone (fra parentesi da 5 a 8). Il tassista deve dirti la tariffa fissa prima di partire.",
+            "en": "All-inclusive fares set by the Town Hall, up to 4 people (5-8 people in brackets). The driver must tell you the fixed fare before setting off."
+          },
+          "punti": [
+            {
+              "it": "Giro interno: 30 € (40)",
+              "en": "Within Positano: €30 (40)"
+            },
+            {
+              "it": "Montepertuso: 40 € (50) · Nocelle: 50 € (60)",
+              "en": "Montepertuso: €40 (50) · Nocelle: €50 (60)"
+            },
+            {
+              "it": "Praiano: da 50 € (60)",
+              "en": "Praiano: from €50 (60)"
+            },
+            {
+              "it": "Amalfi o Sorrento centro: 120 € (140)",
+              "en": "Amalfi or central Sorrento: €120 (140)"
+            },
+            {
+              "it": "Ravello: 150 € (170) · Agerola: 160 € (180) · Pompei: 180 € (230)",
+              "en": "Ravello: €150 (170) · Agerola: €160 (180) · Pompeii: €180 (230)"
+            },
+            {
+              "it": "Napoli stazione o aeroporto, Salerno stazione: 250 € (300)",
+              "en": "Naples station or airport, Salerno station: €250 (300)"
+            },
+            {
+              "it": "Salerno aeroporto: 300 € (350) · Roma: 700 € (750)",
+              "en": "Salerno airport: €300 (350) · Rome: €700 (750)"
+            }
+          ],
+          "dettagli": [
+            {
+              "it": "Tassametro: partenza 6 €",
+              "en": "Meter: €6 start"
+            },
+            {
+              "it": "Notte 22-8: +5 €",
+              "en": "Night 10pm-8am: +€5"
+            },
+            {
+              "it": "Festivi: +5 €",
+              "en": "Holidays: +€5"
+            },
+            {
+              "it": "Bagaglio: 2 €",
+              "en": "Luggage: €2"
+            }
+          ],
+          "cerca": "taxi tariffa prezzo ncc aeroporto",
+          "fonte": {
+            "nome": "Delibera di Giunta n. 97 del 27/5/2024",
+            "data": "2024-05-27"
+          },
+          "verificato": true
         }
       ]
     },
     {
-      "titolo": { "it": "Taxi e NCC", "en": "Taxi and private hire" },
+      "id": "auto",
+      "titolo": {
+        "it": "In auto",
+        "en": "By car"
+      },
       "voci": [
         {
-          "nome": { "it": "Tariffe ufficiali e contatti", "en": "Official rates and contacts" },
-          "nota": { "it": "In raccolta dalle delibere comunali vigenti.", "en": "Being collected from current municipal resolutions." },
+          "id": "targhe-alterne",
+          "nome": {
+            "it": "Targhe alterne sulla SS163",
+            "en": "Odd-even number plates on the SS163"
+          },
+          "nota": {
+            "it": "Nei giorni indicati, dalle 10 alle 18, fra Vietri e Positano: nei giorni pari non circolano le targhe che finiscono con cifra pari, nei dispari quelle dispari. Moto esenti.",
+            "en": "On the listed days, 10am-6pm, between Vietri and Positano: on even dates cars with plates ending in an even digit cannot drive, on odd dates those ending in an odd digit. Motorbikes exempt."
+          },
+          "punti": [
+            {
+              "it": "2026: tutti i giorni in agosto e settembre; sabati, domeniche e festivi in giugno, luglio e ottobre.",
+              "en": "2026: every day in August and September; Saturdays, Sundays and holidays in June, July and October."
+            },
+            {
+              "it": "Esenti: residenti dei comuni della Costiera, turisti con prenotazione nel giorno di arrivo e partenza, disabili, taxi e NCC.",
+              "en": "Exempt: residents of the coast towns, tourists with a booking on arrival and departure day, disabled badge holders, taxis and private hire."
+            }
+          ],
+          "cerca": "targhe alterne pari dispari ss163 amalfitana anas",
+          "fonte": {
+            "nome": "Ordinanza ANAS e stampa locale",
+            "url": "https://www.salernonotizie.it/2026/03/31/costiera-amalfitana-tornano-le-targhe-alterne-regole-e-calendario-2026/",
+            "data": "2026-03-31"
+          },
           "verificato": false
+        },
+        {
+          "id": "ztl-link",
+          "nome": {
+            "it": "ZTL per auto con più di 5 posti",
+            "en": "Restricted zone for vehicles with more than 5 seats"
+          },
+          "nota": {
+            "it": "Via Pasitea, Piazza dei Mulini e via Colombo: si paga online. Dettagli nella sezione Comune.",
+            "en": "Via Pasitea, Piazza dei Mulini and Via Colombo: pay online. Details in the Town Hall section."
+          },
+          "web": "https://www.ztlpositano.it",
+          "webLabel": {
+            "it": "ztlpositano.it",
+            "en": "ztlpositano.it"
+          },
+          "cerca": "ztl minivan ncc",
+          "verificato": true
+        },
+        {
+          "id": "parcheggi",
+          "nome": {
+            "it": "Parcheggi",
+            "en": "Parking"
+          },
+          "nota": {
+            "it": "I posti pubblici sono pochissimi. Ci sono garage privati lungo via Pasitea, a Piazza dei Mulini e alla Sponda, cari in alta stagione (spesso oltre 30 € al giorno). In estate conviene lasciare l'auto prima e arrivare in bus o traghetto.",
+            "en": "Public spaces are very few. There are private garages along Via Pasitea, at Piazza dei Mulini and at Sponda, expensive in high season (often over €30 a day). In summer it is better to leave the car elsewhere and arrive by bus or ferry."
+          },
+          "punti": [
+            {
+              "it": "Per i residenti c'è il contrassegno di sosta della Polizia Municipale.",
+              "en": "Residents can get a parking permit from the Municipal Police."
+            }
+          ],
+          "cerca": "parcheggio garage sosta auto moto",
+          "fonte": {
+            "nome": "Stampa locale e Polizia Municipale",
+            "consultata": "2026-10-08"
+          },
+          "verificato": false
+        },
+        {
+          "id": "ss163",
+          "nome": {
+            "it": "Strada statale 163 Amalfitana",
+            "en": "SS163 Amalfi Coast road"
+          },
+          "nota": {
+            "it": "Unica strada, stretta e a curve; frane e incendi possono chiuderla per ore. Prima di partire controlla le notizie di viabilità.",
+            "en": "The only road, narrow and winding; landslides and fires can close it for hours. Check traffic news before setting off."
+          },
+          "web": "https://www.stradeanas.it/it/le-strade/viabilita-in-tempo-reale",
+          "webLabel": {
+            "it": "Viabilità ANAS",
+            "en": "ANAS traffic"
+          },
+          "cerca": "strada chiusa frana traffico amalfitana anas",
+          "verificato": true
         }
       ]
     }

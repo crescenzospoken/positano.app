@@ -1,29 +1,307 @@
 {
-  "aggiornato": "2026-07-13",
-  "sentieri": [
+  "aggiornato": "2026-10-08",
+  "intro": {
+    "it": "Sentieri del CAI Monti Lattari, con numero, lunghezza e difficoltà. Parti presto, porta acqua e scarpe da trekking, controlla gli avvisi.",
+    "en": "CAI Monti Lattari trails with number, length and difficulty. Start early, bring water and hiking shoes, check the notices."
+  },
+  "gruppi": [
     {
-      "nome": { "it": "Sentiero degli Dei", "en": "Path of the Gods (Sentiero degli Dei)" },
-      "da": { "it": "Bomerano (Agerola)", "en": "Bomerano (Agerola)" },
-      "a": { "it": "Nocelle (Positano)", "en": "Nocelle (Positano)" },
-      "lunghezza": "~7,8 km",
-      "durata": "~3h30",
-      "difficolta": "E (escursionistico)",
-      "nota": { "it": "Porta acqua e scarpe adatte; in estate evita le ore centrali. Da Nocelle si scende a Positano a piedi (lunga scalinata) o con la navetta. Dati tecnici in verifica; traccia GPX in preparazione.", "en": "Bring water and proper shoes; in summer avoid midday hours. From Nocelle, reach Positano on foot (long stairway) or by shuttle bus. Technical data being verified; GPX track in preparation." },
-      "verificato": false
+      "id": "sentieri",
+      "titolo": {
+        "it": "Sentieri",
+        "en": "Trails"
+      },
+      "voci": [
+        {
+          "id": "sentiero-degli-dei",
+          "nome": {
+            "it": "Sentiero degli Dei (CAI 327)",
+            "en": "Path of the Gods (CAI 327)"
+          },
+          "sottotitolo": {
+            "it": "Da Bomerano (Agerola) a Nocelle",
+            "en": "From Bomerano (Agerola) to Nocelle"
+          },
+          "dettagli": [
+            {
+              "it": "5,3 km",
+              "en": "5.3 km"
+            },
+            {
+              "it": "+184 / −356 m",
+              "en": "+184 / −356 m"
+            },
+            {
+              "it": "circa 2 ore",
+              "en": "about 2 hours"
+            },
+            {
+              "it": "Difficoltà E",
+              "en": "Grade E (hiking)"
+            }
+          ],
+          "nota": {
+            "it": "Conviene percorrerlo in discesa da Bomerano (bus SITA da Amalfi). Acqua a Bomerano, Colle La Serra e Nocelle. Da Nocelle si torna a Positano con il bus interno oppure a piedi per Montepertuso (CAI 331 e 331a).",
+            "en": "Best walked downhill from Bomerano (SITA bus from Amalfi). Water at Bomerano, Colle La Serra and Nocelle. From Nocelle return to Positano on the local bus or on foot via Montepertuso (CAI 331 and 331a)."
+          },
+          "punti": [
+            {
+              "it": "Andata: da Positano ad Amalfi in bus SITA o in traghetto, poi bus SITA per Agerola e fermata Bomerano. Parti presto: la coincidenza ad Amalfi può richiedere tempo.",
+              "en": "Getting there: Positano to Amalfi by SITA bus or ferry, then SITA bus to Agerola, Bomerano stop. Start early: the connection in Amalfi can take time."
+            },
+            {
+              "it": "Ritorno: da Nocelle bus interno per Piazza dei Mulini (biglietto 0,90 €), oppure a piedi per Montepertuso e Liparlati (circa 1 ora e mezza di scale). Controlla l'ultima corsa al capolinea.",
+              "en": "Getting back: local bus from Nocelle to Piazza dei Mulini (€0.90 ticket), or on foot via Montepertuso and Liparlati (about 1h30 of steps). Check the last bus at the terminus."
+            },
+            {
+              "it": "Tratti esposti e sassosi: incidenti frequenti, anche quest'anno. Non con sandali né nelle ore calde d'estate.",
+              "en": "Exposed, rocky sections: accidents are frequent, this year too. Not in sandals or in the summer midday heat."
+            },
+            {
+              "it": "In caso di incidente chiama il 118 e indica il numero della mattonella più vicina lungo il sentiero.",
+              "en": "In case of accident call 118 and give the number of the nearest marker tile on the path."
+            }
+          ],
+          "coord": [
+            40.6297,
+            14.53836
+          ],
+          "web": "https://www.caimontilattari.it/sentiero/327/",
+          "webLabel": {
+            "it": "Scheda CAI e GPX",
+            "en": "CAI page and GPX"
+          },
+          "cerca": "sentiero degli dei path of the gods bomerano agerola nocelle trekking",
+          "fonte": {
+            "nome": "CAI Monti Lattari",
+            "url": "https://www.caimontilattari.it/sentiero/327/",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        },
+        {
+          "id": "nocelle-arienzo",
+          "nome": {
+            "it": "Scalinata Nocelle-Arienzo (CAI 331, primo tratto)",
+            "en": "Nocelle-Arienzo stairway (CAI 331, first section)"
+          },
+          "sottotitolo": {
+            "it": "Circa 1.700 gradini fra Nocelle e la SS163",
+            "en": "About 1,700 steps between Nocelle and the SS163"
+          },
+          "dettagli": [
+            {
+              "it": "Da 437 a 83 m",
+              "en": "From 437 to 83 m"
+            },
+            {
+              "it": "Difficoltà E",
+              "en": "Grade E"
+            }
+          ],
+          "nota": {
+            "it": "Lunga scalinata che porta da Nocelle alla strada statale vicino ad Arienzo. In discesa pesa sulle ginocchia.",
+            "en": "A long stairway from Nocelle down to the main road near Arienzo. Hard on the knees going down."
+          },
+          "web": "https://www.caimontilattari.it/sentiero/331/",
+          "webLabel": {
+            "it": "Scheda CAI",
+            "en": "CAI page"
+          },
+          "cerca": "scalinata gradini nocelle arienzo scale",
+          "fonte": {
+            "nome": "CAI Monti Lattari; Comune di Positano",
+            "url": "https://www.caimontilattari.it/sentiero/331/",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        },
+        {
+          "id": "montepertuso-positano",
+          "nome": {
+            "it": "Montepertuso-Positano (CAI 331a)",
+            "en": "Montepertuso-Positano (CAI 331a)"
+          },
+          "sottotitolo": {
+            "it": "Dalla chiesa della Madonna delle Grazie a Liparlati",
+            "en": "From the Madonna delle Grazie church to Liparlati"
+          },
+          "dettagli": [
+            {
+              "it": "1,3 km",
+              "en": "1.3 km"
+            },
+            {
+              "it": "−353 m",
+              "en": "−353 m"
+            },
+            {
+              "it": "45 min in discesa, 1 ora in salita",
+              "en": "45 min down, 1 hour up"
+            },
+            {
+              "it": "Difficoltà T",
+              "en": "Grade T (easy)"
+            }
+          ],
+          "nota": {
+            "it": "Scalinata fra case e terrazzamenti, la via a piedi più breve fra il paese e Montepertuso.",
+            "en": "Steps between houses and terraces, the shortest walk between town and Montepertuso."
+          },
+          "coord": [
+            40.63193,
+            14.49348
+          ],
+          "web": "https://www.caimontilattari.it/sentiero/331a/",
+          "webLabel": {
+            "it": "Scheda CAI",
+            "en": "CAI page"
+          },
+          "cerca": "montepertuso liparlati scale",
+          "fonte": {
+            "nome": "CAI Monti Lattari",
+            "url": "https://www.caimontilattari.it/sentiero/331a/",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        },
+        {
+          "id": "santa-maria-castello",
+          "nome": {
+            "it": "Verso Santa Maria del Castello (CAI 331 e 333)",
+            "en": "To Santa Maria del Castello (CAI 331 and 333)"
+          },
+          "sottotitolo": {
+            "it": "Il balcone a 652 metri sopra Positano",
+            "en": "The 652-metre balcony above Positano"
+          },
+          "dettagli": [
+            {
+              "it": "CAI 333 da Corvo: 2 km, +424 m, difficoltà E",
+              "en": "CAI 333 from Corvo: 2 km, +424 m, grade E"
+            },
+            {
+              "it": "CAI 331 dal Vallone Pozzo: difficoltà EE",
+              "en": "CAI 331 via Vallone Pozzo: grade EE"
+            }
+          ],
+          "nota": {
+            "it": "Ottobre 2026: dopo l'incendio di fine settembre il Comune sconsiglia i sentieri fra Tese e Fiume per caduta massi. Controlla gli avvisi prima di partire.",
+            "en": "October 2026: after the late-September fire the Town Hall advises against the trails between Tese and Fiume because of falling rocks. Check notices before you go."
+          },
+          "web": "https://www.caimontilattari.it/sentiero/333/",
+          "webLabel": {
+            "it": "Scheda CAI",
+            "en": "CAI page"
+          },
+          "cerca": "santa maria del castello tese corvo vallone pozzo",
+          "fonte": {
+            "nome": "CAI Monti Lattari; avviso del Comune 1/10/2026",
+            "url": "https://www.caimontilattari.it/sentiero/333/",
+            "data": "2026-10-01"
+          },
+          "verificato": true
+        },
+        {
+          "id": "positanesi-america",
+          "nome": {
+            "it": "Via Positanesi d'America",
+            "en": "Via Positanesi d'America"
+          },
+          "sottotitolo": {
+            "it": "La passeggiata sul mare fra Spiaggia Grande e Fornillo",
+            "en": "The seaside walk between Spiaggia Grande and Fornillo"
+          },
+          "dettagli": [
+            {
+              "it": "Facile",
+              "en": "Easy"
+            },
+            {
+              "it": "10-15 minuti",
+              "en": "10-15 minutes"
+            }
+          ],
+          "nota": {
+            "it": "Sentiero pedonale a picco sul mare, sotto la Torre Trasita. Porta il nome degli emigrati positanesi in America.",
+            "en": "A footpath above the sea, below Torre Trasita, named after Positano's emigrants to America."
+          },
+          "coord": [
+            40.62673,
+            14.48423
+          ],
+          "cerca": "passeggiata lungomare fornillo torre trasita",
+          "verificato": true
+        },
+        {
+          "id": "alta-via",
+          "nome": {
+            "it": "Sentiero alto (CAI 329) e Alta Via (CAI 300)",
+            "en": "High trail (CAI 329) and Alta Via (CAI 300)"
+          },
+          "nota": {
+            "it": "Percorsi lunghi e impegnativi, segnalati in allerta sul sito del CAI a ottobre 2026 per frane e tratti esposti. Solo per escursionisti esperti: controlla lo stato aggiornato prima di partire.",
+            "en": "Long, demanding routes, flagged on the CAI website in October 2026 for landslides and exposed sections. Experienced hikers only: check the current status before setting off."
+          },
+          "web": "https://www.caimontilattari.it/sentiero/329/",
+          "webLabel": {
+            "it": "Stato del sentiero",
+            "en": "Trail status"
+          },
+          "cerca": "alta via monti lattari tre calli capo muro",
+          "fonte": {
+            "nome": "CAI Monti Lattari",
+            "url": "https://www.caimontilattari.it/sentiero/329/",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        }
+      ]
     },
     {
-      "nome": { "it": "Scalinata Nocelle–Arienzo–SS163", "en": "Nocelle–Arienzo–SS163 stairway" },
-      "da": { "it": "Nocelle", "en": "Nocelle" },
-      "a": { "it": "SS163 / Arienzo", "en": "SS163 road / Arienzo" },
-      "nota": { "it": "Lunga scalinata panoramica (oltre mille gradini). Numero esatto e stato di manutenzione in verifica.", "en": "Long panoramic stairway (over a thousand steps). Exact count and maintenance status being verified." },
-      "verificato": false
-    },
-    {
-      "nome": { "it": "Positano–Montepertuso", "en": "Positano–Montepertuso" },
-      "da": { "it": "Positano centro", "en": "Positano centre" },
-      "a": { "it": "Montepertuso", "en": "Montepertuso" },
-      "nota": { "it": "Salita a gradini tra le case e i terrazzamenti. Dettagli in preparazione.", "en": "Stepped climb through houses and terraces. Details in preparation." },
-      "verificato": false
+      "id": "sicurezza-sentieri",
+      "titolo": {
+        "it": "Prima di partire",
+        "en": "Before you set off"
+      },
+      "voci": [
+        {
+          "id": "consigli-sentieri",
+          "nome": {
+            "it": "Cinque regole",
+            "en": "Five rules"
+          },
+          "punti": [
+            {
+              "it": "Parti presto: d'estate dopo le 11 fa troppo caldo e non c'è ombra.",
+              "en": "Start early: in summer it is too hot after 11am and there is little shade."
+            },
+            {
+              "it": "Almeno un litro e mezzo d'acqua a testa e scarpe chiuse con suola da trekking.",
+              "en": "At least 1.5 litres of water each and closed shoes with hiking soles."
+            },
+            {
+              "it": "Con allerta meteo, vento forte o dopo un incendio i sentieri sono pericolosi: rinuncia.",
+              "en": "With weather alerts, strong wind or after a fire, trails are dangerous: give up."
+            },
+            {
+              "it": "Niente fuochi e niente sigarette: d'estate e in autunno il rischio incendi è alto.",
+              "en": "No fires and no cigarettes: wildfire risk is high in summer and autumn."
+            },
+            {
+              "it": "Il telefono carico: dopo la prima apertura questa guida funziona anche senza campo.",
+              "en": "Keep your phone charged: after the first visit this guide works without signal."
+            }
+          ],
+          "tel": [
+            {
+              "n": "118"
+            }
+          ],
+          "cerca": "sicurezza escursione caldo acqua scarpe",
+          "verificato": true
+        }
+      ]
     }
   ]
 }

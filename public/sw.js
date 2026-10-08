@@ -1,28 +1,19 @@
-/* Positano.app — service worker v0 */
+/* Positano.app · service worker v0.2
+   - Tutta la guida viene salvata alla prima visita (funziona senza rete).
+   - Pagine, codice e dati: prima la rete (così gli aggiornamenti arrivano subito), poi la copia salvata.
+     Se la rete non risponde entro 3 secondi si usa la copia: in spiaggia con una tacca non si aspetta. */
 'use strict';
 
-const VERSIONE = 'positano-v0.1.0';
+const VERSIONE = 'positano-v0.2.0';
 const SHELL = [
-  './',
-  'index.html',
-  'css/style.css',
-  'js/app.js',
-  'js/i18n.js',
-  'manifest.webmanifest',
-  'icons/icon.svg',
-  'data/numeri-utili.json',
-  'data/trasporti.json',
-  'data/rifiuti.json',
-  'data/spiagge.json',
-  'data/sentieri.json',
-  'data/eventi.json',
-  'data/meta.json'
+  './', 'index.html', 'css/style.css', 'js/app.js', 'js/i18n.js', 'js/oggi.js', 'manifest.webmanifest',
+  'icons/icon.svg', 'icons/icon-192.png',
+  'data/numeri-utili.json', 'data/trasporti.json', 'data/rifiuti.json', 'data/spiagge.json', 'data/sentieri.json',
+  'data/eventi.json', 'data/luoghi.json', 'data/comune.json', 'data/avvisi.json', 'data/meta.json'
 ];
 
 self.addEventListener('install', function (ev) {
-  ev.waitUntil(
-    caches.open(VERSIONE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); })
-  );
+  ev.waitUntil(caches.open(VERSIONE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); }));
 });
 
 self.addEventListener('activate', function (ev) {
@@ -33,50 +24,32 @@ self.addEventListener('activate', function (ev) {
   );
 });
 
+function conTimeout(p, ms) {
+  return new Promise(function (resolve, reject) {
+    const t = setTimeout(function () { reject(new Error('timeout')); }, ms);
+    p.then(function (r) { clearTimeout(t); resolve(r); }, function (e) { clearTimeout(t); reject(e); });
+  });
+}
+
 self.addEventListener('fetch', function (ev) {
   const req = ev.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
+  const chiave = req.mode === 'navigate' ? 'index.html' : req;
 
-  // Navigazioni: prima la rete (per gli aggiornamenti), poi la cache.
-  if (req.mode === 'navigate') {
-    ev.respondWith(
-      fetch(req).then(function (res) {
-        const copy = res.clone();
-        caches.open(VERSIONE).then(function (c) { c.put('index.html', copy); });
-        return res;
-      }).catch(function () { return caches.match('index.html'); })
-    );
-    return;
-  }
+  const rete = fetch(req).then(function (res) {
+    if (res && res.ok) {
+      const copia = res.clone();
+      caches.open(VERSIONE).then(function (c) { c.put(chiave, copia); });
+    }
+    return res;
+  });
+  rete.catch(function () { /* offline: gestito sotto */ });
 
-  // Dati JSON: stale-while-revalidate.
-  if (url.pathname.indexOf('/data/') !== -1) {
-    ev.respondWith(
-      caches.open(VERSIONE).then(function (c) {
-        return c.match(req).then(function (cached) {
-          const rete = fetch(req).then(function (res) {
-            if (res && res.ok) c.put(req, res.clone());
-            return res;
-          }).catch(function () { return cached; });
-          return cached || rete;
-        });
-      })
-    );
-    return;
-  }
-
-  // Tutto il resto: cache-first.
   ev.respondWith(
-    caches.match(req).then(function (cached) {
-      return cached || fetch(req).then(function (res) {
-        if (res && res.ok) {
-          const copy = res.clone();
-          caches.open(VERSIONE).then(function (c) { c.put(req, copy); });
-        }
-        return res;
-      });
+    conTimeout(rete, 3000).catch(function () {
+      return caches.match(chiave).then(function (cached) { return cached || rete; });
     })
   );
 });

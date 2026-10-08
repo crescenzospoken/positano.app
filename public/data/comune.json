@@ -1,0 +1,540 @@
+{
+  "aggiornato": "2026-10-08",
+  "intro": {
+    "it": "Dove sono gli uffici, quando sono aperti, come si contattano. E le regole del paese che conviene conoscere.",
+    "en": "Where the offices are, when they are open, how to reach them. And the local rules worth knowing."
+  },
+  "gruppi": [
+    {
+      "id": "il-municipio",
+      "titolo": {
+        "it": "Il Municipio",
+        "en": "Town Hall"
+      },
+      "voci": [
+        {
+          "id": "municipio",
+          "nome": {
+            "it": "Comune di Positano",
+            "en": "Comune di Positano (Town Hall)"
+          },
+          "indirizzo": "Via G. Marconi 111, 84017 Positano (SA)",
+          "orari": {
+            "it": "Apertura della sede: lunedì e giovedì 9-18; martedì, mercoledì e venerdì 9-14. Gli sportelli hanno orari propri:",
+            "en": "Building open: Monday and Thursday 9am-6pm; Tuesday, Wednesday and Friday 9am-2pm. Desks have their own hours:"
+          },
+          "tel": [
+            {
+              "n": "089 8122511",
+              "label": {
+                "it": "Centralino",
+                "en": "Switchboard"
+              }
+            },
+            {
+              "n": "089 8122520",
+              "label": {
+                "it": "Protocollo",
+                "en": "Registry"
+              }
+            }
+          ],
+          "pec": "protocollo@pec.comunedipositano.it",
+          "web": "https://comune.positano.sa.it/",
+          "cerca": "municipio comune centralino protocollo anagrafe uffici orari",
+          "fonte": {
+            "nome": "Sito del Comune, pagina Protocollo e avviso orari",
+            "url": "https://comune.positano.sa.it/amministrazione/uffici/protocollo",
+            "data": "2026-03-05"
+          },
+          "verificato": true,
+          "punti": [
+            {
+              "it": "Protocollo: lun-ven 9-12, lunedì e giovedì anche 15:30-17:30",
+              "en": "Registry office: Mon-Fri 9am-12pm, Monday and Thursday also 3:30-5:30pm"
+            },
+            {
+              "it": "Anagrafe e stato civile: lunedì e martedì 9-12, giovedì 15:30-17:30",
+              "en": "Registry of residents: Monday and Tuesday 9am-12pm, Thursday 3:30-5:30pm"
+            }
+          ]
+        },
+        {
+          "id": "appuntamenti",
+          "nome": {
+            "it": "Prenota un appuntamento in Comune",
+            "en": "Book an appointment at the Town Hall"
+          },
+          "nota": {
+            "it": "Per anagrafe, tributi e gli altri uffici si può prenotare online ed evitare la fila.",
+            "en": "For registry, local taxes and other offices you can book online and skip the queue."
+          },
+          "web": "https://comune.positano.sa.it/servizi/prenotazione-appuntamenti",
+          "webLabel": {
+            "it": "Prenota",
+            "en": "Book"
+          },
+          "cerca": "anagrafe carta identità certificato prenotazione",
+          "fonte": {
+            "nome": "Sito del Comune",
+            "url": "https://comune.positano.sa.it/servizi/prenotazione-appuntamenti",
+            "data": "2026-07-13"
+          },
+          "verificato": true
+        },
+        {
+          "id": "pagopa",
+          "nome": {
+            "it": "Pagamenti al Comune (pagoPA)",
+            "en": "Payments to the Town Hall (pagoPA)"
+          },
+          "nota": {
+            "it": "Tributi, multe, servizi scolastici, permessi: si paga online con pagoPA.",
+            "en": "Local taxes, fines, school services, permits: pay online with pagoPA."
+          },
+          "web": "https://cittadino.plugandpay.it/C_G932",
+          "webLabel": {
+            "it": "Paga online",
+            "en": "Pay online"
+          },
+          "cerca": "pagare tari multa tassa pagopa",
+          "fonte": {
+            "nome": "Sito del Comune, link utili",
+            "data": "2026-07-13"
+          },
+          "verificato": true
+        },
+        {
+          "id": "albo",
+          "nome": {
+            "it": "Albo pretorio e atti",
+            "en": "Official notice board (Albo pretorio)"
+          },
+          "nota": {
+            "it": "Ordinanze, delibere, avvisi e bandi del Comune. Fa fede quello che è pubblicato qui.",
+            "en": "Ordinances, resolutions, notices and calls for tenders. What is published here is legally binding."
+          },
+          "web": "https://comune.positano.sa.it/servizi/albo-pretorio-online",
+          "webLabel": {
+            "it": "Apri l'albo",
+            "en": "Open"
+          },
+          "cerca": "ordinanze delibere bandi avvisi atti trasparenza",
+          "verificato": true
+        },
+        {
+          "id": "social-comune",
+          "nome": {
+            "it": "Notizie del Comune",
+            "en": "Town Hall news"
+          },
+          "nota": {
+            "it": "Il Comune pubblica avvisi e, ogni settimana, «Cosa c'è da fare nei prossimi giorni a Positano» su Instagram e Facebook. C'è anche una newsletter.",
+            "en": "The Town Hall posts notices and a weekly “What's on in Positano” on Instagram and Facebook. There is also a newsletter."
+          },
+          "web": "https://www.instagram.com/comunepositanoofficial/",
+          "webLabel": {
+            "it": "Instagram",
+            "en": "Instagram"
+          },
+          "cerca": "instagram facebook newsletter notizie avvisi",
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "uffici",
+      "titolo": {
+        "it": "Uffici e servizi",
+        "en": "Offices and services"
+      },
+      "voci": [
+        {
+          "id": "polizia-municipale",
+          "nome": {
+            "it": "Polizia Municipale",
+            "en": "Municipal Police"
+          },
+          "sottotitolo": {
+            "it": "Traffico, ZTL, permessi, sosta, oggetti smarriti",
+            "en": "Traffic, restricted zone, permits, parking, lost property"
+          },
+          "indirizzo": "Via G. Marconi 111 (Municipio)",
+          "tel": [
+            {
+              "n": "089 8122552"
+            },
+            {
+              "n": "089 8122553"
+            }
+          ],
+          "email": "poliziamunicipale@comune.positano.sa.it",
+          "cerca": "vigili polizia locale multe permessi ztl sosta",
+          "fonte": {
+            "nome": "Sito del Comune, pagina Polizia Municipale",
+            "url": "https://comune.positano.sa.it/amministrazione/uffici/polizia-municipale",
+            "data": "2026-05-20"
+          },
+          "verificato": true,
+          "orari": {
+            "it": "Sportello al pubblico: martedì 10-12, giovedì 16-18",
+            "en": "Public desk: Tuesday 10am-12pm, Thursday 4-6pm"
+          },
+          "pec": "polizia.municipale@pec.comunedipositano.it"
+        },
+        {
+          "id": "segreteria-sindaco",
+          "nome": {
+            "it": "Segreteria del Sindaco",
+            "en": "Mayor's office"
+          },
+          "tel": [
+            {
+              "n": "089 8122535"
+            }
+          ],
+          "email": "segreteria.sindaco@comune.positano.sa.it",
+          "cerca": "sindaco sindaca segreteria",
+          "fonte": {
+            "nome": "Sito del Comune",
+            "data": "2026-07-13"
+          },
+          "verificato": true
+        },
+        {
+          "id": "turismo",
+          "nome": {
+            "it": "Ufficio Turismo e Infopoint",
+            "en": "Tourist office and Infopoint"
+          },
+          "tel": [
+            {
+              "n": "335 732 8002"
+            }
+          ],
+          "cerca": "informazioni turistiche info point pro loco",
+          "fonte": {
+            "nome": "Sito del Comune, pagina Ufficio Turismo",
+            "url": "https://comune.positano.sa.it/",
+            "data": "2026-05-16"
+          },
+          "verificato": true,
+          "indirizzo": "Viale Regina Giovanna 13",
+          "orari": {
+            "it": "Tutti i giorni 9:00-21:00 (orario pubblicato a maggio 2026)",
+            "en": "Every day 9am-9pm (hours published May 2026)"
+          },
+          "email": "turismo@comune.positano.sa.it"
+        },
+        {
+          "id": "posta",
+          "nome": {
+            "it": "Ufficio postale",
+            "en": "Post office"
+          },
+          "indirizzo": "Via G. Marconi 318",
+          "tel": [
+            {
+              "n": "089 875142"
+            }
+          ],
+          "web": "https://www.poste.it/cerca/index.html#/",
+          "webLabel": {
+            "it": "Orari su poste.it",
+            "en": "Hours on poste.it"
+          },
+          "cerca": "poste posta raccomandata pacchi",
+          "fonte": {
+            "nome": "Piano di emergenza comunale (2018)",
+            "data": "2018-01-24"
+          },
+          "verificato": false
+        },
+        {
+          "id": "bagni-pubblici",
+          "nome": {
+            "it": "Bagni pubblici",
+            "en": "Public toilets"
+          },
+          "nota": {
+            "it": "In via del Brigantino (Spiaggia Grande) e a Piazza dei Mulini, rifatti nel 2024 e accessibili anche a persone con disabilità.",
+            "en": "In Via del Brigantino (Spiaggia Grande) and Piazza dei Mulini, rebuilt in 2024, also accessible to people with disabilities."
+          },
+          "cerca": "toilette wc bagno servizi igienici",
+          "fonte": {
+            "nome": "Comune, lavori conclusi il 25/3/2024",
+            "data": "2024-03-25"
+          },
+          "verificato": true
+        },
+        {
+          "id": "biblioteca",
+          "nome": {
+            "it": "Biblioteca comunale",
+            "en": "Public library"
+          },
+          "indirizzo": "Via Pasitea 246",
+          "tel": [
+            {
+              "n": "089 811808"
+            }
+          ],
+          "cerca": "biblioteca libri lettura",
+          "fonte": {
+            "nome": "Piano di emergenza comunale (2018)",
+            "data": "2018-01-24"
+          },
+          "verificato": false
+        },
+        {
+          "id": "scuole",
+          "nome": {
+            "it": "Scuole",
+            "en": "Schools"
+          },
+          "punti": [
+            {
+              "it": "Istituto comprensivo «Porzio» e scuola media: via Pasitea 308, 089 875166",
+              "en": "“Porzio” school and middle school: Via Pasitea 308, 089 875166"
+            },
+            {
+              "it": "Scuola elementare: via Pasitea 37, 089 875000",
+              "en": "Primary school: Via Pasitea 37, 089 875000"
+            },
+            {
+              "it": "Scuola dell'infanzia «Luigi Rossi»: via Chiesa Nuova 5, 089 875125",
+              "en": "“Luigi Rossi” nursery school: Via Chiesa Nuova 5, 089 875125"
+            },
+            {
+              "it": "Scuola dell'infanzia di Montepertuso: via Gradoni, 089 811160",
+              "en": "Montepertuso nursery school: Via Gradoni, 089 811160"
+            }
+          ],
+          "cerca": "scuola elementare media infanzia asilo nido",
+          "fonte": {
+            "nome": "Piano di emergenza comunale (2018)",
+            "data": "2018-01-24"
+          },
+          "verificato": false
+        }
+      ]
+    },
+    {
+      "id": "regole",
+      "titolo": {
+        "it": "Regole da conoscere",
+        "en": "Rules worth knowing"
+      },
+      "voci": [
+        {
+          "id": "ztl",
+          "nome": {
+            "it": "ZTL: via Pasitea, Piazza dei Mulini, via Colombo",
+            "en": "Restricted traffic zone (ZTL): Via Pasitea, Piazza dei Mulini, Via Colombo"
+          },
+          "nota": {
+            "it": "Tutto l'anno le auto con più di 5 posti (conducente compreso: NCC, minivan, auto private grandi) pagano l'accesso. Si paga solo online, entro 72 ore dal passaggio. Il pass non dà diritto a sostare.",
+            "en": "All year round, vehicles with more than 5 seats (driver included: private hire, minivans, large private cars) must pay to enter. Pay online only, within 72 hours. The pass does not allow parking."
+          },
+          "dettagli": [
+            {
+              "it": "5 € un transito",
+              "en": "€5 single transit"
+            },
+            {
+              "it": "100 € al mese",
+              "en": "€100 per month"
+            },
+            {
+              "it": "500 € a semestre",
+              "en": "€500 per six months"
+            },
+            {
+              "it": "800 € all'anno",
+              "en": "€800 per year"
+            }
+          ],
+          "punti": [
+            {
+              "it": "Esenti: residenti e domiciliati, soccorso e polizia, veicoli per disabili con contrassegno, bus di linea e scuolabus.",
+              "en": "Exempt: residents, emergency and police vehicles, vehicles with a disabled badge, scheduled buses and school buses."
+            }
+          ],
+          "web": "https://www.ztlpositano.it",
+          "webLabel": {
+            "it": "Paga la ZTL",
+            "en": "Pay the ZTL"
+          },
+          "cerca": "ztl varco telecamera minivan ncc pass transito",
+          "fonte": {
+            "nome": "Delibera di Giunta n. 37 del 21/3/2024",
+            "data": "2024-03-21"
+          },
+          "verificato": true
+        },
+        {
+          "id": "spiagge-regole",
+          "nome": {
+            "it": "In spiaggia",
+            "en": "On the beach"
+          },
+          "nota": {
+            "it": "Ordinanza balneare vigente. La stagione va dalla terza settimana di maggio alla terza di settembre.",
+            "en": "Current beach ordinance. The bathing season runs from the third week of May to the third week of September."
+          },
+          "punti": [
+            {
+              "it": "Lascia libera la fascia vicino al mare: 5 metri alla Spiaggia Grande, 3 metri nelle altre spiagge.",
+              "en": "Keep the strip by the water free: 5 metres at Spiaggia Grande, 3 metres on the other beaches."
+            },
+            {
+              "it": "Ombrelloni, sdraio e teli non si lasciano in spiaggia dopo il tramonto.",
+              "en": "Do not leave umbrellas, loungers or towels on the beach after sunset."
+            },
+            {
+              "it": "Vietati campeggio, fuochi, bombole di gas e musica ad alto volume.",
+              "en": "No camping, fires, gas canisters or loud music."
+            },
+            {
+              "it": "Niente animali in spiaggia, anche al guinzaglio, salvo aree riservate e cani di salvataggio.",
+              "en": "No animals on the beach, even on a lead, except designated areas and rescue dogs."
+            },
+            {
+              "it": "Dove non c'è il bagnino un cartello lo segnala: la balneazione non è sorvegliata.",
+              "en": "Where there is no lifeguard a sign says so: swimming is unsupervised."
+            }
+          ],
+          "cerca": "ordinanza balneare cani animali ombrellone tramonto fuochi musica",
+          "fonte": {
+            "nome": "Ordinanza balneare prot. 13167 del 26/8/2025",
+            "data": "2025-08-26"
+          },
+          "verificato": true
+        },
+        {
+          "id": "rifiuti-orari",
+          "nome": {
+            "it": "Rifiuti: quando si espongono",
+            "en": "Waste: when to put it out"
+          },
+          "dettagli": [
+            {
+              "it": "Inverno (1/11-31/3): 20:00-24:00",
+              "en": "Winter (1 Nov-31 Mar): 8pm-midnight"
+            },
+            {
+              "it": "Estate (1/4-31/10): 22:00-02:00",
+              "en": "Summer (1 Apr-31 Oct): 10pm-2am"
+            }
+          ],
+          "nota": {
+            "it": "Fuori orario si rischia la multa. Il calendario per tipo di rifiuto è nella sezione Rifiuti.",
+            "en": "Outside these hours you risk a fine. The calendar by type is in the Waste section."
+          },
+          "cerca": "orario conferimento sacchetti multa",
+          "fonte": {
+            "nome": "Calendario raccolta 2026, Comune di Positano",
+            "data": "2026-01-01"
+          },
+          "verificato": true
+        },
+        {
+          "id": "acqua-estate",
+          "nome": {
+            "it": "Acqua d'estate",
+            "en": "Water in summer"
+          },
+          "nota": {
+            "it": "Nei mesi di siccità il Comune può vietare l'uso dell'acqua potabile per irrigare, riempire piscine o lavare auto e barche (nel 2026 fino al 30 settembre, multa da 25 a 500 €). Il gestore della rete è Ausino.",
+            "en": "During drought the Town Hall may ban drinking water for watering, filling pools or washing cars and boats (in 2026 until 30 September, fine €25-500). The water network is run by Ausino."
+          },
+          "web": "https://www.ausino.it/",
+          "webLabel": {
+            "it": "Ausino (guasti acqua)",
+            "en": "Ausino (water faults)"
+          },
+          "cerca": "acqua siccità piscina irrigazione guasto ausino",
+          "fonte": {
+            "nome": "Ordinanza sindacale n. 11 dell'8/7/2026",
+            "data": "2026-07-08"
+          },
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "segnala",
+      "titolo": {
+        "it": "Segnala un problema",
+        "en": "Report a problem"
+      },
+      "nota": {
+        "it": "Positano.app non raccoglie segnalazioni: ti dice a chi rivolgerti.",
+        "en": "Positano.app does not collect reports: it tells you who to contact."
+      },
+      "voci": [
+        {
+          "id": "segnala-pericolo",
+          "nome": {
+            "it": "Pericolo immediato (incendio, frana, incidente)",
+            "en": "Immediate danger (fire, landslide, accident)"
+          },
+          "tel": [
+            {
+              "n": "112"
+            }
+          ],
+          "cerca": "emergenza incendio frana incidente pericolo",
+          "verificato": true
+        },
+        {
+          "id": "segnala-strada",
+          "nome": {
+            "it": "Strade, sosta selvaggia, rumore, abbandono di rifiuti",
+            "en": "Roads, illegal parking, noise, dumped waste"
+          },
+          "nota": {
+            "it": "Chiama o scrivi alla Polizia Municipale indicando il punto preciso; una foto aiuta.",
+            "en": "Call or email the Municipal Police with the exact location; a photo helps."
+          },
+          "tel": [
+            {
+              "n": "089 8122552"
+            }
+          ],
+          "email": "poliziamunicipale@comune.positano.sa.it",
+          "cerca": "buca strada parcheggio rumore rifiuti abbandonati",
+          "verificato": true
+        },
+        {
+          "id": "segnala-acqua",
+          "nome": {
+            "it": "Guasto all'acqua o alla fogna",
+            "en": "Water or sewer fault"
+          },
+          "nota": {
+            "it": "Rete idrica e fognatura sono gestite da Ausino: numero verde per i guasti sul sito del gestore.",
+            "en": "Water and sewers are run by Ausino: fault hotline on their website."
+          },
+          "web": "https://www.ausino.it/",
+          "cerca": "perdita acqua fogna tubo",
+          "verificato": false
+        },
+        {
+          "id": "segnala-ufficiale",
+          "nome": {
+            "it": "Richieste formali al Comune",
+            "en": "Formal requests to the Town Hall"
+          },
+          "nota": {
+            "it": "Per istanze e reclami che devono restare agli atti si scrive alla PEC del protocollo.",
+            "en": "For formal applications and complaints write to the registry certified email (PEC)."
+          },
+          "pec": "protocollo@pec.comunedipositano.it",
+          "cerca": "reclamo istanza protocollo pec",
+          "verificato": true
+        }
+      ]
+    }
+  ]
+}

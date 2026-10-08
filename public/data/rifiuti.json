@@ -1,20 +1,382 @@
 {
-  "aggiornato": "2026-07-13",
-  "avviso": {
-    "it": "Il calendario ufficiale della raccolta porta a porta per zona è in verifica con l'Ufficio Ambiente e sarà pubblicato qui. Il glossario qui sotto è indicativo: in caso di dubbio fa fede il regolamento comunale.",
-    "en": "The official door-to-door collection calendar by area is being verified with the Environment Office and will be published here. The glossary below is indicative: in case of doubt, municipal rules apply."
+  "aggiornato": "2026-10-08",
+  "intro": {
+    "it": "Porta a porta per le case. Qui trovi cosa si espone stasera e dove va ogni rifiuto.",
+    "en": "Door-to-door collection for homes. Here is what to put out tonight and where each item goes."
   },
-  "zone": [],
+  "frazioni": {
+    "umido": {
+      "nome": {
+        "it": "Umido",
+        "en": "Food waste"
+      },
+      "colore": "brown"
+    },
+    "multi": {
+      "nome": {
+        "it": "Plastica e metalli",
+        "en": "Plastic & metal"
+      },
+      "colore": "yellow"
+    },
+    "carta": {
+      "nome": {
+        "it": "Carta",
+        "en": "Paper"
+      },
+      "colore": "blue"
+    },
+    "vetro": {
+      "nome": {
+        "it": "Vetro",
+        "en": "Glass"
+      },
+      "colore": "green"
+    },
+    "secco": {
+      "nome": {
+        "it": "Secco",
+        "en": "General waste"
+      },
+      "colore": "grey"
+    }
+  },
+  "calendario": {
+    "sere": {
+      "0": [
+        "umido",
+        "carta"
+      ],
+      "1": [
+        "multi"
+      ],
+      "2": [
+        "umido",
+        "vetro"
+      ],
+      "3": [
+        "secco"
+      ],
+      "4": [
+        "multi"
+      ],
+      "5": [
+        "umido"
+      ],
+      "6": []
+    },
+    "esposizione": {
+      "it": "Si espone davanti casa la sera: d'inverno (1/11-31/3) dalle 20 alle 24, d'estate (1/4-31/10) dalle 22 alle 2.",
+      "en": "Put it out in front of your home in the evening: in winter (1 Nov-31 Mar) 8pm-midnight, in summer (1 Apr-31 Oct) 10pm-2am."
+    },
+    "nota": {
+      "it": "Calendario per le abitazioni. Le attività hanno un calendario proprio.",
+      "en": "Household calendar. Businesses have their own calendar."
+    },
+    "fonte": {
+      "nome": "Comune di Positano, pagina Raccolta differenziata; giorno del secco confermato a ottobre 2026",
+      "url": "https://comune.positano.sa.it/servizi/raccolta-differenziata",
+      "data": "2026-10-08"
+    }
+  },
   "glossario": [
-    { "voce": { "it": "Bottiglia di plastica", "en": "Plastic bottle" }, "dove": { "it": "Plastica e metalli (svuotata e schiacciata)", "en": "Plastic and metals (empty and crushed)" } },
-    { "voce": { "it": "Lattina", "en": "Can" }, "dove": { "it": "Plastica e metalli", "en": "Plastic and metals" } },
-    { "voce": { "it": "Bottiglia o barattolo di vetro", "en": "Glass bottle or jar" }, "dove": { "it": "Vetro", "en": "Glass" } },
-    { "voce": { "it": "Scontrino (carta termica)", "en": "Receipt (thermal paper)" }, "dove": { "it": "Indifferenziato", "en": "General waste" } },
-    { "voce": { "it": "Tovagliolo di carta sporco di cibo", "en": "Food-soiled paper napkin" }, "dove": { "it": "Organico", "en": "Organic waste" } },
-    { "voce": { "it": "Cartone della pizza", "en": "Pizza box" }, "dove": { "it": "Pulito: carta. Molto unto: organico/indifferenziato secondo le regole locali", "en": "Clean: paper. Very greasy: organic/general waste according to local rules" } },
-    { "voce": { "it": "Pile e batterie", "en": "Batteries" }, "dove": { "it": "Contenitori dedicati (mai nei sacchi)", "en": "Dedicated bins (never in regular bags)" } },
-    { "voce": { "it": "Farmaci scaduti", "en": "Expired medicines" }, "dove": { "it": "Contenitore presso la farmacia", "en": "Bin at the pharmacy" } },
-    { "voce": { "it": "Olio da cucina usato", "en": "Used cooking oil" }, "dove": { "it": "Punto di raccolta dedicato (mai nel lavandino)", "en": "Dedicated collection point (never down the drain)" } },
-    { "voce": { "it": "Ingombranti", "en": "Bulky items" }, "dove": { "it": "Ritiro su prenotazione — contatti in verifica", "en": "Collection by appointment — contacts being verified" } }
+    {
+      "voce": {
+        "it": "Avanzi di cibo, bucce, fondi di caffè",
+        "en": "Food scraps, peel, coffee grounds"
+      },
+      "frazione": "umido",
+      "dove": {
+        "it": "Umido, in sacchetto compostabile",
+        "en": "Food waste, in a compostable bag"
+      },
+      "cerca": "cibo organico frutta verdura"
+    },
+    {
+      "voce": {
+        "it": "Tovaglioli e fazzoletti di carta sporchi",
+        "en": "Used paper napkins and tissues"
+      },
+      "frazione": "umido",
+      "dove": {
+        "it": "Umido",
+        "en": "Food waste"
+      },
+      "cerca": "carta sporca"
+    },
+    {
+      "voce": {
+        "it": "Cartone della pizza",
+        "en": "Pizza box"
+      },
+      "frazione": "carta",
+      "dove": {
+        "it": "Carta se pulito; se molto unto, i pezzi sporchi vanno nell'umido",
+        "en": "Paper if clean; heavily greasy parts go in food waste"
+      },
+      "cerca": "pizza"
+    },
+    {
+      "voce": {
+        "it": "Giornali, riviste, scatole di cartone",
+        "en": "Newspapers, magazines, cardboard boxes"
+      },
+      "frazione": "carta",
+      "dove": {
+        "it": "Carta, piegati e senza nastro adesivo",
+        "en": "Paper, folded, without tape"
+      },
+      "cerca": "cartone scatola"
+    },
+    {
+      "voce": {
+        "it": "Cartoni del latte e dei succhi (Tetra Pak)",
+        "en": "Milk and juice cartons (Tetra Pak)"
+      },
+      "frazione": "carta",
+      "dove": {
+        "it": "Carta e cartone (verifica le regole locali)",
+        "en": "Paper and cardboard (check local rules)"
+      },
+      "cerca": "tetrapak brick"
+    },
+    {
+      "voce": {
+        "it": "Bottiglie e flaconi di plastica",
+        "en": "Plastic bottles and containers"
+      },
+      "frazione": "multi",
+      "dove": {
+        "it": "Plastica e metalli, svuotati e schiacciati",
+        "en": "Plastic & metal, empty and crushed"
+      },
+      "cerca": "bottiglia acqua flacone shampoo"
+    },
+    {
+      "voce": {
+        "it": "Lattine, scatolette, carta stagnola",
+        "en": "Cans, tins, aluminium foil"
+      },
+      "frazione": "multi",
+      "dove": {
+        "it": "Plastica e metalli",
+        "en": "Plastic & metal"
+      },
+      "cerca": "alluminio latta tonno"
+    },
+    {
+      "voce": {
+        "it": "Vaschette e piatti di plastica",
+        "en": "Plastic trays and plates"
+      },
+      "frazione": "multi",
+      "dove": {
+        "it": "Plastica e metalli, se puliti",
+        "en": "Plastic & metal, if clean"
+      },
+      "cerca": "bicchieri plastica polistirolo"
+    },
+    {
+      "voce": {
+        "it": "Bottiglie e barattoli di vetro",
+        "en": "Glass bottles and jars"
+      },
+      "frazione": "vetro",
+      "dove": {
+        "it": "Vetro, senza tappo (il tappo va in plastica e metalli)",
+        "en": "Glass, without the cap (caps go in plastic & metal)"
+      },
+      "cerca": "birra vino barattolo"
+    },
+    {
+      "voce": {
+        "it": "Bicchieri rotti, ceramica, specchi",
+        "en": "Broken drinking glasses, ceramics, mirrors"
+      },
+      "frazione": "secco",
+      "dove": {
+        "it": "Secco: non sono vetro da riciclare",
+        "en": "General waste: not recyclable glass"
+      },
+      "cerca": "ceramica piatto rotto cristallo"
+    },
+    {
+      "voce": {
+        "it": "Scontrini (carta termica)",
+        "en": "Receipts (thermal paper)"
+      },
+      "frazione": "secco",
+      "dove": {
+        "it": "Secco",
+        "en": "General waste"
+      },
+      "cerca": "scontrino"
+    },
+    {
+      "voce": {
+        "it": "Mozziconi di sigaretta",
+        "en": "Cigarette butts"
+      },
+      "frazione": "secco",
+      "dove": {
+        "it": "Secco, spenti. Mai a terra né in spiaggia",
+        "en": "General waste, put out. Never on the ground or the beach"
+      },
+      "cerca": "sigaretta cicca"
+    },
+    {
+      "voce": {
+        "it": "Pannolini e assorbenti",
+        "en": "Nappies and sanitary products"
+      },
+      "frazione": "secco",
+      "dove": {
+        "it": "Secco; pannolini anche ogni giorno 7-10 al contenitore di località Cascata (SS163)",
+        "en": "General waste; nappies also daily 7-10am at the Cascata container (SS163)"
+      },
+      "cerca": "pannolini pannoloni traverse"
+    },
+    {
+      "voce": {
+        "it": "Pile e batterie",
+        "en": "Batteries"
+      },
+      "frazione": "",
+      "dove": {
+        "it": "Contenitori nei negozi che le vendono, nelle scuole e in Comune",
+        "en": "Bins in shops that sell them, schools and the Town Hall"
+      },
+      "cerca": "pile batterie"
+    },
+    {
+      "voce": {
+        "it": "Farmaci scaduti",
+        "en": "Expired medicines"
+      },
+      "frazione": "",
+      "dove": {
+        "it": "Contenitori della farmacia, delle parafarmacie e della Croce Rossa",
+        "en": "Bins at the pharmacy, parapharmacies and Red Cross"
+      },
+      "cerca": "medicine farmaci"
+    },
+    {
+      "voce": {
+        "it": "Olio da cucina usato",
+        "en": "Used cooking oil"
+      },
+      "frazione": "",
+      "dove": {
+        "it": "Contenitori stradali per l'olio vegetale. Mai nel lavandino",
+        "en": "Street containers for vegetable oil. Never down the sink"
+      },
+      "cerca": "olio frittura"
+    },
+    {
+      "voce": {
+        "it": "Abiti e scarpe usati",
+        "en": "Used clothes and shoes"
+      },
+      "frazione": "",
+      "dove": {
+        "it": "Contenitori in località Cascata (SS163)",
+        "en": "Containers at Cascata (SS163)"
+      },
+      "cerca": "vestiti indumenti scarpe"
+    },
+    {
+      "voce": {
+        "it": "Mobili, materassi, elettrodomestici",
+        "en": "Furniture, mattresses, appliances"
+      },
+      "frazione": "",
+      "dove": {
+        "it": "Ritiro gratuito su prenotazione allo 089 8122508, al piano della strada",
+        "en": "Free collection by appointment on 089 8122508, at road level"
+      },
+      "cerca": "ingombranti raee frigorifero lavatrice divano materasso tv"
+    }
+  ],
+  "gruppi": [
+    {
+      "id": "servizi",
+      "titolo": {
+        "it": "Servizi",
+        "en": "Services"
+      },
+      "voci": [
+        {
+          "id": "ingombranti",
+          "nome": {
+            "it": "Ritiro ingombranti e RAEE",
+            "en": "Bulky items and electrical waste collection"
+          },
+          "nota": {
+            "it": "Gratuito su prenotazione. Si lasciano al livello della strada carrozzabile nel giorno concordato. Di solito sospeso ad agosto.",
+            "en": "Free, by appointment. Leave items at road level on the agreed day. Usually suspended in August."
+          },
+          "orari": {
+            "it": "Prenotazioni: lunedì 8:30-13:30 e 15:30-17:30, martedì e mercoledì 8:30-13:30",
+            "en": "Bookings: Monday 8:30am-1:30pm and 3:30-5:30pm, Tuesday and Wednesday 8:30am-1:30pm"
+          },
+          "tel": [
+            {
+              "n": "089 8122508"
+            }
+          ],
+          "cerca": "ingombranti raee mobili elettrodomestici",
+          "fonte": {
+            "nome": "Comune, calendario raccolta",
+            "url": "https://comune.positano.sa.it/servizi/raccolta-differenziata",
+            "data": "2026-01-01"
+          },
+          "verificato": true
+        },
+        {
+          "id": "cascata",
+          "nome": {
+            "it": "Località Cascata (SS163)",
+            "en": "Cascata area (SS163)"
+          },
+          "nota": {
+            "it": "Contenitori per pannolini (ogni giorno 7-10) e per abiti usati, vicino al centro di raccolta comunale.",
+            "en": "Containers for nappies (daily 7-10am) and used clothes, near the municipal collection centre."
+          },
+          "cerca": "centro di raccolta isola ecologica cascata",
+          "fonte": {
+            "nome": "Comune, calendario raccolta",
+            "data": "2026-01-01"
+          },
+          "verificato": false
+        },
+        {
+          "id": "tari",
+          "nome": {
+            "it": "TARI, la tassa sui rifiuti",
+            "en": "TARI, the waste tax"
+          },
+          "nota": {
+            "it": "Tariffe 2026 approvate dal Consiglio comunale il 30 luglio 2026. Per informazioni: ufficio tributi.",
+            "en": "2026 rates approved by the Town Council on 30 July 2026. For information: local tax office."
+          },
+          "tel": [
+            {
+              "n": "089 8122526"
+            }
+          ],
+          "web": "https://cittadino.plugandpay.it/C_G932",
+          "webLabel": {
+            "it": "Paga con pagoPA",
+            "en": "Pay with pagoPA"
+          },
+          "cerca": "tari tassa rifiuti pagamento",
+          "fonte": {
+            "nome": "Delibera di Consiglio n. 20 del 30/7/2026",
+            "data": "2026-07-30"
+          },
+          "verificato": false
+        }
+      ]
+    }
   ]
 }
