@@ -1,30 +1,457 @@
 {
-  "aggiornato": "2026-07-13",
+  "aggiornato": "2026-10-08",
+  "intro": {
+    "it": "In pericolo chiama il 112: è gratuito e funziona anche senza credito. Qui sotto i numeri giusti per tutto il resto.",
+    "en": "In danger, call 112: it is free and works without credit. Below, the right numbers for everything else."
+  },
   "gruppi": [
     {
-      "titolo": { "it": "Emergenze nazionali", "en": "National emergency numbers" },
+      "id": "emergenza",
+      "titolo": {
+        "it": "Emergenza",
+        "en": "Emergency"
+      },
       "voci": [
-        { "nome": { "it": "Numero Unico di Emergenza", "en": "Single Emergency Number" }, "tel": "112", "verificato": true },
-        { "nome": { "it": "Polizia di Stato", "en": "State Police" }, "tel": "113", "verificato": true },
-        { "nome": { "it": "Vigili del Fuoco", "en": "Fire Brigade" }, "tel": "115", "verificato": true },
-        { "nome": { "it": "Emergenza sanitaria", "en": "Medical emergency" }, "tel": "118", "verificato": true },
-        { "nome": { "it": "Guardia Costiera — emergenze in mare", "en": "Coast Guard — emergencies at sea" }, "tel": "1530", "verificato": true },
-        { "nome": { "it": "Antiviolenza e stalking", "en": "Anti-violence and stalking helpline" }, "tel": "1522", "verificato": true }
+        {
+          "id": "112",
+          "nome": {
+            "it": "Numero unico di emergenza",
+            "en": "European emergency number"
+          },
+          "nota": {
+            "it": "Carabinieri, polizia, ambulanza, vigili del fuoco. Risponde anche in inglese.",
+            "en": "Police, ambulance, fire brigade. Operators also speak English."
+          },
+          "tel": [
+            {
+              "n": "112"
+            }
+          ],
+          "cerca": "emergenza polizia carabinieri aiuto sos",
+          "verificato": true
+        },
+        {
+          "id": "118",
+          "nome": {
+            "it": "Emergenza sanitaria",
+            "en": "Medical emergency"
+          },
+          "nota": {
+            "it": "Ambulanza ed elisoccorso. Anche per incidenti sui sentieri: il soccorso alpino parte dal 118 di Salerno.",
+            "en": "Ambulance and air ambulance. Also for accidents on trails: mountain rescue is dispatched by 118 Salerno."
+          },
+          "tel": [
+            {
+              "n": "118"
+            }
+          ],
+          "cerca": "ambulanza malore soccorso alpino elisoccorso sentiero",
+          "verificato": true
+        },
+        {
+          "id": "1530",
+          "nome": {
+            "it": "Guardia Costiera: emergenze in mare",
+            "en": "Coast Guard: emergencies at sea"
+          },
+          "nota": {
+            "it": "Persona in difficoltà in acqua, barca in avaria, inquinamento.",
+            "en": "Person in difficulty in the water, boat breakdown, pollution."
+          },
+          "tel": [
+            {
+              "n": "1530"
+            }
+          ],
+          "cerca": "mare annegamento barca naufragio",
+          "verificato": true
+        },
+        {
+          "id": "115",
+          "nome": {
+            "it": "Vigili del Fuoco",
+            "en": "Fire brigade"
+          },
+          "nota": {
+            "it": "Incendi, crolli, frane. Se vedi un incendio nel bosco chiama subito.",
+            "en": "Fires, collapses, landslides. Report any wildfire immediately."
+          },
+          "tel": [
+            {
+              "n": "115"
+            }
+          ],
+          "cerca": "incendio fuoco frana crollo",
+          "verificato": true
+        },
+        {
+          "id": "113",
+          "nome": {
+            "it": "Polizia di Stato",
+            "en": "State Police"
+          },
+          "tel": [
+            {
+              "n": "113"
+            }
+          ],
+          "cerca": "polizia furto denuncia",
+          "verificato": true
+        },
+        {
+          "id": "1522",
+          "nome": {
+            "it": "Antiviolenza e stalking",
+            "en": "Violence and stalking helpline"
+          },
+          "nota": {
+            "it": "Gratuito, anonimo, attivo 24 ore su 24, anche in inglese.",
+            "en": "Free, anonymous, 24/7, also in English."
+          },
+          "tel": [
+            {
+              "n": "1522"
+            }
+          ],
+          "cerca": "violenza donne stalking",
+          "verificato": true
+        }
       ]
     },
     {
-      "titolo": { "it": "Servizi locali", "en": "Local services" },
+      "id": "salute",
+      "titolo": {
+        "it": "Salute",
+        "en": "Health"
+      },
       "voci": [
-        { "nome": { "it": "Comune di Positano — centralino", "en": "Positano Town Hall — switchboard" }, "tel": "", "nota": { "it": "Numero in fase di verifica.", "en": "Number being verified." }, "verificato": false },
-        { "nome": { "it": "Polizia Municipale", "en": "Municipal Police" }, "tel": "", "nota": { "it": "Numero in fase di verifica.", "en": "Number being verified." }, "verificato": false },
-        { "nome": { "it": "Guardia Medica (continuità assistenziale)", "en": "Out-of-hours medical service" }, "tel": "", "nota": { "it": "Numero e orari in fase di verifica.", "en": "Number and hours being verified." }, "verificato": false },
-        { "nome": { "it": "Farmacia", "en": "Pharmacy" }, "tel": "", "nota": { "it": "Contatti e turni in fase di verifica.", "en": "Contacts and duty rota being verified." }, "verificato": false }
+        {
+          "id": "guardia-medica",
+          "nome": {
+            "it": "Guardia medica (continuità assistenziale)",
+            "en": "Out-of-hours doctor (guardia medica)"
+          },
+          "nota": {
+            "it": "Medico gratuito quando il proprio medico non c'è. A Positano non c'è una sede tutto l'anno: le più vicine sono Praiano e Amalfi.",
+            "en": "Free doctor when GPs are closed. There is no year-round office in Positano: the nearest are in Praiano and Amalfi."
+          },
+          "orari": {
+            "it": "Notti 20-8; dalle 10 del sabato alle 8 del lunedì; dalle 10 dei prefestivi alle 8 del giorno dopo la festa",
+            "en": "Nights 8pm-8am; from 10am Saturday to 8am Monday; from 10am the day before a holiday to 8am the day after"
+          },
+          "tel": [
+            {
+              "n": "089 4455842",
+              "label": {
+                "it": "Praiano",
+                "en": "Praiano"
+              }
+            },
+            {
+              "n": "089 4455840",
+              "label": {
+                "it": "Amalfi",
+                "en": "Amalfi"
+              }
+            }
+          ],
+          "cerca": "medico notte febbre guardia medica continuita assistenziale",
+          "fonte": {
+            "nome": "ASL Salerno, sedi di continuità assistenziale",
+            "url": "https://www.aslsalerno.it/archivio2_come-fare-per_0_122.html",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        },
+        {
+          "id": "guardia-turistica",
+          "nome": {
+            "it": "Guardia medica turistica di Positano",
+            "en": "Positano tourist medical service"
+          },
+          "periodo": {
+            "dal": "08-01",
+            "al": "08-31",
+            "testo": {
+              "it": "d'estate, nel 2026 dal 3 al 31 agosto",
+              "en": "in summer; in 2026 from 3 to 31 August"
+            }
+          },
+          "nota": {
+            "it": "Ambulatorio stagionale per chi non è residente, con turni affissi alla porta.",
+            "en": "Seasonal clinic for non-residents; hours posted at the door."
+          },
+          "indirizzo": "Via Pasitea, Polo socio-sanitario",
+          "tel": [
+            {
+              "n": "089 875832"
+            }
+          ],
+          "cerca": "medico turisti ambulatorio",
+          "fonte": {
+            "nome": "ASL Salerno DS 63, avviso del Comune",
+            "url": "https://comune.positano.sa.it/novita/avvisi/comunicazione-attivazione-guardia-medica-turistica",
+            "data": "2026-07-30"
+          },
+          "verificato": true
+        },
+        {
+          "id": "ospedale",
+          "nome": {
+            "it": "Pronto soccorso più vicino: Ospedale Costa d'Amalfi",
+            "en": "Nearest A&E: Costa d'Amalfi Hospital"
+          },
+          "nota": {
+            "it": "A Castiglione di Ravello, circa 40 minuti in auto. I casi gravi vengono trasferiti a Salerno, Sorrento o Napoli. In urgenza chiama il 118, non metterti in viaggio.",
+            "en": "In Castiglione di Ravello, about 40 minutes by car. Serious cases are transferred to Salerno, Sorrento or Naples. In an emergency call 118 rather than driving."
+          },
+          "indirizzo": "Via Civita, Castiglione di Ravello",
+          "tel": [
+            {
+              "n": "089 8309111",
+              "label": {
+                "it": "Centralino Ruggi",
+                "en": "Switchboard"
+              }
+            }
+          ],
+          "coord": [
+            40.63794,
+            14.61265
+          ],
+          "web": "https://www.sangiovannieruggi.it/index.php/azienda/plessi/plesso-costa-d-amalfi",
+          "cerca": "ospedale pronto soccorso ravello castiglione",
+          "fonte": {
+            "nome": "AOU Ruggi d'Aragona",
+            "url": "https://www.sangiovannieruggi.it/index.php/azienda/plessi/plesso-costa-d-amalfi",
+            "consultata": "2026-10-08"
+          },
+          "verificato": false
+        },
+        {
+          "id": "farmacia",
+          "nome": {
+            "it": "Farmacia",
+            "en": "Pharmacy"
+          },
+          "nota": {
+            "it": "Il turno di notte e dei festivi è affisso sulla porta della farmacia. Farmaci da banco anche nelle parafarmacie.",
+            "en": "The night and holiday rota is posted on the pharmacy door. Over-the-counter medicines are also sold in parapharmacies."
+          },
+          "indirizzo": "Via Pasitea 22",
+          "tel": [
+            {
+              "n": "089 875863"
+            }
+          ],
+          "cerca": "farmacia medicine turno parafarmacia",
+          "fonte": {
+            "nome": "Elenchi farmacie (Dica33) e piano di emergenza comunale",
+            "consultata": "2026-10-08"
+          },
+          "verificato": false
+        },
+        {
+          "id": "croce-rossa",
+          "nome": {
+            "it": "Croce Rossa, delegazione di Positano",
+            "en": "Red Cross, Positano unit"
+          },
+          "nota": {
+            "it": "Postazione sanitaria e idroambulanza in convenzione con il Comune. Numero della sede in verifica: le fonti non coincidono.",
+            "en": "First-aid post and sea ambulance in agreement with the Town Hall. Local phone number being verified: sources disagree."
+          },
+          "indirizzo": "Via Pasitea 120",
+          "cerca": "croce rossa ambulanza idroambulanza",
+          "fonte": {
+            "nome": "Piano di emergenza comunale (2018); albo pretorio 2026",
+            "data": "2026-09-01"
+          },
+          "verificato": false
+        }
       ]
     },
     {
-      "titolo": { "it": "Defibrillatori (DAE)", "en": "Defibrillators (AED)" },
+      "id": "sicurezza",
+      "titolo": {
+        "it": "Forze dell'ordine",
+        "en": "Police and coast guard"
+      },
       "voci": [
-        { "nome": { "it": "Mappa dei DAE — censimento in corso", "en": "AED map — survey in progress" }, "tel": "", "nota": { "it": "Le posizioni dei defibrillatori pubblici sono in raccolta con il 118 e le associazioni locali.", "en": "Public defibrillator locations are being collected with local EMS and associations." }, "verificato": false }
+        {
+          "id": "carabinieri",
+          "nome": {
+            "it": "Carabinieri, stazione di Positano",
+            "en": "Carabinieri, Positano station"
+          },
+          "tel": [
+            {
+              "n": "089 875011"
+            }
+          ],
+          "nota": {
+            "it": "Per denunce e informazioni. In emergenza: 112.",
+            "en": "For reports and information. In an emergency: 112."
+          },
+          "cerca": "carabinieri denuncia furto smarrimento",
+          "fonte": {
+            "nome": "Vecchio sito del Comune ed elenchi telefonici",
+            "data": "2017-01-01"
+          },
+          "verificato": false
+        },
+        {
+          "id": "capitaneria",
+          "nome": {
+            "it": "Guardia Costiera, Ufficio locale marittimo",
+            "en": "Coast Guard, local maritime office"
+          },
+          "indirizzo": "Via del Brigantino",
+          "tel": [
+            {
+              "n": "089 875486"
+            }
+          ],
+          "email": "positano@guardiacostiera.it",
+          "orari": {
+            "it": "Lun, mer, ven 9-12; mar e gio 9-12 e 15-16",
+            "en": "Mon, Wed, Fri 9am-12pm; Tue and Thu 9am-12pm and 3-4pm"
+          },
+          "coord": [
+            40.62791,
+            14.4875
+          ],
+          "cerca": "capitaneria porto guardia costiera barca ancoraggio",
+          "fonte": {
+            "nome": "Guardia Costiera",
+            "url": "https://www.guardiacostiera.gov.it/portale/l/197261",
+            "consultata": "2026-10-08"
+          },
+          "verificato": true
+        },
+        {
+          "id": "polizia-municipale-sos",
+          "nome": {
+            "it": "Polizia Municipale",
+            "en": "Municipal Police"
+          },
+          "tel": [
+            {
+              "n": "089 8122552"
+            }
+          ],
+          "nota": {
+            "it": "Traffico, sosta, rumore, ZTL. Altri recapiti nella sezione Comune.",
+            "en": "Traffic, parking, noise, restricted zone. More contacts in the Town Hall section."
+          },
+          "cerca": "vigili polizia locale",
+          "fonte": {
+            "nome": "Sito del Comune",
+            "url": "https://comune.positano.sa.it/amministrazione/uffici/polizia-municipale",
+            "data": "2026-05-20"
+          },
+          "verificato": true
+        },
+        {
+          "id": "finanza",
+          "nome": {
+            "it": "Guardia di Finanza",
+            "en": "Guardia di Finanza (financial police)"
+          },
+          "tel": [
+            {
+              "n": "089 875129"
+            }
+          ],
+          "cerca": "finanza scontrino",
+          "fonte": {
+            "nome": "Vecchio sito del Comune",
+            "data": "2017-01-01"
+          },
+          "verificato": false
+        }
+      ]
+    },
+    {
+      "id": "protezione-civile",
+      "titolo": {
+        "it": "Protezione civile",
+        "en": "Civil protection"
+      },
+      "nota": {
+        "it": "Cosa fare in caso di terremoto, frana o incendio grave.",
+        "en": "What to do in case of earthquake, landslide or major fire."
+      },
+      "voci": [
+        {
+          "id": "aree-attesa",
+          "nome": {
+            "it": "Aree di attesa: dove andare",
+            "en": "Assembly points: where to go"
+          },
+          "nota": {
+            "it": "In un'emergenza grave raggiungi a piedi l'area più vicina e aspetta indicazioni. Non usare l'auto.",
+            "en": "In a major emergency walk to the nearest point and wait for instructions. Do not use your car."
+          },
+          "punti": [
+            {
+              "it": "Piazzale della Chiesa Madre (la più grande, oltre 300 persone)",
+              "en": "Square in front of the Mother Church (largest, 300+ people)"
+            },
+            {
+              "it": "Ingresso garage di Piazza dei Mulini, via Pasitea",
+              "en": "Garage entrance at Piazza dei Mulini, Via Pasitea"
+            },
+            {
+              "it": "Via Marconi, giardinetti vicino al Municipio",
+              "en": "Via Marconi, small gardens near the Town Hall"
+            },
+            {
+              "it": "Via Pasitea, slargo del Presepe al bivio con via Boscariello",
+              "en": "Via Pasitea, Presepe area at the Via Boscariello junction"
+            },
+            {
+              "it": "SS163, belvedere della Madonnina",
+              "en": "SS163 road, Madonnina viewpoint"
+            },
+            {
+              "it": "SS163, accesso al quartiere Liparlati",
+              "en": "SS163 road, entrance to Liparlati"
+            },
+            {
+              "it": "Piazzetta di Montepertuso",
+              "en": "Montepertuso square"
+            },
+            {
+              "it": "Parcheggio all'ingresso di Nocelle",
+              "en": "Car park at the entrance to Nocelle"
+            }
+          ],
+          "cerca": "terremoto evacuazione area di attesa raduno emergenza",
+          "fonte": {
+            "nome": "Piano di emergenza comunale, 24/1/2018",
+            "data": "2018-01-24"
+          },
+          "verificato": false
+        },
+        {
+          "id": "allerte",
+          "nome": {
+            "it": "Allerte meteo della Regione",
+            "en": "Regional weather alerts"
+          },
+          "nota": {
+            "it": "Con allerta arancione o rossa: evita sentieri, spiagge sotto le pareti e valloni.",
+            "en": "With orange or red alerts: avoid trails, beaches below cliffs and gullies."
+          },
+          "web": "https://centrofunzionale.regione.campania.it/",
+          "webLabel": {
+            "it": "Allerte in corso",
+            "en": "Current alerts"
+          },
+          "cerca": "allerta meteo pioggia temporale vento",
+          "verificato": true
+        }
       ]
     }
   ]

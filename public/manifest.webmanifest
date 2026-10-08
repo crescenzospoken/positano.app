@@ -1,37 +1,26 @@
 {
-  "name": "Positano.app — la guida civica di Positano",
+  "id": "./",
+  "name": "Positano.app · la guida civica di Positano",
   "short_name": "Positano",
-  "description": "Numeri utili, trasporti, rifiuti, spiagge, sentieri ed eventi di Positano. App civica open source.",
+  "description": "Numeri utili, bus e traghetti, rifiuti, spiagge, sentieri, eventi e Comune di Positano. Guida civica open source, senza pubblicità e senza tracciamento.",
   "lang": "it",
+  "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f4f7fa",
-  "theme_color": "#0b4f8a",
+  "orientation": "portrait",
+  "background_color": "#f7f4ee",
+  "theme_color": "#0a3a5c",
+  "categories": ["travel", "navigation", "utilities"],
   "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Emergenze", "short_name": "Emergenze", "url": "./#emergenze", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Arrivare e muoversi", "short_name": "Muoversi", "url": "./#muoversi", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Rifiuti", "short_name": "Rifiuti", "url": "./#rifiuti", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
   ]
 }

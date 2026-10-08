@@ -12,18 +12,27 @@ Una **PWA** (Progressive Web App) che raccoglie in un unico posto le informazion
 
 | Sezione | Contenuto |
 |---|---|
-| 🚨 Emergenze | Numeri di emergenza e servizi locali, con chiamata diretta |
-| 🚌 Trasporti | Bus, collegamenti via mare, parcheggi, taxi |
-| ♻️ Rifiuti | Calendario raccolta differenziata e glossario "dove lo butto?" |
-| 🏖️ Spiagge | Accessi, servizi, note pratiche |
-| 🥾 Sentieri | Sentiero degli Dei e percorsi locali |
-| 📅 Eventi | Calendario della comunità |
+| Oggi | La home sa che ore sono: alba e tramonto, avvisi attivi, rifiuti da esporre stasera, prossime partenze, targhe alterne, prossimi eventi |
+| Emergenze e salute | 112, guardia medica, farmacia, ospedale, forze dell'ordine, aree di attesa della protezione civile |
+| Arrivare e muoversi | Bus SITA e interno, traghetti, taxi a tariffa fissa, ZTL, targhe alterne, parcheggi |
+| Rifiuti | Cosa si espone sera per sera e glossario «dove lo butto?» |
+| Spiagge | Accessi, gradini, Bandiera Blu, sicurezza in acqua |
+| Sentieri | Sentieri CAI con numero, lunghezza, dislivello e difficoltà |
+| Eventi | Feste e appuntamenti, con le ricorrenze annuali |
+| Da vedere | Chiesa, MAR, frazioni, torri, storia |
+| Comune | Uffici, orari, PEC, pagoPA, regole, a chi segnalare cosa |
 
 **Principi:** bilingue (IT/EN) · funziona offline · installabile · senza registrazione · senza pubblicità · senza tracciamento · accessibile · dati con fonte e data di aggiornamento.
 
 ## Stato del progetto
 
-⚠️ **v0.1.0 — scheletro iniziale.** La struttura funziona; molti contenuti sono segnaposto contrassegnati "da verificare" in attesa di verifica sul campo e con gli uffici competenti. Il progetto nasce dalla società civile ed è progettato per l'adozione da parte del Comune di Positano ai sensi degli artt. 68-69 del CAD (vedi [`publiccode.yml`](publiccode.yml)).
+⚠️ **v0.2.0 · prototipo con dati reali.** I contenuti sono stati raccolti da fonti pubbliche, ognuno con fonte e data; quelli non confermati da fonte primaria hanno l'etichetta «Da verificare» (elenco in [`docs/fonti-dati.md`](docs/fonti-dati.md)). Molti testi sono stati scritti con l'aiuto dell'intelligenza artificiale e vanno rivisti da una persona prima di un lancio pubblico. Audit della versione in [`docs/audit-2026-10.md`](docs/audit-2026-10.md). Il progetto nasce dalla società civile ed è progettato per l'adozione da parte del Comune di Positano ai sensi degli artt. 68-69 del CAD (vedi [`publiccode.yml`](publiccode.yml)).
+
+## Test
+
+```bash
+node --test tests/*.test.mjs
+```
 
 ## Provala in locale
 
@@ -52,9 +61,9 @@ publiccode.yml    descrittore standard per il riuso nella PA italiana
 
 ## Da fare subito (v0 → v1)
 
-- [ ] Verificare sul campo i numeri locali (`public/data/numeri-utili.json`)
-- [ ] Calendario rifiuti per zona dall'Ufficio Ambiente
-- [ ] Orari bus/traghetti strutturati (accordo con i gestori)
+- [x] Numeri locali, trasporti, rifiuti, spiagge, sentieri, eventi da fonti pubbliche (v0.2)
+- [ ] Verificare con gli uffici i 13 punti aperti in `docs/fonti-dati.md`
+- [ ] Orari completi bus e traghetti come dati (accordo con i gestori, GTFS)
 - [ ] Adottare il Design system .italia con [Dev Kit Italia](https://italia.github.io/dev-kit-italia) (Web Components nativi, senza bundler) quando uscirà dalla beta — vedi [#2](../../issues/2)
 - [ ] Traccia GPX Sentiero degli Dei
 

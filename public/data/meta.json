@@ -1,7 +1,18 @@
 {
   "nome": "Positano.app",
-  "versione": "0.1.0",
-  "aggiornato": "2026-07-13",
+  "versione": "0.2.0",
+  "aggiornato": "2026-10-08",
   "repo": "https://github.com/crescenzospoken/positano.app",
-  "licenza": "EUPL-1.2"
+  "segnalazioni": "https://github.com/crescenzospoken/positano.app/issues/new",
+  "licenza": "EUPL-1.2",
+  "stagioni": {
+    "alta": {
+      "dal": "06-15",
+      "al": "09-15"
+    },
+    "bassa": {
+      "dal": "11-01",
+      "al": "03-31"
+    }
+  }
 }

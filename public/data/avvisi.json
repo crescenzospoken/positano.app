@@ -1,0 +1,42 @@
+{
+  "aggiornato": "2026-10-08",
+  "avvisi": [
+    {
+      "id": "incendi-2026",
+      "titolo": {
+        "it": "Pericolo incendi: niente fuochi all'aperto",
+        "en": "Wildfire danger: no open fires"
+      },
+      "testo": {
+        "it": "La Regione ha prorogato lo stato di grave pericolosità per gli incendi boschivi fino al 15 ottobre. Vietato accendere fuochi e bruciare sterpaglie. Se vedi fumo o fiamme chiama subito il 112.",
+        "en": "The Region has extended the state of high wildfire danger until 15 October. Lighting fires and burning brush is forbidden. If you see smoke or flames call 112 immediately."
+      },
+      "dal": "2026-10-01",
+      "al": "2026-10-15",
+      "livello": "attenzione",
+      "fonte": {
+        "nome": "Comune di Positano, Instagram 1/10/2026",
+        "url": "https://www.instagram.com/comunepositanoofficial/"
+      }
+    },
+    {
+      "id": "massi-tese-fiume",
+      "titolo": {
+        "it": "Sentieri fra Tese e Fiume: escursioni sconsigliate",
+        "en": "Trails between Tese and Fiume: hiking not advised"
+      },
+      "testo": {
+        "it": "Dopo l'incendio del 30 settembre c'è pericolo di caduta massi sui sentieri fra le località Tese e Fiume. Il Comune sconsiglia vivamente di percorrerli finché non saranno messi in sicurezza.",
+        "en": "After the fire of 30 September there is a risk of falling rocks on the trails between Tese and Fiume. The Town Hall strongly advises against using them until they are made safe."
+      },
+      "dal": "2026-10-01",
+      "al": "2026-10-31",
+      "livello": "attenzione",
+      "verificato": false,
+      "fonte": {
+        "nome": "Comune di Positano, Instagram 1/10/2026",
+        "url": "https://www.instagram.com/comunepositanoofficial/"
+      }
+    }
+  ]
+}
