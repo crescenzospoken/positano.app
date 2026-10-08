@@ -38,8 +38,7 @@
         "it": "Secco",
         "en": "General waste"
       },
-      "colore": "grey",
-      "verificato": false
+      "colore": "grey"
     }
   },
   "calendario": {
@@ -55,10 +54,11 @@
         "umido",
         "vetro"
       ],
-      "3": [],
-      "4": [
-        "multi",
+      "3": [
         "secco"
+      ],
+      "4": [
+        "multi"
       ],
       "5": [
         "umido"
@@ -70,13 +70,13 @@
       "en": "Put it out in front of your home in the evening: in winter (1 Nov-31 Mar) 8pm-midnight, in summer (1 Apr-31 Oct) 10pm-2am."
     },
     "nota": {
-      "it": "Calendario per le abitazioni, dalla pagina del Comune del 2024: in attesa di conferma per il 2026. Il giorno del secco è incerto (la pagina dice giovedì, il vecchio calendario mercoledì). Le attività hanno un calendario proprio.",
-      "en": "Household calendar, from the Town Hall page of 2024: awaiting confirmation for 2026. The general-waste day is uncertain (the page says Thursday, the old calendar Wednesday). Businesses have their own calendar."
+      "it": "Calendario per le abitazioni. Le attività hanno un calendario proprio.",
+      "en": "Household calendar. Businesses have their own calendar."
     },
     "fonte": {
-      "nome": "Comune di Positano, pagina Raccolta differenziata",
+      "nome": "Comune di Positano, pagina Raccolta differenziata; giorno del secco confermato a ottobre 2026",
       "url": "https://comune.positano.sa.it/servizi/raccolta-differenziata",
-      "data": "2024-04-29"
+      "data": "2026-10-08"
     }
   },
   "glossario": [

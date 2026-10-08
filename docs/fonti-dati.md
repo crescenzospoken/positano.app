@@ -30,7 +30,7 @@ Ogni sezione ha un "proprietario" umano responsabile dell'aggiornamento e una fo
 
 ## Dati da verificare con gli uffici (al 8 ottobre 2026)
 
-1. **Rifiuti**: il secco si espone il giovedì (pagina web del Comune, 2024) o il mercoledì (eco-calendario PDF 2017)? E i giorni sono "sera di esposizione" o "giorno di ritiro"? Gestore 2026: DM Technology (determine 2026) o L'Igiene Urbana Evolution (Carta della qualità 2023)? Calendario delle attività.
+1. **Rifiuti**: ✅ il secco è il mercoledì (confermato l'8/10/2026). Restano: i giorni sono "sera di esposizione" o "giorno di ritiro"? Gestore 2026: DM Technology (determine 2026) o L'Igiene Urbana Evolution (Carta della qualità 2023)? Calendario delle attività.
 2. **Bus interno** Mobility Amalfi Coast: orari invernali e canale ufficiale.
 3. **Farmacia**: indirizzo (via Pasitea 22 negli elenchi, via Marconi su OpenStreetMap), turni festivi e notturni; esiste una seconda farmacia?
 4. **Croce Rossa**: numero della sede (089 811812 o 089 811912, le fonti non coincidono).
