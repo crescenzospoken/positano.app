@@ -32,7 +32,8 @@
         "url": "https://www.travelmar.it/_download/orari-travelmar-dal-1-ottobre_896.pdf",
         "data": "2026-10-01"
       },
-      "verificato": true
+      "verificato": true,
+      "tipo": "boat"
     },
     {
       "id": "sita-sorrento",
@@ -55,6 +56,138 @@
         "nome": "SITA Sud, orario dal 14/9/2026",
         "url": "https://sitasudtrasporti.it/campania/orari",
         "data": "2026-09-14"
+      },
+      "verificato": true,
+      "tipo": "bus"
+    },
+    {
+      "id": "mac-nocelle",
+      "tipo": "bus",
+      "nome": {
+        "it": "Bus per Montepertuso e Nocelle",
+        "en": "Bus to Montepertuso and Nocelle"
+      },
+      "da": {
+        "it": "Piazza dei Mulini",
+        "en": "Piazza dei Mulini"
+      },
+      "orari": [
+        "07:10",
+        "08:00",
+        "09:20",
+        "10:20",
+        "11:20",
+        "12:20",
+        "13:20",
+        "14:20",
+        "15:20",
+        "16:20",
+        "17:20",
+        "18:20",
+        "19:20",
+        "20:20",
+        "21:20",
+        "22:20",
+        "23:20"
+      ],
+      "dal": "2026-10-01",
+      "al": "2026-10-31",
+      "link": "#muoversi/bus-interno",
+      "fonte": {
+        "nome": "Mobility Amalfi Coast, orari in vigore dall'1 al 31 ottobre 2026",
+        "url": "https://holidaycoast.it/wp-content/uploads/2024/04/mobility-2-8.jpg",
+        "data": "2026-10-01"
+      },
+      "verificato": true
+    },
+    {
+      "id": "mac-interno",
+      "tipo": "bus",
+      "nome": {
+        "it": "Bus interno: Sponda, Chiesa Nuova, Fornillo",
+        "en": "Town bus: Sponda, Chiesa Nuova, Fornillo"
+      },
+      "da": {
+        "it": "Piazza dei Mulini",
+        "en": "Piazza dei Mulini"
+      },
+      "orari": [
+        "07:40",
+        "08:30",
+        "09:00",
+        "09:30",
+        "10:00",
+        "10:30",
+        "11:00",
+        "11:30",
+        "12:00",
+        "12:30",
+        "13:00",
+        "13:30",
+        "14:00",
+        "14:30",
+        "15:00",
+        "15:30",
+        "16:00",
+        "16:30",
+        "17:00",
+        "17:30",
+        "18:00",
+        "18:30",
+        "19:00",
+        "19:30",
+        "20:00",
+        "20:30",
+        "21:00",
+        "21:30",
+        "22:00",
+        "22:30",
+        "23:00",
+        "23:30"
+      ],
+      "dal": "2026-10-01",
+      "al": "2026-10-31",
+      "link": "#muoversi/bus-interno",
+      "fonte": {
+        "nome": "Mobility Amalfi Coast, orari in vigore dall'1 al 31 ottobre 2026",
+        "url": "https://holidaycoast.it/wp-content/uploads/2024/04/mobility-2-8.jpg",
+        "data": "2026-10-01"
+      },
+      "verificato": true
+    },
+    {
+      "id": "mac-praiano",
+      "tipo": "bus",
+      "nome": {
+        "it": "Bus per Arienzo, Laurito e Praiano",
+        "en": "Bus to Arienzo, Laurito and Praiano"
+      },
+      "da": {
+        "it": "Piazza dei Mulini",
+        "en": "Piazza dei Mulini"
+      },
+      "orari": [
+        "08:10",
+        "09:10",
+        "10:40",
+        "11:40",
+        "12:50",
+        "13:50",
+        "15:40",
+        "16:50",
+        "18:50",
+        "19:50",
+        "21:40",
+        "22:50",
+        "23:50"
+      ],
+      "dal": "2026-10-01",
+      "al": "2026-10-31",
+      "link": "#muoversi/bus-interno",
+      "fonte": {
+        "nome": "Mobility Amalfi Coast, orari in vigore dall'1 al 31 ottobre 2026",
+        "url": "https://holidaycoast.it/wp-content/uploads/2024/04/mobility-2-8.jpg",
+        "data": "2026-10-01"
       },
       "verificato": true
     }
@@ -175,8 +308,8 @@
               "en": "Buy your ticket before boarding: tobacconists, cafés or the UnicoCampania app. It costs more on board."
             },
             {
-              "it": "COSTIERASITA: 10 €, vale 24 ore su tutta la Costiera e la penisola sorrentina.",
-              "en": "COSTIERASITA: €10, valid 24 hours on the whole Amalfi Coast and Sorrento peninsula."
+              "it": "COSTIERASITA: biglietto 24 ore su tutta la Costiera e la penisola sorrentina, valido anche sui bus interni di Positano. Prezzo aggiornato con le tariffe del 1° ottobre (10 € sul sito SITA, 12 € su positano.com).",
+              "en": "COSTIERASITA: 24-hour ticket for the whole Amalfi Coast and Sorrento peninsula, also valid on Positano's local buses. Price updated with the 1 October fares (€10 on the SITA website, €12 on positano.com)."
             },
             {
               "it": "Dal 1° ottobre 2026 nuove tariffe regionali; i biglietti vecchi valgono fino al 31 dicembre.",
@@ -207,49 +340,73 @@
         {
           "id": "bus-interno",
           "nome": {
-            "it": "Bus interno: Positano, Montepertuso, Nocelle",
-            "en": "Local bus: Positano, Montepertuso, Nocelle"
+            "it": "Bus interni di Positano (Mobility Amalfi Coast)",
+            "en": "Positano local buses (Mobility Amalfi Coast)"
           },
           "sottotitolo": {
-            "it": "Mobility Amalfi Coast · capolinea Piazza dei Mulini",
-            "en": "Mobility Amalfi Coast · terminus Piazza dei Mulini"
+            "it": "Tre linee, tutte da Piazza dei Mulini · orario di ottobre 2026",
+            "en": "Three lines, all from Piazza dei Mulini · October 2026 timetable"
+          },
+          "periodo": {
+            "dal": "2026-10-01",
+            "al": "2026-10-31",
+            "testo": {
+              "it": "orario valido fino al 31 ottobre",
+              "en": "timetable valid until 31 October"
+            }
           },
           "dettagli": [
             {
-              "it": "Biglietto 0,90 €",
-              "en": "Ticket €0.90"
+              "it": "Biglietto 1,50 € (2 € a bordo)",
+              "en": "Ticket €1.50 (€2 on board)"
             },
             {
-              "it": "Mensile 29 €",
-              "en": "Monthly pass €29"
+              "it": "Bagaglio 1,50 €",
+              "en": "Luggage €1.50"
+            },
+            {
+              "it": "Paga chi supera 1 metro",
+              "en": "Children over 1 m pay"
             }
           ],
-          "nota": {
-            "it": "È anche il bus per chi finisce il Sentiero degli Dei a Nocelle. Orari invernali da confermare: chiedi al capolinea o sulla pagina del gestore.",
-            "en": "It is also the bus for hikers finishing the Path of the Gods in Nocelle. Winter timetable to be confirmed: ask at the terminus or on the operator's page."
-          },
           "punti": [
             {
-              "it": "Per anziani e invalidi residenti il Comune prevede abbonamenti gratuiti o agevolati.",
-              "en": "Free or reduced passes for elderly and disabled residents are funded by the Town Hall."
+              "it": "Montepertuso e Nocelle: dai Mulini alle 7:10, 8:00, poi ogni ora ai :20 dalle 9:20 alle 23:20. Da Nocelle alle 6:50, 7:40, 8:30, poi ogni ora ai :50 dalle 9:50 alle 23:50 (fino al Terminal Prisco). Fermate: Sponda, Chiesa Nuova, Piazza Cappella (Montepertuso).",
+              "en": "Montepertuso and Nocelle: from Mulini at 7:10, 8:00, then hourly at :20 from 9:20 to 23:20. From Nocelle at 6:50, 7:40, 8:30, then hourly at :50 from 9:50 to 23:50 (to Terminal Prisco). Stops: Sponda, Chiesa Nuova, Piazza Cappella (Montepertuso)."
+            },
+            {
+              "it": "Interno (Mulini, Sponda, Chiesa Nuova, Fornillo, Terminal Prisco): 7:40, 8:30, poi ogni mezz'ora dalle 9:00 alle 23:30, ultima a mezzanotte.",
+              "en": "Town loop (Mulini, Sponda, Chiesa Nuova, Fornillo, Terminal Prisco): 7:40, 8:30, then every 30 min from 9:00 to 23:30, last at midnight."
+            },
+            {
+              "it": "Praiano (via Arienzo e Laurito): dai Mulini 8:10, 9:10, 10:40, 11:40, 12:50, 13:50, 15:40, 16:50, 18:50, 19:50, 21:40, 22:50, 23:50. Da Praiano (San Luca) 7:15, 8:29, 9:29, 10:59, 11:59, 13:09, 14:09, 15:59, 17:09, 19:09, 20:09, 21:59, 23:09.",
+              "en": "Praiano (via Arienzo and Laurito): from Mulini 8:10, 9:10, 10:40, 11:40, 12:50, 13:50, 15:40, 16:50, 18:50, 19:50, 21:40, 22:50, 23:50. From Praiano (San Luca) 7:15, 8:29, 9:29, 10:59, 11:59, 13:09, 14:09, 15:59, 17:09, 19:09, 20:09, 21:59, 23:09."
+            },
+            {
+              "it": "Il biglietto si compra prima, nei locali col marchio Mobility Amalfi Coast. Il COSTIERASITA 24 ore vale anche su questi bus.",
+              "en": "Buy your ticket beforehand at shops showing the Mobility Amalfi Coast sign. The COSTIERASITA 24-hour ticket is also valid on these buses."
+            },
+            {
+              "it": "È il bus per chi finisce il Sentiero degli Dei a Nocelle. A novembre l'orario cambia (l'inverno scorso la linea per Praiano aveva 4 corse).",
+              "en": "This is the bus for hikers finishing the Path of the Gods in Nocelle. The timetable changes in November (last winter the Praiano line had 4 runs)."
             }
           ],
           "web": "https://www.facebook.com/Mobilityamalficoast",
           "webLabel": {
-            "it": "Pagina del gestore",
-            "en": "Operator's page"
+            "it": "Avvisi del gestore",
+            "en": "Operator notices"
           },
           "coord": [
             40.62988,
             14.48614
           ],
-          "cerca": "navetta bus interno montepertuso nocelle flavio gioia mobility",
+          "cerca": "navetta bus interno montepertuso nocelle praiano arienzo laurito fornillo mobility mulini",
           "fonte": {
-            "nome": "Avvisi del Comune 2025",
-            "url": "https://comune.positano.sa.it/novita/avvisi/avviso-abbonamento-bus-anziani",
-            "data": "2025-09-01"
+            "nome": "Mobility Amalfi Coast, orari in vigore dall'1 al 31 ottobre 2026",
+            "url": "https://holidaycoast.it/wp-content/uploads/2024/04/mobility-2-8.jpg",
+            "data": "2026-10-01"
           },
-          "verificato": false
+          "verificato": true
         }
       ]
     },

@@ -37,6 +37,24 @@
         "nome": "Comune di Positano, Instagram 1/10/2026",
         "url": "https://www.instagram.com/comunepositanoofficial/"
       }
+    },
+    {
+      "id": "cimitero-defunti-2026",
+      "titolo": {
+        "it": "Cimitero aperto tutti i giorni 8-18",
+        "en": "Cemetery open every day 8am-6pm"
+      },
+      "testo": {
+        "it": "Per la commemorazione dei defunti, dal 27 ottobre al 4 novembre il cimitero comunale di via Santa Croce resta aperto tutti i giorni dalle 8 alle 18.",
+        "en": "For All Souls, from 27 October to 4 November the municipal cemetery in Via Santa Croce is open every day from 8am to 6pm."
+      },
+      "dal": "2026-10-27",
+      "al": "2026-11-04",
+      "livello": "info",
+      "fonte": {
+        "nome": "Comune di Positano, scheda Cimitero comunale",
+        "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/edificio-di-culto/cimitero-comunale-di-positano"
+      }
     }
   ]
 }

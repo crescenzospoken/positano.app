@@ -4,7 +4,7 @@
      Se la rete non risponde entro 3 secondi si usa la copia: in spiaggia con una tacca non si aspetta. */
 'use strict';
 
-const VERSIONE = 'positano-v0.2.0';
+const VERSIONE = 'positano-v0.2.1';
 const SHELL = [
   './', 'index.html', 'css/style.css', 'js/app.js', 'js/i18n.js', 'js/oggi.js', 'manifest.webmanifest',
   'icons/icon.svg', 'icons/icon-192.png',

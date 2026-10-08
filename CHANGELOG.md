@@ -3,6 +3,16 @@
 Tutte le modifiche rilevanti a questo progetto sono documentate qui.
 Formato ispirato a [Keep a Changelog](https://keepachangelog.com/it/); versioning [SemVer](https://semver.org/lang/it/).
 
+## [0.2.1] · 2026-10-08
+
+### Aggiunto
+- Orari di ottobre 2026 dei tre bus interni Mobility Amalfi Coast (Montepertuso-Nocelle, interno, Praiano) e prossime corse in home, ordinate per orario.
+- Orari della farmacia, cimitero comunale con orari stagionali, avviso di apertura straordinaria per i defunti (27/10-4/11), Croce Rossa con sede e telefono.
+
+### Corretto
+- Il secco si espone il mercoledì.
+- Bus interno: biglietto 1,50 € (2 € a bordo), non 0,90 €.
+
 ## [0.2.0] · 2026-10-08
 
 ### Aggiunto
