@@ -12,7 +12,7 @@ categories:
   - communications
 developmentStatus: development
 releaseDate: "2026-10-08"
-softwareVersion: "0.2.0"
+softwareVersion: "0.2.1"
 logo: public/icons/icon.svg
 description:
   it:

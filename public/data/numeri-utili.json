@@ -231,14 +231,14 @@
         {
           "id": "farmacia",
           "nome": {
-            "it": "Farmacia",
-            "en": "Pharmacy"
+            "it": "Farmacia (l'unica di Positano)",
+            "en": "Pharmacy (the only one in Positano)"
           },
           "nota": {
-            "it": "Il turno di notte e dei festivi è affisso sulla porta della farmacia. Farmaci da banco anche nelle parafarmacie.",
-            "en": "The night and holiday rota is posted on the pharmacy door. Over-the-counter medicines are also sold in parapharmacies."
+            "it": "Il turno di notte è affisso sulla porta. In via della Tartana e in viale Pasitea 210 ci sono parafarmacie: farmaci da banco, non ricette.",
+            "en": "The night rota is posted on the door. In Via della Tartana and Viale Pasitea 210 there are parapharmacies: over-the-counter medicines only, no prescriptions."
           },
-          "indirizzo": "Via Pasitea 22",
+          "indirizzo": "Viale Pasitea 22",
           "tel": [
             {
               "n": "089 875863"
@@ -246,10 +246,16 @@
           ],
           "cerca": "farmacia medicine turno parafarmacia",
           "fonte": {
-            "nome": "Elenchi farmacie (Dica33) e piano di emergenza comunale",
+            "nome": "Scheda Google Maps e sito della farmacia",
+            "url": "http://www.positanofarmacia.it/",
             "consultata": "2026-10-08"
           },
-          "verificato": false
+          "verificato": true,
+          "orari": {
+            "it": "Lunedì-sabato 8:30-20:30, domenica 9:00-20:30",
+            "en": "Monday-Saturday 8:30am-8:30pm, Sunday 9am-8:30pm"
+          },
+          "web": "http://www.positanofarmacia.it/"
         },
         {
           "id": "croce-rossa",
@@ -258,16 +264,21 @@
             "en": "Red Cross, Positano unit"
           },
           "nota": {
-            "it": "Postazione sanitaria e idroambulanza in convenzione con il Comune. Numero della sede in verifica: le fonti non coincidono.",
-            "en": "First-aid post and sea ambulance in agreement with the Town Hall. Local phone number being verified: sources disagree."
+            "it": "Comitato Costa Amalfitana. Postazione sanitaria e idroambulanza in convenzione con il Comune. In emergenza: 118.",
+            "en": "Amalfi Coast committee. First-aid post and sea ambulance in agreement with the Town Hall. In an emergency: 118."
           },
-          "indirizzo": "Via Pasitea 120",
+          "indirizzo": "Viale Pasitea 286A",
           "cerca": "croce rossa ambulanza idroambulanza",
           "fonte": {
-            "nome": "Piano di emergenza comunale (2018); albo pretorio 2026",
-            "data": "2026-09-01"
+            "nome": "Scheda Google Maps",
+            "consultata": "2026-10-08"
           },
-          "verificato": false
+          "verificato": false,
+          "tel": [
+            {
+              "n": "089 8123520"
+            }
+          ]
         }
       ]
     },
@@ -306,7 +317,7 @@
             "it": "Guardia Costiera, Ufficio locale marittimo",
             "en": "Coast Guard, local maritime office"
           },
-          "indirizzo": "Via del Brigantino",
+          "indirizzo": "Via del Brigantino 39",
           "tel": [
             {
               "n": "089 875486"

@@ -248,7 +248,11 @@
             "nome": "Piano di emergenza comunale (2018)",
             "data": "2018-01-24"
           },
-          "verificato": false
+          "verificato": false,
+          "orari": {
+            "it": "Indicativo: lunedì-venerdì 8:20-13:35, sabato 8:20-12:35",
+            "en": "Approximate: Monday-Friday 8:20am-1:35pm, Saturday 8:20am-12:35pm"
+          }
         },
         {
           "id": "bagni-pubblici",
@@ -316,6 +320,48 @@
             "data": "2018-01-24"
           },
           "verificato": false
+        },
+        {
+          "id": "cimitero",
+          "nome": {
+            "it": "Cimitero comunale",
+            "en": "Municipal cemetery"
+          },
+          "indirizzo": "Via Santa Croce",
+          "tel": [
+            {
+              "n": "089 811017"
+            }
+          ],
+          "punti": [
+            {
+              "it": "Lunedì e martedì chiuso tutto l'anno.",
+              "en": "Closed on Mondays and Tuesdays all year."
+            },
+            {
+              "it": "Inverno (27/10-31/3): mercoledì-sabato 8-12 e 14:30-16:30, domenica 9-12 e 14:30-16:30.",
+              "en": "Winter (27 Oct-31 Mar): Wednesday-Saturday 8am-12pm and 2:30-4:30pm, Sunday 9am-12pm and 2:30-4:30pm."
+            },
+            {
+              "it": "Primavera e inizio autunno (1/4-14/5 e 16/9-26/10): mercoledì-sabato 8-12 e 15:30-17:30, domenica 9-12 e 15:30-17:30.",
+              "en": "Spring and early autumn (1 Apr-14 May and 16 Sep-26 Oct): Wednesday-Saturday 8am-12pm and 3:30-5:30pm, Sunday 9am-12pm and 3:30-5:30pm."
+            },
+            {
+              "it": "Estate (15/5-15/9): mercoledì-venerdì 7-12:30; sabato e domenica 7-12:30 e 17:30-19:30.",
+              "en": "Summer (15 May-15 Sep): Wednesday-Friday 7am-12:30pm; Saturday and Sunday 7am-12:30pm and 5:30-7:30pm."
+            },
+            {
+              "it": "Commemorazione dei defunti (27/10-4/11): tutti i giorni 8-18. Natale, Capodanno, Pasqua, Ferragosto: 9-13.",
+              "en": "All Souls period (27 Oct-4 Nov): every day 8am-6pm. Christmas, New Year, Easter, 15 August: 9am-1pm."
+            }
+          ],
+          "cerca": "cimitero orari defunti",
+          "fonte": {
+            "nome": "Comune di Positano, scheda Cimitero comunale",
+            "url": "https://comune.positano.sa.it/vivere-il-comune/luogo/edificio-di-culto/cimitero-comunale-di-positano",
+            "data": "2024-09-20"
+          },
+          "verificato": true
         }
       ]
     },

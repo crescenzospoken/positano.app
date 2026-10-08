@@ -367,11 +367,11 @@
     const now = O.minutesRome();
     const rows = (tr && tr.partenze || []).filter(function (p) { return O.inPeriod({ dal: p.dal, al: p.al }, iso); }).map(function (p) {
       const next = (p.orari || []).filter(function (o) { const a = o.split(':'); return Number(a[0]) * 60 + Number(a[1]) >= now; });
-      if (!next.length) return '';
+      if (!next.length) return null;
       const list = p.soloUltima ? next.slice(0, 1) : next.slice(0, 3);
-      return '<a class="dep" href="' + esc(p.link || '#muoversi') + '"><span class="dep-ic">' + icon(p.id.indexOf('sita') === 0 ? 'bus' : 'boat') + '</span><span class="dep-b"><strong>' + esc(pick(p.nome)) + '</strong>' +
-        '<small>' + esc(pick(p.da)) + '</small></span><span class="dep-t">' + list.map(function (o, i) { return '<b' + (i ? ' class="later"' : '') + '>' + esc(o) + '</b>'; }).join('') + '</span></a>';
-    }).filter(Boolean);
+      return { at: next[0], html: '<a class="dep" href="' + esc(p.link || '#muoversi') + '"><span class="dep-ic">' + icon(p.tipo === 'boat' ? 'boat' : 'bus') + '</span><span class="dep-b"><strong>' + esc(pick(p.nome)) + '</strong>' +
+        '<small>' + esc(pick(p.da)) + '</small></span><span class="dep-t">' + list.map(function (o, i) { return '<b' + (i ? ' class="later"' : '') + '>' + esc(o) + '</b>'; }).join('') + '</span></a>' };
+    }).filter(Boolean).sort(function (a, b) { return a.at.localeCompare(b.at); }).slice(0, 4).map(function (r) { return r.html; });
     if (!rows.length) return '';
     return '<h2 class="group-title">' + esc(t('home.departures')) + '</h2><div class="deps">' + rows.join('') + '</div>';
   }
