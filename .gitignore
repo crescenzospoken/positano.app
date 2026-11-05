@@ -4,3 +4,6 @@ dist/
 Thumbs.db
 *.log
 .env
+
+controlli.md
+.wrangler/

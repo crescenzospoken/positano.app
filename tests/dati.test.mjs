@@ -7,6 +7,9 @@ const dir = new URL('../public/data/', import.meta.url);
 const files = readdirSync(dir).filter(f => f.endsWith('.json'));
 const load = f => JSON.parse(readFileSync(new URL(f, dir), 'utf8'));
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
+const ISO_ORA = /^\d{4}-\d{2}-\d{2}(T[\d:.]+Z)?$/;
+// File scritti dalle automazioni: titoli presi tali e quali dalle fonti (solo italiano), date con l'ora.
+const GENERATI = ['avvisi-comune.json', 'allerta.json', 'meteo.json'];
 const TESTO = ['nome', 'titolo', 'nota', 'sottotitolo', 'testo', 'intro', 'orari', 'luogo', 'voce', 'dove', 'esposizione', 'avviso', 'da'];
 
 function walk(x, path, out) {
@@ -28,18 +31,20 @@ for (const f of files) {
     const d = load(f);
     const out = { bilingue: [], coord: [], id: [], date: [], monolingue: [] };
     walk(d, f, out);
+    const generato = GENERATI.includes(f);
     for (const [p, v] of out.bilingue) {
+      if (generato) continue;
       assert.ok(v.it && v.it.trim(), p + ': manca il testo italiano');
       assert.ok(v.en && v.en.trim(), p + ': manca il testo inglese');
     }
-    if (f !== 'meta.json') assert.deepEqual(out.monolingue, [], 'testi senza traduzione');
-    for (const [p, v] of out.date) assert.match(String(v), ISO, p + ': data non valida');
+    if (f !== 'meta.json' && !generato) assert.deepEqual(out.monolingue, [], 'testi senza traduzione');
+    for (const [p, v] of out.date) assert.match(String(v), generato ? ISO_ORA : ISO, p + ': data non valida');
     for (const [p, c] of out.coord) {
       assert.ok(c[0] > 40.55 && c[0] < 40.70 && c[1] > 14.40 && c[1] < 14.65, p + ': coordinate fuori zona ' + c);
     }
     const ids = out.id.map(x => x[1]);
     assert.equal(new Set(ids).size, ids.length, 'id duplicati: ' + ids.filter((v, i) => ids.indexOf(v) !== i));
-    if (f !== 'meta.json') assert.match(d.aggiornato || '', ISO, 'manca "aggiornato"');
+    if (f !== 'meta.json') assert.match(d.aggiornato || '', generato ? ISO_ORA : ISO, 'manca "aggiornato"');
   });
 }
 

@@ -11,8 +11,8 @@ platforms:
 categories:
   - communications
 developmentStatus: development
-releaseDate: "2026-10-08"
-softwareVersion: "0.2.2"
+releaseDate: "2026-11-05"
+softwareVersion: "0.3.0"
 logo: public/icons/icon.svg
 description:
   it:

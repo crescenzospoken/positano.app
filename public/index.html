@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Positano.app · la guida civica di Positano</title>
   <meta name="description" content="Numeri utili, bus e traghetti, rifiuti, spiagge, sentieri, eventi e uffici del Comune di Positano. Guida civica open source, gratuita, senza pubblicità e senza tracciamento.">
-  <meta name="theme-color" content="#0a3a5c" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#08131c" media="(prefers-color-scheme: dark)">
-  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light">
+  <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -45,6 +46,13 @@
       <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
       <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16.5V12l2-5h10l2 5v4.5"/><path d="M3.5 12h17v4.5h-17z"/><path d="M6 19v-2.5M18 19v-2.5"/></symbol>
       <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+      <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2.5v19M3.8 7.2l16.4 9.6M3.8 16.8l16.4-9.6"/><path d="m9.5 4 2.5 2 2.5-2M9.5 20l2.5-2 2.5 2"/></symbol>
+      <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.2-2.5 3.8M12 17v.1"/></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7"/><rect x="13.5" y="3.5" width="7" height="7"/><rect x="3.5" y="13.5" width="7" height="7"/><rect x="13.5" y="13.5" width="7" height="7"/></symbol>
+      <symbol id="i-megafono" viewBox="0 0 24 24"><path d="M3.5 10v4h3l8 4.5v-13l-8 4.5z"/><path d="M6.5 14l1.2 5h2.3l-1-5"/><path d="M18 9.5a3.5 3.5 0 0 1 0 5"/></symbol>
+      <symbol id="i-immagine" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15"/><circle cx="9" cy="10" r="1.8"/><path d="m4 18 5.5-5 4 3.5 2.5-2 4.5 3.5"/></symbol>
+      <symbol id="i-scudo" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 3 7.9 7 9.5 4-1.6 7-5.1 7-9.5V6z"/></symbol>
+      <symbol id="i-pagare" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12.5"/><path d="M3 10h18M7 15h4"/></symbol>
       <symbol id="i-cross" viewBox="0 0 24 24"><path d="M9.5 3.5h5v6h6v5h-6v6h-5v-6h-6v-5h6z"/></symbol>
     </defs>
   </svg>
@@ -52,16 +60,15 @@
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Salta al contenuto</a>
 
   <header class="topbar">
-    <a class="brand" href="#home">
-      <img src="icons/icon.svg" alt="" width="34" height="34">
-      <span>
-        <strong>Positano<span class="dot">.app</span></strong>
+    <div class="topbar-in">
+      <a class="brand" href="#home">
+        <strong>Positano.app</strong>
         <small data-i18n="app.tagline">La guida civica di Positano</small>
-      </span>
-    </a>
-    <div class="topbar-actions">
-      <button type="button" class="icon-btn" id="search-open" data-i18n-label="search.open" aria-label="Cerca"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></button>
-      <button type="button" class="lang-btn" id="lang-toggle" lang="en" aria-label="EN, switch to English">EN</button>
+      </a>
+      <div class="topbar-actions">
+        <button type="button" class="icon-btn" id="search-open" data-i18n-label="search.open" aria-label="Cerca"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></button>
+        <button type="button" class="lang-btn" id="lang-toggle" lang="en" aria-label="EN, switch to English">EN</button>
+      </div>
     </div>
   </header>
 
@@ -84,9 +91,9 @@
   <nav class="bottomnav" aria-label="Sezioni" data-i18n-label="a11y.nav">
     <a href="#home" data-tab="home"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><span data-i18n="nav.home">Oggi</span></a>
     <a href="#emergenze" data-tab="emergenze" class="nav-sos"><svg class="ic" aria-hidden="true"><use href="#i-sos"/></svg><span data-i18n="nav.emergenze">Emergenze</span></a>
+    <a href="#servizi" data-tab="servizi"><svg class="ic" aria-hidden="true"><use href="#i-townhall"/></svg><span data-i18n="nav.servizi">Servizi</span></a>
     <a href="#muoversi" data-tab="muoversi"><svg class="ic" aria-hidden="true"><use href="#i-bus"/></svg><span data-i18n="nav.muoversi">Muoversi</span></a>
-    <a href="#rifiuti" data-tab="rifiuti"><svg class="ic" aria-hidden="true"><use href="#i-recycle"/></svg><span data-i18n="nav.rifiuti">Rifiuti</span></a>
-    <a href="#tutto" data-tab="tutto"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span data-i18n="nav.tutto">Tutto</span></a>
+    <a href="#tutto" data-tab="tutto"><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg><span data-i18n="nav.tutto">Tutto</span></a>
   </nav>
 
   <div id="toast" class="toast" role="status" hidden></div>
@@ -95,6 +102,7 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/oggi.js"></script>
+  <script src="js/post.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+-- Positano.app · schema del database D1 «positano-app-db» (applicato il 5/11/2026).
+CREATE TABLE IF NOT EXISTS locali (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, categoria TEXT NOT NULL, zona TEXT, indirizzo TEXT, telefono TEXT, nota TEXT, periodi TEXT NOT NULL DEFAULT '[]', visibile INTEGER NOT NULL DEFAULT 1, creato TEXT NOT NULL, aggiornato TEXT NOT NULL, aggiornato_da TEXT);
+CREATE TABLE IF NOT EXISTS utenti (email TEXT PRIMARY KEY, nome TEXT, ruolo TEXT NOT NULL DEFAULT 'redazione', sale TEXT NOT NULL, hash TEXT NOT NULL, creato TEXT NOT NULL, cambiare_password INTEGER NOT NULL DEFAULT 1);
+CREATE TABLE IF NOT EXISTS config (chiave TEXT PRIMARY KEY, valore TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS registro (id INTEGER PRIMARY KEY AUTOINCREMENT, quando TEXT NOT NULL, chi TEXT NOT NULL, azione TEXT NOT NULL, oggetto TEXT, prima TEXT, dopo TEXT);
+CREATE TABLE IF NOT EXISTS tentativi (chiave TEXT NOT NULL, quando INTEGER NOT NULL);
+CREATE INDEX IF NOT EXISTS tentativi_chiave ON tentativi(chiave, quando);
+CREATE TABLE IF NOT EXISTS avvisi (id INTEGER PRIMARY KEY AUTOINCREMENT, titolo_it TEXT NOT NULL, titolo_en TEXT, testo_it TEXT, testo_en TEXT, categoria TEXT NOT NULL DEFAULT 'istituzionale', dal TEXT NOT NULL, al TEXT NOT NULL, stato TEXT NOT NULL DEFAULT 'attivo', aggiornamenti TEXT NOT NULL DEFAULT '[]', fonte_nome TEXT, fonte_url TEXT, priorita INTEGER NOT NULL DEFAULT 0, visibile INTEGER NOT NULL DEFAULT 1, creato TEXT NOT NULL, aggiornato TEXT NOT NULL, aggiornato_da TEXT);
+INSERT OR IGNORE INTO config (chiave, valore) VALUES ('home', '{"forzata":null,"messaggio":null}');
+INSERT OR IGNORE INTO config (chiave, valore) VALUES ('stagione', '{"titolo":{"it":"Aperti d''inverno","en":"Open in winter"},"dal":"2026-11-01","al":"2027-03-31","aggiornato":"2026-11-01","nota":{"it":"Date comunicate dalle attività al Comune: possono cambiare. I gestori che vogliono segnalare aperture o modifiche possono contattare l''Ufficio di Staff della Sindaca.","en":"Dates provided by the businesses to the Town Hall: they may change. Owners who want to report openings or changes can contact the Mayor''s Staff Office."},"zone":[]}');
+-- Gli utenti si creano a mano (email, sale e hash PBKDF2-SHA256, 100.000 iterazioni), con cambiare_password = 1.

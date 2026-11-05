@@ -1,0 +1,28 @@
+name: Controllo settimanale
+
+# Ogni lunedì mattina: orari e dati in scadenza, link rotti. Se c'è qualcosa da fare apre una issue.
+on:
+  schedule:
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  controlla:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/controlli.mjs
+      - name: Apri una issue se serve
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s controlli.md ]; then
+            gh issue create --title "Controllo settimanale del $(date +%d/%m/%Y)" --body-file controlli.md --label "dati" || gh issue create --title "Controllo settimanale del $(date +%d/%m/%Y)" --body-file controlli.md
+          fi

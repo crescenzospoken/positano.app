@@ -1,13 +1,23 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "positano-app",
+  "main": "worker.js",
   "compatibility_date": "2026-07-13",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "positano-app-db",
+      "database_id": "2b105646-b4a1-4fe3-b7e0-fda542f7d5bd"
+    }
+  ],
   "compatibility_flags": [
     "nodejs_compat"
   ]

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Redazione · Positano.app</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body{padding-bottom:2rem}
+    .tabs{display:flex;gap:.3rem;overflow-x:auto;margin:0 0 1rem;border-bottom:1px solid var(--bordo)}
+    .tabs button{min-height:44px;padding:.4rem .9rem;border:0;border-bottom:3px solid transparent;background:none;font:600 14px/1 var(--sans);color:var(--ink2);cursor:pointer;white-space:nowrap}
+    .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--filo)}
+    .riga-l{display:flex;align-items:center;gap:.7rem;padding:.6rem .8rem;border-top:1px solid var(--bordo);background:var(--carta)}
+    .riga-l:first-child{border-top:0}
+    .riga-l > div{flex:1;min-width:0}
+    .riga-l small{display:block;color:var(--ink2)}
+    .elenco{border:1px solid var(--bordo);margin-bottom:1rem}
+    form.scheda{display:grid;gap:.75rem;background:var(--carta);border:1px solid var(--bordo);padding:1rem;margin-bottom:1rem}
+    form.scheda label{display:flex;flex-direction:column;gap:.25rem;font-weight:600;font-size:.88rem}
+    form.scheda input,form.scheda select,form.scheda textarea{font:inherit;font-weight:400;padding:.5rem .65rem;border:1.5px solid var(--bordo-forte);border-radius:var(--r);background:#fff;color:var(--ink);min-height:44px}
+    .due{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:.6rem}
+    .periodo{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;padding:.6rem;border:1px solid var(--bordo);background:var(--fondo)}
+    .periodo .giorni{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.3rem .7rem;font-weight:400;font-size:.85rem}
+    .periodo .giorni label{flex-direction:row;align-items:center;gap:.25rem;font-weight:400}
+    .periodo .giorni input{min-height:auto}
+    .periodo .full{grid-column:1/-1}
+    .errore{color:var(--c-emergenze);font-weight:600}
+    .ok{color:var(--verde-ok);font-weight:600}
+    .piccolo{font-size:.82rem;color:var(--ink2)}
+    .registro td{padding:.35rem .5rem;border-top:1px solid var(--bordo);font-size:.85rem;vertical-align:top}
+    .tabella{overflow-x:auto;background:var(--carta);border:1px solid var(--bordo)}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-in">
+    <a class="brand" href="./"><strong>Positano.app</strong><small>Area redazione</small></a>
+    <div class="topbar-actions"><button type="button" class="btn secondario" id="esci" hidden>Esci</button></div>
+  </div></header>
+  <main id="main">
+    <section id="accesso" hidden>
+      <header class="sec-head"><span class="banda">Redazione</span><h1>Accedi</h1><p>Riservato a chi aggiorna l'app per conto del Comune. Ogni modifica è registrata con nome e ora.</p></header>
+      <form class="scheda" id="f-accesso">
+        <label>Email<input type="email" id="a-email" autocomplete="username" required></label>
+        <label>Password<input type="password" id="a-pw" autocomplete="current-password" required></label>
+        <button class="btn" type="submit">Entra</button>
+        <p id="a-msg" class="errore" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="cambio" hidden>
+      <header class="sec-head"><span class="banda">Redazione</span><h1>Scegli la tua password</h1><p>Al primo accesso la password va cambiata: almeno 12 caratteri. Usa il gestore delle password del telefono.</p></header>
+      <form class="scheda" id="f-cambio">
+        <label>Password attuale<input type="password" id="c-old" autocomplete="current-password" required></label>
+        <label>Nuova password<input type="password" id="c-new" autocomplete="new-password" minlength="12" required></label>
+        <button class="btn" type="submit">Salva</button>
+        <p id="c-msg" class="errore" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="pannello" hidden>
+      <header class="sec-head"><span class="banda">Redazione</span><h1>Pannello</h1><p id="chi"></p></header>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="aperture" aria-selected="true">Aperture invernali</button>
+        <button role="tab" data-tab="avvisi" aria-selected="false">Avvisi</button>
+        <button role="tab" data-tab="home" aria-selected="false">Home</button>
+        <button role="tab" data-tab="registro" aria-selected="false">Registro</button>
+      </nav>
+      <div id="tab"></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
