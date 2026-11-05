@@ -26,7 +26,7 @@ Una **PWA** (Progressive Web App) che raccoglie in un unico posto le informazion
 
 ## Stato del progetto
 
-⚠️ **v0.2.0 · prototipo con dati reali.** I contenuti sono stati raccolti da fonti pubbliche, ognuno con fonte e data; quelli non confermati da fonte primaria hanno l'etichetta «Da verificare» (elenco in [`docs/fonti-dati.md`](docs/fonti-dati.md)). Molti testi sono stati scritti con l'aiuto dell'intelligenza artificiale e vanno rivisti da una persona prima di un lancio pubblico. Audit della versione in [`docs/audit-2026-10.md`](docs/audit-2026-10.md). Il progetto nasce dalla società civile ed è progettato per l'adozione da parte del Comune di Positano ai sensi degli artt. 68-69 del CAD (vedi [`publiccode.yml`](publiccode.yml)).
+⚠️ **v0.3.0 · prototipo con dati reali e pannello di redazione** (guida: [`docs/redazione.md`](docs/redazione.md); quadro legale: [`docs/legale.md`](docs/legale.md)). I contenuti sono stati raccolti da fonti pubbliche, ognuno con fonte e data; quelli non confermati da fonte primaria hanno l'etichetta «Da verificare» (elenco in [`docs/fonti-dati.md`](docs/fonti-dati.md)). Molti testi sono stati scritti con l'aiuto dell'intelligenza artificiale e vanno rivisti da una persona prima di un lancio pubblico. Audit della versione in [`docs/audit-2026-10.md`](docs/audit-2026-10.md). Il progetto nasce dalla società civile ed è progettato per l'adozione da parte del Comune di Positano ai sensi degli artt. 68-69 del CAD (vedi [`publiccode.yml`](publiccode.yml)).
 
 ## Test
 

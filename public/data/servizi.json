@@ -1,0 +1,1082 @@
+{
+  "aggiornato": "2026-11-05",
+  "intro": {
+    "it": "I servizi li eroga il Comune: qui trovi la strada più corta per arrivarci, ordinata per quello che ti serve. Ogni bottone porta alla pagina ufficiale.",
+    "en": "Services are provided by the Town Hall: here is the shortest way to them, sorted by what you need. Each button opens the official page."
+  },
+  "gruppi": [
+    {
+      "id": "pagare",
+      "titolo": {
+        "it": "Devo pagare",
+        "en": "I need to pay"
+      },
+      "voci": [
+        {
+          "id": "pagopa",
+          "nome": {
+            "it": "Pagare con pagoPA",
+            "en": "Pay with pagoPA"
+          },
+          "nota": {
+            "it": "Avvisi ricevuti e pagamenti spontanei al Comune: multe, mensa, permessi, tributi.",
+            "en": "Notices received and voluntary payments to the Town Hall: fines, school meals, permits, taxes."
+          },
+          "web": "https://comune.positano.sa.it/servizi/pagare-servizi-o-avvisi-di-pagamento-tramite-pagopa",
+          "webLabel": {
+            "it": "Paga online",
+            "en": "Pay online"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "pagare multa pagopa avviso pagamento",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "pagopa-codice",
+          "nome": {
+            "it": "Ho un avviso con il codice",
+            "en": "I have a notice with a code"
+          },
+          "nota": {
+            "it": "Con il codice dell'avviso pagoPA puoi pagare anche senza SPID, dal sito nazionale o in tabaccheria.",
+            "en": "With the pagoPA notice code you can pay without SPID, on the national website or at a tobacconist."
+          },
+          "web": "https://checkout.pagopa.it/",
+          "webLabel": {
+            "it": "Paga l'avviso",
+            "en": "Pay the notice"
+          },
+          "dettagli": [
+            {
+              "it": "Senza SPID",
+              "en": "No SPID needed"
+            }
+          ],
+          "cerca": "avviso codice iuv tabaccheria",
+          "fonte": {
+            "nome": "pagoPA",
+            "url": "https://checkout.pagopa.it/",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "tari",
+          "nome": {
+            "it": "TARI, la tassa sui rifiuti",
+            "en": "TARI waste tax"
+          },
+          "nota": {
+            "it": "Tariffe 2026 e regolamento. Per avvisi, riduzioni e rimborsi si contatta l'Ufficio Tributi.",
+            "en": "2026 rates and rules. For notices, reductions and refunds contact the Tax Office."
+          },
+          "web": "https://comune.positano.sa.it/servizi/tassa-rifiuti-tari",
+          "webLabel": {
+            "it": "Tariffe e regole",
+            "en": "Rates and rules"
+          },
+          "dettagli": [
+            {
+              "it": "Informazioni",
+              "en": "Information"
+            }
+          ],
+          "cerca": "tari rifiuti tassa",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122526"
+            }
+          ],
+          "orari": {
+            "it": "Ufficio Tributi: lun, mar, gio 10-12; lun e gio anche 15:30-17:30",
+            "en": "Tax office: Mon, Tue, Thu 10am-12pm; Mon and Thu also 3:30-5:30pm"
+          }
+        },
+        {
+          "id": "imu",
+          "nome": {
+            "it": "IMU",
+            "en": "IMU property tax"
+          },
+          "nota": {
+            "it": "Aliquote 2026 e istruzioni: si paga con F24.",
+            "en": "2026 rates and instructions: paid with an F24 form."
+          },
+          "web": "https://comune.positano.sa.it/servizi/calcolo-e-pagamento-imu-dellanno-precedente",
+          "webLabel": {
+            "it": "Aliquote e istruzioni",
+            "en": "Rates and instructions"
+          },
+          "dettagli": [
+            {
+              "it": "F24",
+              "en": "F24 form"
+            }
+          ],
+          "cerca": "imu casa seconda casa f24",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122526"
+            }
+          ],
+          "orari": {
+            "it": "Ufficio Tributi: lun, mar, gio 10-12; lun e gio anche 15:30-17:30",
+            "en": "Tax office: Mon, Tue, Thu 10am-12pm; Mon and Thu also 3:30-5:30pm"
+          }
+        },
+        {
+          "id": "soggiorno",
+          "nome": {
+            "it": "Imposta di soggiorno",
+            "en": "Tourist tax"
+          },
+          "nota": {
+            "it": "Regole e tariffe per strutture, affitti brevi e ospiti (dal 1° aprile al 31 ottobre).",
+            "en": "Rules and rates for accommodation, short lets and guests (1 April to 31 October)."
+          },
+          "web": "https://comune.positano.sa.it/servizi/imposta-di-soggiorno-ids",
+          "webLabel": {
+            "it": "Regole e tariffe",
+            "en": "Rules and rates"
+          },
+          "dettagli": [
+            {
+              "it": "Informazioni",
+              "en": "Information"
+            }
+          ],
+          "cerca": "tassa di soggiorno affitti brevi b&b",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "ztl-pass",
+          "nome": {
+            "it": "Pass ZTL",
+            "en": "Restricted zone pass"
+          },
+          "nota": {
+            "it": "Pass per entrare nella ZTL con veicoli oltre 5 posti: si chiede e si paga online, rilascio immediato.",
+            "en": "Pass to enter the restricted zone with vehicles over 5 seats: request and pay online, issued immediately."
+          },
+          "web": "https://ztlpositano.it/",
+          "webLabel": {
+            "it": "Portale ZTL",
+            "en": "ZTL portal"
+          },
+          "dettagli": [
+            {
+              "it": "Online",
+              "en": "Online"
+            }
+          ],
+          "cerca": "ztl pass minivan ncc permesso",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "documenti",
+      "titolo": {
+        "it": "Mi serve un documento",
+        "en": "I need a document"
+      },
+      "voci": [
+        {
+          "id": "appuntamento",
+          "nome": {
+            "it": "Prenota un appuntamento in Comune",
+            "en": "Book an appointment at the Town Hall"
+          },
+          "nota": {
+            "it": "Scegli ufficio, giorno e ora: niente fila. Gratuito, fino a 3 prenotazioni.",
+            "en": "Choose office, day and time: no queue. Free, up to 3 bookings."
+          },
+          "web": "https://comune.positano.sa.it/servizi/prenotazione-appuntamenti",
+          "webLabel": {
+            "it": "Prenota",
+            "en": "Book"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID",
+              "en": "Online with SPID"
+            }
+          ],
+          "cerca": "appuntamento prenotare ufficio fila",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "certificati",
+          "nome": {
+            "it": "Certificati anagrafici",
+            "en": "Civil registry certificates"
+          },
+          "nota": {
+            "it": "Residenza, stato di famiglia e altri 13 certificati, gratis e subito, dall'anagrafe nazionale.",
+            "en": "Residence, family status and 13 more certificates, free and instant, from the national registry."
+          },
+          "web": "https://www.anagrafenazionale.interno.it/servizi-al-cittadino/",
+          "webLabel": {
+            "it": "Scarica il certificato",
+            "en": "Download"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "certificato residenza stato di famiglia nascita anpr",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122520"
+            }
+          ],
+          "orari": {
+            "it": "Anagrafe: lun e mar 9-12, gio 15:30-17:30",
+            "en": "Registry office: Mon and Tue 9am-12pm, Thu 3:30-5:30pm"
+          }
+        },
+        {
+          "id": "residenza",
+          "nome": {
+            "it": "Cambio di residenza",
+            "en": "Change of residence"
+          },
+          "nota": {
+            "it": "Dichiari online il cambio di residenza per te e la tua famiglia.",
+            "en": "Declare your change of residence online for you and your family."
+          },
+          "web": "https://www.anagrafenazionale.interno.it/servizi-al-cittadino/",
+          "webLabel": {
+            "it": "Dichiara online",
+            "en": "Declare online"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "residenza trasloco cambio indirizzo",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122520"
+            }
+          ],
+          "orari": {
+            "it": "Anagrafe: lun e mar 9-12, gio 15:30-17:30",
+            "en": "Registry office: Mon and Tue 9am-12pm, Thu 3:30-5:30pm"
+          }
+        },
+        {
+          "id": "cie",
+          "nome": {
+            "it": "Carta d'identità elettronica",
+            "en": "Electronic ID card"
+          },
+          "nota": {
+            "it": "Si fa in Comune su appuntamento: prenota dall'agenda nazionale o dal sistema del Comune, porta una foto e la vecchia carta.",
+            "en": "Issued at the Town Hall by appointment: book on the national calendar or the Town Hall system, bring a photo and the old card."
+          },
+          "web": "https://www.cartaidentita.interno.gov.it/",
+          "webLabel": {
+            "it": "Informazioni e prenotazione",
+            "en": "Info and booking"
+          },
+          "dettagli": [
+            {
+              "it": "Allo sportello",
+              "en": "At the counter"
+            }
+          ],
+          "cerca": "carta d'identita cie documento",
+          "fonte": {
+            "nome": "Ministero dell'Interno",
+            "url": "https://www.cartaidentita.interno.gov.it/",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122520"
+            }
+          ],
+          "orari": {
+            "it": "Anagrafe: lun e mar 9-12, gio 15:30-17:30",
+            "en": "Registry office: Mon and Tue 9am-12pm, Thu 3:30-5:30pm"
+          }
+        },
+        {
+          "id": "matrimonio",
+          "nome": {
+            "it": "Sposarsi a Positano",
+            "en": "Getting married in Positano"
+          },
+          "nota": {
+            "it": "Pubblicazioni e rito civile sulla terrazza o nella sala maiolicata del Municipio.",
+            "en": "Banns and civil ceremony on the terrace or in the majolica hall of the Town Hall."
+          },
+          "web": "https://comune.positano.sa.it/servizi/sposarsi-comune",
+          "webLabel": {
+            "it": "Come fare",
+            "en": "How to"
+          },
+          "dettagli": [
+            {
+              "it": "Allo sportello",
+              "en": "At the counter"
+            }
+          ],
+          "cerca": "matrimonio sposarsi nozze rito civile",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122520"
+            }
+          ]
+        },
+        {
+          "id": "ue",
+          "nome": {
+            "it": "Cittadini dell'Unione europea",
+            "en": "EU citizens"
+          },
+          "nota": {
+            "it": "Iscrizione all'anagrafe per chi resta più di tre mesi e certificato di nascita per chi è nato in Italia.",
+            "en": "Registration for those staying more than three months and birth certificate for those born in Italy."
+          },
+          "web": "https://comune.positano.sa.it/servizi/iscrizione-anagrafica-cittadini-europei",
+          "webLabel": {
+            "it": "Come fare",
+            "en": "How to"
+          },
+          "dettagli": [
+            {
+              "it": "Allo sportello",
+              "en": "At the counter"
+            }
+          ],
+          "cerca": "cittadino europeo iscrizione anagrafe",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "famiglia",
+      "titolo": {
+        "it": "Scuola, famiglia e sociale",
+        "en": "School, family and welfare"
+      },
+      "voci": [
+        {
+          "id": "mensa",
+          "nome": {
+            "it": "Mensa scolastica",
+            "en": "School meals"
+          },
+          "nota": {
+            "it": "Iscrizione ogni anno; il blocchetto di buoni costa 45 € e si ritira dal messo comunale.",
+            "en": "Enrol every year; a book of vouchers costs €45 and is collected from the municipal messenger."
+          },
+          "web": "https://comune.positano.sa.it/servizi/richiesta-servizio-mensa-scolastica",
+          "webLabel": {
+            "it": "Iscriviti",
+            "en": "Enrol"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "mensa scuola buoni pasto",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122518"
+            }
+          ]
+        },
+        {
+          "id": "libri",
+          "nome": {
+            "it": "Bonus libri di testo",
+            "en": "School book grant"
+          },
+          "nota": {
+            "it": "Contributo per i libri degli studenti residenti, in base all'ISEE.",
+            "en": "Grant for resident students' school books, based on ISEE income."
+          },
+          "web": "https://comune.positano.sa.it/servizi/bonus-economico-libri-di-testo",
+          "webLabel": {
+            "it": "Come chiederlo",
+            "en": "How to apply"
+          },
+          "dettagli": [
+            {
+              "it": "Online",
+              "en": "Online"
+            }
+          ],
+          "cerca": "libri scuola bonus isee",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "sociale",
+          "nome": {
+            "it": "Contributi e assistenza sociale",
+            "en": "Welfare support"
+          },
+          "nota": {
+            "it": "Sostegno per spese urgenti e progetti per persone con disabilità grave: modulo e colloquio con il servizio sociale.",
+            "en": "Support for urgent expenses and projects for people with severe disabilities: form and interview with social services."
+          },
+          "web": "https://comune.positano.sa.it/servizi/contributo-di-assistenza-sociale",
+          "webLabel": {
+            "it": "Come fare",
+            "en": "How to"
+          },
+          "dettagli": [
+            {
+              "it": "Allo sportello",
+              "en": "At the counter"
+            }
+          ],
+          "cerca": "contributo sociale aiuto disabilita anziani",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "orari": {
+            "it": "Servizi sociali: lun e mar 10-12, gio 10-14 e 15:30-17:30",
+            "en": "Social services: Mon and Tue 10am-12pm, Thu 10am-2pm and 3:30-5:30pm"
+          }
+        },
+        {
+          "id": "animali",
+          "nome": {
+            "it": "Cani: visite e microchip gratis",
+            "en": "Dogs: free checks and microchip"
+          },
+          "nota": {
+            "it": "Visite contro la leishmaniosi e microchip con il veterinario dell'ASL; adozioni da «Positano a 4 zampe».",
+            "en": "Leishmaniasis checks and microchip with the ASL vet; adoptions from “Positano a 4 zampe”."
+          },
+          "web": "https://comune.positano.sa.it/servizi/amici-animali",
+          "webLabel": {
+            "it": "Informazioni",
+            "en": "Information"
+          },
+          "dettagli": [
+            {
+              "it": "Informazioni",
+              "en": "Information"
+            }
+          ],
+          "cerca": "cane microchip veterinario adozione",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "casa",
+      "titolo": {
+        "it": "Casa, lavori e attività",
+        "en": "Home, building works and business"
+      },
+      "voci": [
+        {
+          "id": "sue",
+          "nome": {
+            "it": "Pratiche edilizie (SUE)",
+            "en": "Building permits (SUE)"
+          },
+          "nota": {
+            "it": "Permessi, SCIA e agibilità si presentano online sullo sportello dell'edilizia.",
+            "en": "Permits, SCIA and certificates of occupancy are filed online at the building desk."
+          },
+          "web": "https://www.positano.cportal.it/",
+          "webLabel": {
+            "it": "Sportello edilizia",
+            "en": "Building desk"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "edilizia permesso scia ristrutturazione lavori casa",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122519"
+            }
+          ],
+          "orari": {
+            "it": "Edilizia privata: mar 10-12, gio 15:30-17:30",
+            "en": "Building office: Tue 10am-12pm, Thu 3:30-5:30pm"
+          }
+        },
+        {
+          "id": "suolo",
+          "nome": {
+            "it": "Occupare suolo pubblico",
+            "en": "Public space permit"
+          },
+          "nota": {
+            "it": "Tavolini, ponteggi, cantieri: richiesta online.",
+            "en": "Outdoor tables, scaffolding, building sites: apply online."
+          },
+          "web": "https://comune.positano.sa.it/servizi/richiedere-permesso-di-occupazione-suolo-pubblico",
+          "webLabel": {
+            "it": "Richiedi",
+            "en": "Apply"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "suolo pubblico tavolini ponteggio",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122519"
+            }
+          ]
+        },
+        {
+          "id": "suap",
+          "nome": {
+            "it": "Aprire o gestire un'attività (SUAP)",
+            "en": "Open or run a business (SUAP)"
+          },
+          "nota": {
+            "it": "Le pratiche per le imprese: serve SPID o CNS, firma digitale e PEC.",
+            "en": "Business procedures: you need SPID or CNS, a digital signature and certified email."
+          },
+          "web": "https://comune.positano.sa.it/servizi/sportello-unico-attivita-produttive-suap",
+          "webLabel": {
+            "it": "Sportello imprese",
+            "en": "Business desk"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "suap attivita negozio impresa licenza",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "atti",
+          "nome": {
+            "it": "Accesso agli atti",
+            "en": "Access to records"
+          },
+          "nota": {
+            "it": "Chiedi di vedere o avere copia di documenti del Comune che ti riguardano.",
+            "en": "Ask to see or copy Town Hall records that concern you."
+          },
+          "web": "https://comune.positano.sa.it/servizi/accesso-agli-atti-documentale",
+          "webLabel": {
+            "it": "Richiedi online",
+            "en": "Request online"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "accesso atti documenti copia",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "passo-carrabile",
+          "nome": {
+            "it": "Passo carrabile",
+            "en": "Driveway permit"
+          },
+          "nota": {
+            "it": "Autorizzazione per l'accesso carrabile.",
+            "en": "Authorisation for a driveway."
+          },
+          "web": "https://comune.positano.sa.it/servizi/rilascio-nuova-licenza-duso-passo-carrabile",
+          "webLabel": {
+            "it": "Come fare",
+            "en": "How to"
+          },
+          "dettagli": [
+            {
+              "it": "Allo sportello",
+              "en": "At the counter"
+            }
+          ],
+          "cerca": "passo carrabile garage",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "atti-bandi",
+      "titolo": {
+        "it": "Atti, bandi e notizie",
+        "en": "Acts, calls and news"
+      },
+      "voci": [
+        {
+          "id": "albo",
+          "nome": {
+            "it": "Albo pretorio",
+            "en": "Official notice board"
+          },
+          "nota": {
+            "it": "Ordinanze, delibere, avvisi: ciò che è pubblicato qui ha valore legale.",
+            "en": "Ordinances, resolutions, notices: what is published here is legally binding."
+          },
+          "web": "https://servizionline.hspromilaprod.hypersicapp.net/cmspositano/portale/albopretorio/albopretorioconsultazione.aspx?P=400",
+          "webLabel": {
+            "it": "Apri l'albo",
+            "en": "Open"
+          },
+          "dettagli": [
+            {
+              "it": "Informazioni",
+              "en": "Information"
+            }
+          ],
+          "cerca": "albo ordinanze delibere atti",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "trasparenza",
+          "nome": {
+            "it": "Amministrazione trasparente",
+            "en": "Transparency"
+          },
+          "nota": {
+            "it": "Bilanci, incarichi, contratti, contributi, organizzazione degli uffici.",
+            "en": "Budgets, appointments, contracts, grants, office organisation."
+          },
+          "web": "https://comune.positano.sa.it/amministrazione/amministrazione-trasparente",
+          "webLabel": {
+            "it": "Apri",
+            "en": "Open"
+          },
+          "dettagli": [
+            {
+              "it": "Informazioni",
+              "en": "Information"
+            }
+          ],
+          "cerca": "trasparenza bilanci contratti incarichi",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "concorsi",
+          "nome": {
+            "it": "Bandi e concorsi",
+            "en": "Jobs and tenders"
+          },
+          "nota": {
+            "it": "Concorsi per lavorare in Comune e bandi di gara.",
+            "en": "Competitions to work at the Town Hall and tenders."
+          },
+          "web": "https://comune.positano.sa.it/amministrazione-trasparente/bandi-di-concorso",
+          "webLabel": {
+            "it": "Vedi i bandi",
+            "en": "See"
+          },
+          "dettagli": [
+            {
+              "it": "Informazioni",
+              "en": "Information"
+            }
+          ],
+          "cerca": "concorso lavoro bando gara",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "io",
+          "nome": {
+            "it": "Il Comune su App IO",
+            "en": "The Town Hall on the IO app"
+          },
+          "nota": {
+            "it": "Circa trenta servizi del Comune mandano messaggi e avvisi di pagamento sull'app IO.",
+            "en": "About thirty Town Hall services send messages and payment notices on the IO app."
+          },
+          "web": "https://comune.positano.sa.it/servizi/il-comune-di-positano-su-io-app",
+          "webLabel": {
+            "it": "Quali servizi",
+            "en": "Which services"
+          },
+          "dettagli": [
+            {
+              "it": "App IO",
+              "en": "IO app"
+            }
+          ],
+          "cerca": "app io notifiche messaggi",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "newsletter",
+          "nome": {
+            "it": "Newsletter del Comune",
+            "en": "Town Hall newsletter"
+          },
+          "nota": {
+            "it": "Iscriviti e scegli gli argomenti: novità, eventi, servizi, documenti.",
+            "en": "Subscribe and choose topics: news, events, services, documents."
+          },
+          "web": "https://comune.positano.sa.it/newsletter-positano",
+          "webLabel": {
+            "it": "Iscriviti",
+            "en": "Subscribe"
+          },
+          "dettagli": [
+            {
+              "it": "Informazioni",
+              "en": "Information"
+            }
+          ],
+          "cerca": "newsletter email notizie",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "modulistica",
+          "nome": {
+            "it": "Moduli",
+            "en": "Forms"
+          },
+          "nota": {
+            "it": "Tutti i moduli del Comune in un elenco.",
+            "en": "All Town Hall forms in one list."
+          },
+          "web": "https://comune.positano.sa.it/tipi-di-documento/modulistica",
+          "webLabel": {
+            "it": "Apri i moduli",
+            "en": "Open forms"
+          },
+          "dettagli": [
+            {
+              "it": "Informazioni",
+              "en": "Information"
+            }
+          ],
+          "cerca": "moduli modulo domanda",
+          "fonte": {
+            "nome": "Sito del Comune, schede servizio",
+            "url": "https://comune.positano.sa.it/servizi",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        }
+      ]
+    },
+    {
+      "id": "nazionali",
+      "titolo": {
+        "it": "Servizi nazionali utili",
+        "en": "Useful national services"
+      },
+      "nota": {
+        "it": "Non sono del Comune, ma risolvono molte cose senza andare allo sportello.",
+        "en": "Not run by the Town Hall, but they solve many things without going to the counter."
+      },
+      "voci": [
+        {
+          "id": "spid",
+          "nome": {
+            "it": "SPID, l'identità digitale",
+            "en": "SPID digital identity"
+          },
+          "nota": {
+            "it": "Serve per quasi tutti i servizi online: come ottenerlo.",
+            "en": "Needed for almost every online service: how to get it."
+          },
+          "web": "https://www.spid.gov.it/",
+          "webLabel": {
+            "it": "Come ottenerlo",
+            "en": "How to get it"
+          },
+          "dettagli": [],
+          "cerca": "spid identita digitale",
+          "fonte": {
+            "nome": "AgID",
+            "url": "https://www.spid.gov.it/",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "app-io",
+          "nome": {
+            "it": "App IO",
+            "en": "IO app"
+          },
+          "nota": {
+            "it": "Messaggi, scadenze e pagamenti della pubblica amministrazione sul telefono.",
+            "en": "Messages, deadlines and payments from public administration on your phone."
+          },
+          "web": "https://ioapp.it/",
+          "webLabel": {
+            "it": "Scarica IO",
+            "en": "Get IO"
+          },
+          "dettagli": [],
+          "cerca": "app io",
+          "fonte": {
+            "nome": "PagoPA S.p.A.",
+            "url": "https://ioapp.it/",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "fse",
+          "nome": {
+            "it": "Fascicolo sanitario e prenotazioni",
+            "en": "Health record and bookings"
+          },
+          "nota": {
+            "it": "Referti, ricette e prenotazioni: portale nazionale e CUP dell'ASL Salerno.",
+            "en": "Reports, prescriptions and bookings: national portal and ASL Salerno booking centre."
+          },
+          "web": "https://www.fascicolosanitario.gov.it/",
+          "webLabel": {
+            "it": "Fascicolo sanitario",
+            "en": "Health record"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "fascicolo sanitario referti ricetta cup prenotazione visita",
+          "fonte": {
+            "nome": "Ministero della Salute",
+            "url": "https://www.fascicolosanitario.gov.it/",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "inps",
+          "nome": {
+            "it": "INPS",
+            "en": "INPS"
+          },
+          "nota": {
+            "it": "Pensioni, assegno unico, ISEE, disoccupazione.",
+            "en": "Pensions, child benefit, ISEE, unemployment."
+          },
+          "web": "https://www.inps.it/",
+          "webLabel": {
+            "it": "Vai all'INPS",
+            "en": "Go to INPS"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "inps pensione isee assegno unico naspi",
+          "fonte": {
+            "nome": "INPS",
+            "url": "https://www.inps.it/",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "entrate",
+          "nome": {
+            "it": "Agenzia delle Entrate",
+            "en": "Revenue Agency"
+          },
+          "nota": {
+            "it": "730 precompilato, F24, codice fiscale.",
+            "en": "Pre-filled tax return, F24, tax code."
+          },
+          "web": "https://www.agenziaentrate.gov.it/portale/",
+          "webLabel": {
+            "it": "Vai all'Agenzia",
+            "en": "Go"
+          },
+          "dettagli": [
+            {
+              "it": "Online con SPID o CIE",
+              "en": "Online with SPID or CIE"
+            }
+          ],
+          "cerca": "730 tasse f24 codice fiscale",
+          "fonte": {
+            "nome": "Agenzia delle Entrate",
+            "url": "https://www.agenziaentrate.gov.it/portale/",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        },
+        {
+          "id": "unico",
+          "nome": {
+            "it": "Biglietti dei bus regionali",
+            "en": "Regional bus tickets"
+          },
+          "nota": {
+            "it": "Biglietti e abbonamenti UnicoCampania, anche dall'app.",
+            "en": "UnicoCampania tickets and passes, also via the app."
+          },
+          "web": "https://www.unicocampania.it/",
+          "webLabel": {
+            "it": "UnicoCampania",
+            "en": "UnicoCampania"
+          },
+          "dettagli": [],
+          "cerca": "biglietto bus abbonamento unicocampania",
+          "fonte": {
+            "nome": "UnicoCampania",
+            "url": "https://www.unicocampania.it/",
+            "consultata": "2026-11-05"
+          },
+          "verificato": true
+        }
+      ]
+    }
+  ]
+}

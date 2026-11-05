@@ -3,6 +3,25 @@
 Tutte le modifiche rilevanti a questo progetto sono documentate qui.
 Formato ispirato a [Keep a Changelog](https://keepachangelog.com/it/); versioning [SemVer](https://semver.org/lang/it/).
 
+## [0.3.0] · 2026-11-05
+
+### Aggiunto
+- **Home a modalità**: ordinaria, inverno, Natale, estate, giorno di festa, allerta. Si sceglie da sola (data, allerta meteo arancione o rossa) o dal pannello; anteprime su `#home/<modalità>`.
+- **Pannello di redazione** (`/admin.html`, Worker + D1): aperture invernali, avvisi con stato e storia, modalità e messaggio della home, registro delle modifiche. Accesso con password (PBKDF2), cookie firmato, blocco dopo 8 tentativi.
+- **Aperti d'inverno**: timeline novembre-marzo per zona e in ordine alfabetico, filtri per categoria e «aperti oggi», importazione di un elenco.
+- **Servizi del Comune per bisogno** (33 schede con link alle pagine ufficiali) e **Chi chiamo per…** (17 problemi, email di segnalazione già impostata).
+- **Avvisi**: pagina dedicata, stato e storico, avvisi del sito del Comune importati dal feed RSS.
+- **Allerta meteo** dal bollettino della Protezione Civile, **meteo e mare** da Open-Meteo: li scarica GitHub ogni 2 ore, il telefono non contatta siti terzi.
+- **Regole in vigore oggi** (bruciatura, incendi, orari dei rifiuti, ordinanza balneare, ZTL).
+- **Crea un post**: grafica 4:5 nello stile dei preset del Comune, anche partendo da un avviso.
+- Eventi: filtri oggi, domani, fine settimana; «Aggiungi al calendario».
+- Controllo settimanale automatico di dati in scadenza e link rotti (issue su GitHub).
+- `docs/legale.md` (quadro legale) e `docs/redazione.md` (guida al pannello).
+
+### Cambiato
+- Grafica del design system «Comune di Positano»: Cormorant Garamond e Montserrat ospitati nell'app (niente Google Fonts), colori di categoria, fili rossi, angoli squadrati. **Solo tema chiaro.**
+- Barra in basso: Oggi, Emergenze, Servizi, Muoversi, Tutto.
+
 ## [0.2.2] · 2026-11-05
 
 ### Cambiato

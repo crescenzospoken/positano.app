@@ -1,0 +1,168 @@
+{
+  "aggiornato": "2026-11-05",
+  "nota": {
+    "it": "La home cambia da sola secondo il periodo dell'anno, le feste e le allerte. Dal pannello si può anche fissare una modalità a mano e aggiungere un messaggio in cima.",
+    "en": "The home page changes by itself with the season, festivals and alerts. From the panel a mode can also be set by hand, with a message on top."
+  },
+  "modalita": [
+    {
+      "id": "allerta",
+      "nome": {
+        "it": "Allerta",
+        "en": "Alert"
+      },
+      "colore": "emergenze",
+      "automatica": "allerta",
+      "descrizione": {
+        "it": "Si accende da sola con allerta meteo arancione o rossa: prima la sicurezza, i numeri e le aree di attesa.",
+        "en": "Switches on by itself with an orange or red weather alert: safety, numbers and assembly points first."
+      },
+      "blocchi": [
+        "allerta",
+        "sos",
+        "avvisi",
+        "protezione",
+        "chiamo",
+        "sezioni"
+      ]
+    },
+    {
+      "id": "festa",
+      "nome": {
+        "it": "Giorno di festa",
+        "en": "Festival day"
+      },
+      "colore": "cultura",
+      "date": [
+        {
+          "dal": "07-01",
+          "al": "07-02"
+        },
+        {
+          "dal": "08-14",
+          "al": "08-15"
+        },
+        {
+          "dal": "06-14",
+          "al": "06-15"
+        }
+      ],
+      "descrizione": {
+        "it": "Nei giorni delle feste grandi: programma, strade chiuse, ultimi bus.",
+        "en": "On the big festival days: programme, closed roads, last buses."
+      },
+      "blocchi": [
+        "avvisi",
+        "eventi",
+        "partenze",
+        "sos",
+        "sezioni"
+      ]
+    },
+    {
+      "id": "natale",
+      "nome": {
+        "it": "Natale",
+        "en": "Christmas"
+      },
+      "colore": "comunicati",
+      "periodo": {
+        "dal": "12-06",
+        "al": "01-07"
+      },
+      "descrizione": {
+        "it": "Dalle luci di Natale all'Epifania: eventi, aperture, orari delle feste.",
+        "en": "From the Christmas lights to Epiphany: events, openings, holiday timetables."
+      },
+      "blocchi": [
+        "sos",
+        "allerta",
+        "avvisi",
+        "eventi",
+        "inverno",
+        "partenze",
+        "rifiuti",
+        "servizi",
+        "sezioni"
+      ]
+    },
+    {
+      "id": "estate",
+      "nome": {
+        "it": "Estate",
+        "en": "Summer"
+      },
+      "colore": "turismo",
+      "periodo": {
+        "dal": "06-15",
+        "al": "09-15"
+      },
+      "descrizione": {
+        "it": "Alta stagione: mare, traghetti, regole in spiaggia, eventi.",
+        "en": "High season: sea, ferries, beach rules, events."
+      },
+      "blocchi": [
+        "sos",
+        "allerta",
+        "avvisi",
+        "mare",
+        "partenze",
+        "regole",
+        "eventi",
+        "rifiuti",
+        "sezioni"
+      ]
+    },
+    {
+      "id": "inverno",
+      "nome": {
+        "it": "Inverno",
+        "en": "Winter"
+      },
+      "colore": "extra",
+      "periodo": {
+        "dal": "11-01",
+        "al": "03-31"
+      },
+      "descrizione": {
+        "it": "Bassa stagione: chi è aperto, orari invernali, servizi del Comune.",
+        "en": "Low season: who is open, winter timetables, Town Hall services."
+      },
+      "blocchi": [
+        "sos",
+        "allerta",
+        "avvisi",
+        "inverno",
+        "rifiuti",
+        "partenze",
+        "regole",
+        "eventi",
+        "servizi",
+        "sezioni"
+      ]
+    },
+    {
+      "id": "ordinaria",
+      "nome": {
+        "it": "Ordinaria",
+        "en": "Standard"
+      },
+      "colore": "istituzionale",
+      "descrizione": {
+        "it": "Il resto dell'anno: avvisi, rifiuti, partenze, eventi, servizi.",
+        "en": "The rest of the year: notices, waste, departures, events, services."
+      },
+      "blocchi": [
+        "sos",
+        "allerta",
+        "avvisi",
+        "rifiuti",
+        "partenze",
+        "regole",
+        "eventi",
+        "servizi",
+        "sezioni"
+      ]
+    }
+  ]
+}

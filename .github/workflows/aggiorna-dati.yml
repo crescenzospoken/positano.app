@@ -1,0 +1,39 @@
+name: Aggiorna dati
+
+# Allerta della Protezione Civile, meteo e avvisi dal sito del Comune.
+# Ogni due ore (e a mano dal pulsante «Run workflow»). Se i dati cambiano, il commit su main
+# rimette online l'app in automatico.
+on:
+  schedule:
+    - cron: '17 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aggiorna-dati
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Allerta meteo (Protezione Civile)
+        run: node scripts/allerta.mjs || echo "::warning::allerta non aggiornata"
+      - name: Meteo e mare (Open-Meteo)
+        run: node scripts/meteo.mjs || echo "::warning::meteo non aggiornato"
+      - name: Avvisi dal sito del Comune
+        run: node scripts/avvisi-comune.mjs || echo "::warning::avvisi non aggiornati"
+      - name: Pubblica se cambiato
+        run: |
+          git config user.name "positano-app bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/allerta.json public/data/meteo.json public/data/avvisi-comune.json
+          if git diff --cached --quiet; then echo "Niente di nuovo"; exit 0; fi
+          git commit -m "dati: aggiornamento automatico"
+          git push

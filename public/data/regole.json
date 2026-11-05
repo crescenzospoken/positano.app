@@ -1,0 +1,167 @@
+{
+  "aggiornato": "2026-11-05",
+  "intro": {
+    "it": "Divieti e obblighi in vigore, con le date: in home compaiono solo quelli validi oggi.",
+    "en": "Bans and obligations in force, with their dates: the home page shows only those valid today."
+  },
+  "gruppi": [
+    {
+      "id": "regole",
+      "titolo": {
+        "it": "Regole con una data",
+        "en": "Rules with a date"
+      },
+      "voci": [
+        {
+          "id": "bruciatura",
+          "nome": {
+            "it": "Bruciatura dei residui vegetali",
+            "en": "Burning of garden waste"
+          },
+          "categoria": "ambiente",
+          "periodo": {
+            "dal": "2026-10-29",
+            "al": "2027-06-14"
+          },
+          "nota": {
+            "it": "Si possono bruciare sfalci e potature solo nei giorni e negli orari del calendario comunale 2026/2027, con le precauzioni dell'avviso.",
+            "en": "Cuttings and prunings may be burned only on the days and at the times of the 2026/2027 municipal calendar, with the precautions in the notice."
+          },
+          "web": "https://comune.positano.sa.it/novita/avvisi/disciplina-e-calendario-le-operazioni-di-combustione-cd-bruciatura-dei-residui",
+          "webLabel": {
+            "it": "Calendario e regole",
+            "en": "Calendar and rules"
+          },
+          "fonte": {
+            "nome": "Comune di Positano, avviso del 29/10/2026",
+            "data": "2026-10-29",
+            "url": "https://comune.positano.sa.it/novita/avvisi/disciplina-e-calendario-le-operazioni-di-combustione-cd-bruciatura-dei-residui"
+          },
+          "verificato": true,
+          "cerca": "bruciatura sterpaglie potature fuoco"
+        },
+        {
+          "id": "incendi",
+          "nome": {
+            "it": "Periodo di massima pericolosità per gli incendi",
+            "en": "Peak wildfire risk period"
+          },
+          "categoria": "emergenze",
+          "periodo": {
+            "dal": "06-15",
+            "al": "09-30"
+          },
+          "nota": {
+            "it": "Vietato accendere fuochi e bruciare sterpaglie all'aperto. La Regione può prorogarlo: nel 2026 è durato fino al 15 ottobre.",
+            "en": "No open fires or burning of brush. The Region may extend it: in 2026 it lasted until 15 October."
+          },
+          "tel": [
+            {
+              "n": "112"
+            }
+          ],
+          "fonte": {
+            "nome": "Regione Campania, piano antincendio boschivo"
+          },
+          "verificato": false,
+          "cerca": "incendi fuochi divieto barbecue"
+        },
+        {
+          "id": "orari-rifiuti-inverno",
+          "nome": {
+            "it": "Rifiuti: si espongono dalle 20 alle 24",
+            "en": "Waste: put out 8pm to midnight"
+          },
+          "categoria": "ambiente",
+          "periodo": {
+            "dal": "11-01",
+            "al": "03-31"
+          },
+          "nota": {
+            "it": "Orario invernale del conferimento porta a porta. Fuori orario si rischia la multa.",
+            "en": "Winter hours for door-to-door collection. Outside these hours you risk a fine."
+          },
+          "link": "#rifiuti",
+          "fonte": {
+            "nome": "Comune di Positano, raccolta differenziata"
+          },
+          "verificato": true,
+          "cerca": "orario rifiuti sera"
+        },
+        {
+          "id": "orari-rifiuti-estate",
+          "nome": {
+            "it": "Rifiuti: si espongono dalle 22 alle 2",
+            "en": "Waste: put out 10pm to 2am"
+          },
+          "categoria": "ambiente",
+          "periodo": {
+            "dal": "04-01",
+            "al": "10-31"
+          },
+          "nota": {
+            "it": "Orario estivo del conferimento porta a porta.",
+            "en": "Summer hours for door-to-door collection."
+          },
+          "link": "#rifiuti",
+          "fonte": {
+            "nome": "Comune di Positano, raccolta differenziata"
+          },
+          "verificato": true,
+          "cerca": "orario rifiuti sera estate"
+        },
+        {
+          "id": "balneare",
+          "nome": {
+            "it": "Ordinanza balneare",
+            "en": "Beach ordinance"
+          },
+          "categoria": "turismo",
+          "periodo": {
+            "dal": "05-15",
+            "al": "09-25"
+          },
+          "nota": {
+            "it": "Fascia libera vicino alla riva, niente attrezzature lasciate dopo il tramonto, niente animali, fuochi o musica alta in spiaggia.",
+            "en": "Free strip by the shore, no gear left after sunset, no animals, fires or loud music on the beach."
+          },
+          "link": "#comune/spiagge-regole",
+          "fonte": {
+            "nome": "Ordinanza balneare prot. 13167 del 26/8/2025",
+            "data": "2025-08-26"
+          },
+          "verificato": true,
+          "cerca": "spiaggia ordinanza cani ombrellone"
+        },
+        {
+          "id": "ztl-sempre",
+          "nome": {
+            "it": "ZTL per i veicoli oltre 5 posti",
+            "en": "Restricted zone for vehicles over 5 seats"
+          },
+          "categoria": "viabilita",
+          "periodo": {
+            "dal": "01-01",
+            "al": "12-31"
+          },
+          "nota": {
+            "it": "Via Pasitea, Piazza dei Mulini e via Colombo: tutto l'anno si paga online entro 72 ore.",
+            "en": "Via Pasitea, Piazza dei Mulini and Via Colombo: all year, pay online within 72 hours."
+          },
+          "web": "https://ztlpositano.it/",
+          "webLabel": {
+            "it": "Portale ZTL",
+            "en": "ZTL portal"
+          },
+          "fonte": {
+            "nome": "Delibera di Giunta n. 37 del 21/3/2024",
+            "data": "2024-03-21"
+          },
+          "verificato": true,
+          "inHome": false,
+          "cerca": "ztl"
+        }
+      ]
+    }
+  ]
+}

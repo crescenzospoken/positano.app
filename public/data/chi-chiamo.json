@@ -1,0 +1,419 @@
+{
+  "aggiornato": "2026-11-05",
+  "intro": {
+    "it": "Scegli il problema: trovi a chi rivolgerti, con il numero o l'email già pronta. L'app non raccoglie segnalazioni: le manda a chi può risolverle.",
+    "en": "Pick the problem: you get who to contact, with the number or a ready-to-send email. The app does not collect reports: it sends you to who can fix them."
+  },
+  "gruppi": [
+    {
+      "id": "subito",
+      "titolo": {
+        "it": "Subito, è un'emergenza",
+        "en": "Right now, it's an emergency"
+      },
+      "voci": [
+        {
+          "id": "pericolo",
+          "nome": {
+            "it": "C'è un pericolo per le persone",
+            "en": "Someone is in danger"
+          },
+          "nota": {
+            "it": "Incidente, crollo, aggressione, persona che sta male: chiama il 112, risponde anche in inglese.",
+            "en": "Accident, collapse, assault, someone unwell: call 112, operators speak English."
+          },
+          "categoria": "emergenze",
+          "cerca": "emergenza aiuto incidente",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "112"
+            }
+          ]
+        },
+        {
+          "id": "incendio",
+          "nome": {
+            "it": "Vedo fumo o un incendio",
+            "en": "I see smoke or a fire"
+          },
+          "nota": {
+            "it": "Chiama subito il 112 o il 115 e indica il punto più preciso possibile: frazione, sentiero, curva della statale.",
+            "en": "Call 112 or 115 straight away and give the most precise location: hamlet, trail, bend of the road."
+          },
+          "categoria": "emergenze",
+          "cerca": "incendio fuoco fumo bosco",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "115"
+            },
+            {
+              "n": "112"
+            }
+          ]
+        },
+        {
+          "id": "mare",
+          "nome": {
+            "it": "Qualcuno è in difficoltà in mare",
+            "en": "Someone is in trouble at sea"
+          },
+          "nota": {
+            "it": "Guardia Costiera: 1530, gratuito.",
+            "en": "Coast Guard: 1530, free."
+          },
+          "categoria": "emergenze",
+          "cerca": "mare annegamento barca",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "1530"
+            }
+          ]
+        },
+        {
+          "id": "malore",
+          "nome": {
+            "it": "Sto male, ma non è un'emergenza",
+            "en": "I feel ill, but it's not an emergency"
+          },
+          "nota": {
+            "it": "Di notte e nei festivi c'è la guardia medica di Praiano o Amalfi; di giorno il tuo medico o la farmacia.",
+            "en": "At night and on holidays the out-of-hours doctor in Praiano or Amalfi; by day your GP or the pharmacy."
+          },
+          "categoria": "sanita",
+          "cerca": "medico notte guardia medica febbre",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 4455842",
+              "label": {
+                "it": "Praiano",
+                "en": "Praiano"
+              }
+            }
+          ],
+          "link": "#emergenze/guardia-medica"
+        }
+      ]
+    },
+    {
+      "id": "strade",
+      "titolo": {
+        "it": "Strade, luce, acqua",
+        "en": "Roads, lights, water"
+      },
+      "voci": [
+        {
+          "id": "buca",
+          "nome": {
+            "it": "Buca, gradino rotto, muro pericolante",
+            "en": "Pothole, broken step, unsafe wall"
+          },
+          "nota": {
+            "it": "Polizia Municipale per la sicurezza immediata; per i lavori l'Ufficio lavori pubblici. Scrivi il punto preciso e, se puoi, allega una foto.",
+            "en": "Municipal Police for immediate safety; for repairs the Public Works office. Give the exact spot and attach a photo if you can."
+          },
+          "categoria": "lavori",
+          "cerca": "buca strada scale gradino muro",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122552",
+              "label": {
+                "it": "Polizia Municipale",
+                "en": "Municipal Police"
+              }
+            },
+            {
+              "n": "089 8122508",
+              "label": {
+                "it": "Lavori pubblici",
+                "en": "Public works"
+              }
+            }
+          ],
+          "email": "segreteria.sindaco@comune.positano.sa.it",
+          "oggetto": "Segnalazione: strada o gradini"
+        },
+        {
+          "id": "luce",
+          "nome": {
+            "it": "Lampione spento",
+            "en": "Street light out"
+          },
+          "nota": {
+            "it": "Ufficio lavori pubblici: indica via e numero civico più vicino.",
+            "en": "Public Works office: give the street and nearest house number."
+          },
+          "categoria": "lavori",
+          "cerca": "luce lampione illuminazione buio",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122508"
+            }
+          ],
+          "email": "segreteria.sindaco@comune.positano.sa.it",
+          "oggetto": "Segnalazione: illuminazione pubblica"
+        },
+        {
+          "id": "acqua",
+          "nome": {
+            "it": "Manca l'acqua o c'è una perdita",
+            "en": "No water or a leak"
+          },
+          "nota": {
+            "it": "Rete idrica e fognature le gestisce Ausino: il numero verde per i guasti è sul loro sito. Prima controlla gli avvisi: può essere una sospensione programmata.",
+            "en": "Water and sewers are run by Ausino: the fault hotline is on their website. Check the notices first: it may be a planned outage."
+          },
+          "categoria": "ambiente",
+          "cerca": "acqua perdita fogna manca",
+          "verificato": true,
+          "web": "https://www.ausino.it/",
+          "webLabel": {
+            "it": "Guasti Ausino",
+            "en": "Ausino faults"
+          },
+          "link": "#avvisi"
+        },
+        {
+          "id": "frana",
+          "nome": {
+            "it": "Sassi in strada, piccola frana",
+            "en": "Rocks on the road, small landslide"
+          },
+          "nota": {
+            "it": "Se blocca la strada o è pericolosa: 112. Altrimenti Polizia Municipale.",
+            "en": "If it blocks the road or is dangerous: 112. Otherwise the Municipal Police."
+          },
+          "categoria": "emergenze",
+          "cerca": "frana sassi massi strada",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "112"
+            },
+            {
+              "n": "089 8122552",
+              "label": {
+                "it": "Polizia Municipale",
+                "en": "Municipal Police"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "convivenza",
+      "titolo": {
+        "it": "Rifiuti, rumore, sosta, animali",
+        "en": "Waste, noise, parking, animals"
+      },
+      "voci": [
+        {
+          "id": "rifiuti-abbandonati",
+          "nome": {
+            "it": "Rifiuti abbandonati o raccolta saltata",
+            "en": "Dumped waste or missed collection"
+          },
+          "nota": {
+            "it": "Per la raccolta saltata e gli ingombranti il servizio rifiuti; per chi abbandona rifiuti la Polizia Municipale.",
+            "en": "For missed collections and bulky items the waste service; for illegal dumping the Municipal Police."
+          },
+          "categoria": "ambiente",
+          "cerca": "rifiuti abbandonati sacchetti raccolta",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122508",
+              "label": {
+                "it": "Servizio rifiuti",
+                "en": "Waste service"
+              }
+            },
+            {
+              "n": "089 8122552",
+              "label": {
+                "it": "Polizia Municipale",
+                "en": "Municipal Police"
+              }
+            }
+          ],
+          "email": "segreteria.sindaco@comune.positano.sa.it",
+          "oggetto": "Segnalazione: rifiuti"
+        },
+        {
+          "id": "rumore",
+          "nome": {
+            "it": "Rumore, musica alta di notte",
+            "en": "Noise, loud music at night"
+          },
+          "nota": {
+            "it": "Polizia Municipale; di notte, se non risponde, i Carabinieri.",
+            "en": "Municipal Police; at night, if no answer, the Carabinieri."
+          },
+          "categoria": "viabilita",
+          "cerca": "rumore musica notte schiamazzi",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122552",
+              "label": {
+                "it": "Polizia Municipale",
+                "en": "Municipal Police"
+              }
+            },
+            {
+              "n": "089 875011",
+              "label": {
+                "it": "Carabinieri",
+                "en": "Carabinieri"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sosta",
+          "nome": {
+            "it": "Auto che blocca il passaggio",
+            "en": "Car blocking the way"
+          },
+          "nota": {
+            "it": "Polizia Municipale, con via e targa.",
+            "en": "Municipal Police, with street and plate number."
+          },
+          "categoria": "viabilita",
+          "cerca": "parcheggio sosta auto bloccata passo carrabile",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122552"
+            }
+          ]
+        },
+        {
+          "id": "animali",
+          "nome": {
+            "it": "Animale ferito o vagante",
+            "en": "Injured or stray animal"
+          },
+          "nota": {
+            "it": "Polizia Municipale, che attiva il servizio convenzionato.",
+            "en": "Municipal Police, who will call the contracted service."
+          },
+          "categoria": "sociale",
+          "cerca": "cane gatto randagio ferito animale",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122552"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uffici",
+      "titolo": {
+        "it": "Pratiche e informazioni",
+        "en": "Paperwork and information"
+      },
+      "voci": [
+        {
+          "id": "documenti",
+          "nome": {
+            "it": "Certificati, carta d'identità, residenza",
+            "en": "Certificates, ID card, residence"
+          },
+          "nota": {
+            "it": "Anagrafe: molti certificati si scaricano online gratis, la carta d'identità si fa su appuntamento.",
+            "en": "Registry office: many certificates can be downloaded free online, ID cards are by appointment."
+          },
+          "categoria": "comunicati",
+          "cerca": "anagrafe certificato carta identita",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122520"
+            }
+          ],
+          "link": "#servizi/g-documenti"
+        },
+        {
+          "id": "tasse",
+          "nome": {
+            "it": "TARI, IMU, avvisi di pagamento",
+            "en": "TARI, IMU, payment notices"
+          },
+          "nota": {
+            "it": "Ufficio Tributi.",
+            "en": "Tax office."
+          },
+          "categoria": "comunicati",
+          "cerca": "tari imu tasse tributi",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "089 8122526"
+            }
+          ],
+          "link": "#servizi/g-pagare"
+        },
+        {
+          "id": "turismo",
+          "nome": {
+            "it": "Informazioni per chi visita",
+            "en": "Visitor information"
+          },
+          "nota": {
+            "it": "Ufficio Turismo e Infopoint, in viale Regina Giovanna 13.",
+            "en": "Tourist office and Infopoint, Viale Regina Giovanna 13."
+          },
+          "categoria": "turismo",
+          "cerca": "turismo informazioni infopoint",
+          "verificato": true,
+          "tel": [
+            {
+              "n": "331 2085821"
+            }
+          ],
+          "email": "turismo@comune.positano.sa.it"
+        },
+        {
+          "id": "formale",
+          "nome": {
+            "it": "Una richiesta che deve restare agli atti",
+            "en": "A request that must be on record"
+          },
+          "nota": {
+            "it": "Reclami, istanze, domande formali: si scrivono alla PEC del protocollo.",
+            "en": "Complaints, applications, formal requests: write to the registry's certified email."
+          },
+          "categoria": "istituzionale",
+          "cerca": "pec protocollo reclamo istanza",
+          "verificato": true,
+          "pec": "protocollo@pec.comunedipositano.it"
+        },
+        {
+          "id": "disservizio",
+          "nome": {
+            "it": "Un servizio del Comune non funziona",
+            "en": "A Town Hall service isn't working"
+          },
+          "nota": {
+            "it": "Come sul sito del Comune: si scrive alla Segreteria del Sindaco.",
+            "en": "As on the Town Hall website: write to the Mayor's office."
+          },
+          "categoria": "istituzionale",
+          "cerca": "disservizio reclamo segnalazione",
+          "verificato": true,
+          "email": "segreteria.sindaco@comune.positano.sa.it",
+          "oggetto": "Segnalazione disservizio"
+        }
+      ]
+    }
+  ]
+}
