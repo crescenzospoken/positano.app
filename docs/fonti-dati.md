@@ -34,7 +34,7 @@ Ogni sezione ha un "proprietario" umano responsabile dell'aggiornamento e una fo
 2. **Bus interno** Mobility Amalfi Coast: ✅ orario di ottobre 2026 inserito (locandine ufficiali). ⚠️ Scade il 31/10: inserire l'orario di novembre appena esce (il gestore è provvisorio, contratto scaduto il 30/6).
 3. **Farmacia**: ✅ una sola, viale Pasitea 22, orari da Google. Restano i turni notturni.
 4. **Croce Rossa**: viale Pasitea 286A, 089 8123520 da Google (da confermare).
-5. **Carabinieri** (089 875011 dal sito 2017, 089 811666 da un elenco recente: quale?) e **Guardia di Finanza** (089 875129): numeri dal sito comunale del 2017.
+5. **Carabinieri**: ✅ 089 875011 (confermato il 5/11/2026). **Guardia di Finanza** (089 875129): numero dal sito comunale del 2017.
 6. **Taxi**: non esiste un numero pubblico del posteggio o di una cooperativa (solo imprese private e cellulari, esclusi per neutralità); conferma che la delibera 97/2024 sia ancora in vigore.
 7. **Targhe alterne**: fine del calendario 2026 (31 ottobre o 1° novembre) e calendario 2027.
 8. **Traghetti** stagionali (Positano Jet, NLG, Alicost): date di inizio e fine stagione.

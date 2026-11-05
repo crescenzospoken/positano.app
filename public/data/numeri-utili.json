@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-10-08",
+  "aggiornato": "2026-11-05",
   "intro": {
     "it": "In pericolo chiama il 112: è gratuito e funziona anche senza credito. Qui sotto i numeri giusti per tutto il resto.",
     "en": "In danger, call 112: it is free and works without credit. Below, the right numbers for everything else."
@@ -306,10 +306,10 @@
           },
           "cerca": "carabinieri denuncia furto smarrimento",
           "fonte": {
-            "nome": "Vecchio sito del Comune ed elenchi telefonici",
-            "data": "2017-01-01"
+            "nome": "Confermato dall'amministrazione comunale",
+            "data": "2026-11-05"
           },
-          "verificato": false
+          "verificato": true
         },
         {
           "id": "capitaneria",
