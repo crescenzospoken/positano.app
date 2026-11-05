@@ -25,7 +25,7 @@ jobs:
       - name: Controlla la sintassi JavaScript
         run: |
           set -e
-          for f in public/js/*.js public/sw.js; do
+          for f in public/js/*.js public/sw.js public/worker.js public/server/*.js scripts/*.mjs; do
             node --check "$f" && echo "OK $f"
           done
 

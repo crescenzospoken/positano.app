@@ -12,7 +12,9 @@
     { id: 'emergenze', file: 'numeri-utili', icon: 'sos', cat: 'emergenze' },
     { id: 'servizi', file: 'servizi', icon: 'townhall', cat: 'comunicati' },
     { id: 'chiamo', file: 'chi-chiamo', icon: 'help', cat: 'istituzionale' },
+    { id: 'zona', file: null, icon: 'campana', cat: 'comunicati' },
     { id: 'muoversi', file: 'trasporti', icon: 'bus', cat: 'viabilita' },
+    { id: 'mappa', file: null, icon: 'mappa', cat: 'turismo' },
     { id: 'rifiuti', file: 'rifiuti', icon: 'recycle', cat: 'ambiente' },
     { id: 'inverno', file: null, icon: 'snow', cat: 'extra' },
     { id: 'eventi', file: 'eventi', icon: 'calendar', cat: 'cultura' },
@@ -20,6 +22,8 @@
     { id: 'mare', file: 'spiagge', icon: 'beach', cat: 'turismo' },
     { id: 'sentieri', file: 'sentieri', icon: 'hike', cat: 'ambiente' },
     { id: 'luoghi', file: 'luoghi', icon: 'eye', cat: 'turismo' },
+    { id: 'albo', file: null, icon: 'albo', cat: 'istituzionale' },
+    { id: 'consiglio', file: null, icon: 'consiglio', cat: 'istituzionale' },
     { id: 'comune', file: 'comune', icon: 'townhall', cat: 'istituzionale' },
     { id: 'info', file: null, icon: 'info', cat: 'extra' },
     { id: 'post', file: null, icon: 'immagine', cat: 'comunicati', nascosta: true }
@@ -31,6 +35,10 @@
   let firstRender = true;
   let deferredInstall = null;
   const stato = { filtroEventi: 'tutti', filtroInverno: 'tutti', soloAperti: false };
+  /* La zona scelta resta solo sul telefono (localStorage): non viene mai inviata, salvo iscrizione alle notifiche. */
+  function miaZona() { try { return localStorage.getItem('pa-zona') || ''; } catch (e) { return ''; } }
+  function setZona(z) { try { if (z) localStorage.setItem('pa-zona', z); else localStorage.removeItem('pa-zona'); } catch (e) { /* ignora */ } }
+  function perZona(a, z) { return !z || !a.zone || !a.zone.length || a.zone.indexOf(z) !== -1; }
 
   /* ---------- utilità ---------- */
   function esc(s) {
@@ -269,10 +277,33 @@
   /* ---------- eventi ---------- */
   function upcomingEvents(data) {
     const iso = today();
-    return (data && data.eventi || []).map(function (e) {
+    let list = (data && data.eventi || []).map(function (e) {
       const occ = O.nextOccurrence(e, iso);
       return occ ? Object.assign({}, e, { _da: occ.data, _a: occ.fine, _stimata: occ.stimata }) : null;
-    }).filter(Boolean).sort(function (a, b) { return a._da.localeCompare(b._da); });
+    }).filter(Boolean);
+    list = unisciFeste(list, (cache._api && cache._api.feste) || [], iso);
+    return list.sort(function (a, b) { return a._da.localeCompare(b._da); });
+  }
+  /* Feste dal calendario del Comune in Super Agenda: date vere al posto di quelle stimate, senza doppioni. */
+  const PAROLE_VUOTE = ['festa', 'della', 'delle', 'dello', 'chiesa', 'nuova', 'martire', 'apostolo', 'madonna', 'santa', 'santo', 'maria'];
+  function paroleChiave(s) { return norm(s).replace(/[^a-z ]/g, ' ').split(/\s+/).filter(function (w) { return w.length > 4 && PAROLE_VUOTE.indexOf(w) === -1; }); }
+  function unisciFeste(list, feste, iso) {
+    feste.forEach(function (f) {
+      if (!f.inizio) return;
+      const da = O.isoRome(new Date(f.inizio));
+      let a = f.fine ? O.isoRome(new Date(new Date(f.fine).getTime() - (f.tutto_il_giorno ? 1000 : 0))) : da;
+      if (a < da) a = da;
+      if (a < iso) return;
+      const pc = paroleChiave(f.titolo);
+      const simile = list.find(function (e) { const pe = paroleChiave(pick(e.titolo) + ' ' + (e.titolo && e.titolo.it || '')); return pc.some(function (w) { return pe.indexOf(w) !== -1; }); });
+      if (simile && !simile._stimata) return;
+      const ev = { id: simile ? simile.id : 'sa-' + norm(f.titolo).replace(/[^a-z0-9]+/g, '-').slice(0, 40), titolo: simile ? simile.titolo : { it: f.titolo }, luogo: simile ? simile.luogo : (f.luogo ? { it: f.luogo } : null),
+        coord: simile && simile.coord, nota: simile && simile.nota, web: simile && simile.web, _da: da, _a: a, _stimata: false,
+        fonte: { nome: { it: 'Calendario delle feste del Comune', en: 'Town feast calendar' } } };
+      if (simile) list.splice(list.indexOf(simile), 1);
+      list.push(ev);
+    });
+    return list;
   }
 
   function eventRow(e) {
@@ -324,7 +355,8 @@
 
   function renderEventi() {
     const s = section('eventi');
-    return loadJSON('eventi').then(function (data) {
+    return Promise.all([loadJSON('eventi'), loadAPI()]).then(function (rr) {
+      const data = rr[0];
       if (!data) return sectionHeader(s) + '<p class="note">' + esc(t('common.offline')) + '</p>';
       const list = upcomingEvents(data);
       let h = sectionHeader(s, data);
@@ -367,7 +399,12 @@
     let h = '<article class="avviso" id="v-' + esc(a.id) + '"><div class="occhiello" style="' + catStyle(a.categoria) + '"><span>' + esc(t('cat.' + a.categoria)) + '</span><span>' + esc(validita(a, iso)) + '</span></div><div class="filo"></div><div class="corpo">';
     h += '<div class="item-head" style="padding-right:44px"><h3>' + esc(pick(a.titolo)) + '</h3>' + badges(a) + shareBtn('#avvisi/' + a.id, pick(a.titolo)) + '</div>';
     if (a.stato && a.stato !== 'attivo') h += '<span class="stato ' + esc(a.stato) + '" style="align-self:flex-start">' + esc(t('avvisi.stato.' + a.stato)) + '</span>';
+    if ((a.zone && a.zone.length) || a.servizio) {
+      h += '<p class="zone-riga">' + (a.servizio ? '<span class="chip-serv">' + icon(a.servizio === 'luce' ? 'fulmine' : a.servizio === 'acqua' ? 'goccia' : 'alert') + esc(t('serv.' + a.servizio)) + '</span>' : '') +
+        (a.zone && a.zone.length ? '<span>' + icon('pin') + esc(a.zone.join(', ')) + '</span>' : '') + '</p>';
+    }
     if (pick(a.testo)) h += '<p>' + esc(pick(a.testo)) + '</p>';
+    if (a.tradotto && getLang() === 'en') h += '<p class="src">' + esc(t('common.autotrad')) + '</p>';
     if (a.aggiornamenti && a.aggiornamenti.length) {
       h += '<ol class="storia">' + a.aggiornamenti.slice().reverse().map(function (u) {
         return '<li><b>' + esc(dateLabel(String(u.quando).slice(0, 10), { month: 'short' })) + '</b> · ' + esc(u.testo) + '</li>';
@@ -382,11 +419,16 @@
 
   function renderAvvisi() {
     const s = section('avvisi');
-    return tuttiAvvisi().then(function (r) {
+    return Promise.all([tuttiAvvisi(), loadAPI()]).then(function (rr) {
+      const r = rr[0], zone = (rr[1] && rr[1].zone) || [], z = zone.indexOf(miaZona()) !== -1 ? miaZona() : '';
       const iso = today();
-      const attivi = avvisiAttivi(r.avvisi, iso);
-      const recenti = r.avvisi.filter(function (a) { return attivi.indexOf(a) === -1 && a.al >= O.addDays(iso, -30) && a.dal <= iso; });
+      const attivi = avvisiAttivi(r.avvisi, iso).filter(function (a) { return perZona(a, z); });
+      const recenti = r.avvisi.filter(function (a) { return attivi.indexOf(a) === -1 && perZona(a, z) && a.al >= O.addDays(iso, -30) && a.dal <= iso; });
       let h = sectionHeader(s, null, t('avvisi.intro'));
+      if (zone.length) {
+        h += '<label class="scegli-zona">' + esc(t('zona.filtra')) + '<select data-zona>' + '<option value="">' + esc(t('zona.tutte')) + '</option>' +
+          zone.map(function (x) { return '<option' + (x === z ? ' selected' : '') + '>' + esc(x) + '</option>'; }).join('') + '</select></label>';
+      }
       h += '<h2 class="titolo-sez">' + esc(t('avvisi.incorso')) + '</h2><div class="avvisi">' + (attivi.length ? attivi.map(function (a) { return avvisoCard(a, iso); }).join('') : '<p class="note">' + esc(t('avvisi.nessuno')) + '</p>') + '</div>';
       if (r.comune.length) h += '<h2 class="titolo-sez">' + esc(t('avvisi.sito')) + '</h2><div class="avvisi">' + r.comune.slice(0, 12).map(comuneLink).join('') + '</div>';
       if (recenti.length) h += '<h2 class="titolo-sez">' + esc(t('avvisi.conclusi')) + '</h2><div class="avvisi">' + recenti.map(function (a) { return avvisoCard(a, iso); }).join('') + '</div>';
@@ -565,6 +607,29 @@
         return '<a class="pannello" href="#emergenze/aree-attesa"><span class="ic-big" style="' + catStyle('protezione-civile') + '">' + icon('scudo') + '</span><span><span class="k">' + esc(t('home.protezione')) + '</span><span class="v">' + esc(t('home.protezione.v')) + '</span></span>' + icon('chevron', 'chev') + '</a>';
       case 'chiamo':
         return '<a class="pannello" href="#chiamo"><span class="ic-big" style="' + catStyle('istituzionale') + '">' + icon('help') + '</span><span><span class="k">' + esc(t('sec.chiamo')) + '</span><span class="v">' + esc(t('desc.chiamo')) + '</span></span>' + icon('chevron', 'chev') + '</a>';
+      case 'zona': {
+        const z = miaZona(), zone = (ctx.api && ctx.api.zone) || [];
+        const serv = avvisiAttivi(ctx.avvisi.avvisi, iso).filter(function (a) { return a.servizio && perZona(a, z); });
+        if (!serv.length && (z || !zone.length)) return '';
+        let hz = '<h2 class="titolo-sez">' + esc(z ? t('zona.home.titolo', { z: z }) : t('zona.home.titolo0')) + '</h2>';
+        hz += serv.length ? '<div class="menu">' + serv.map(function (a) {
+          return '<a class="menu-row" href="#avvisi/' + esc(a.id) + '"><span class="menu-b" style="background:var(--c-' + esc(a.categoria) + ')"></span>' + icon(a.servizio === 'luce' ? 'fulmine' : a.servizio === 'acqua' ? 'goccia' : 'alert') +
+            '<span><strong>' + esc(pick(a.titolo)) + '</strong><small>' + esc(t('serv.' + a.servizio)) + (a.zone && a.zone.length ? ' · ' + esc(a.zone.join(', ')) : '') + ' · ' + esc(validita(a, iso)) + '</small></span>' + icon('chevron', 'chev') + '</a>';
+        }).join('') + '</div>' : '';
+        if (!z) hz += '<a class="pannello" href="#zona"><span class="ic-big" style="' + catStyle('extra') + '">' + icon('campana') + '</span><span><span class="k">' + esc(t('zona.home.k')) + '</span><span class="v">' + esc(t('zona.home.v')) + '</span></span>' + icon('chevron', 'chev') + '</a>';
+        return hz;
+      }
+      case 'consiglio': {
+        const pr = ctx.api && ctx.api.consiglio && ctx.api.consiglio.redazione && ctx.api.consiglio.redazione.prossima;
+        if (!pr || !pr.data || pr.data < iso || pr.data > O.addDays(iso, 14)) return '';
+        return '<a class="pannello" href="#consiglio"><span class="ic-big" style="' + catStyle('istituzionale') + '">' + icon('consiglio') + '</span><span><span class="k">' + esc(t('consiglio.prossima')) + '</span><span class="v">' +
+          esc(dateLabel(pr.data, { weekday: 'long' }) + (pr.ora ? ' · ' + pr.ora : '') + ' · ' + relDay(pr.data)) + '</span></span>' + icon('chevron', 'chev') + '</a>';
+      }
+      case 'whatsapp': {
+        const c = ctx.api && ctx.api.canali;
+        if (!c || !c.whatsapp) return '';
+        return '<a class="pannello" href="' + esc(c.whatsapp) + '" rel="noopener"><span class="ic-big" style="background:#1D7A4C;color:#fff">' + icon('chat') + '</span><span><span class="k">' + esc(t('canale.k')) + '</span><span class="v">' + esc(c.nome_whatsapp || t('canale.v')) + '</span></span>' + icon('link', 'chev') + '</a>';
+      }
       case 'sezioni':
         return '<h2 class="titolo-sez">' + esc(t('home.sections')) + '</h2><div class="tiles">' + SECTIONS.filter(function (s) { return !s.nascosta && s.id !== 'info' && s.id !== 'avvisi'; }).map(tile).join('') + '</div>';
     }
@@ -578,7 +643,7 @@
   }
 
   function renderHome(anteprima) {
-    return Promise.all(['meta', 'rifiuti', 'eventi', 'trasporti', 'home', 'regole', 'allerta', 'meteo'].map(loadJSON).concat([loadAPI(), tuttiAvvisi()])).then(function (r) {
+    return loadAPI().then(function () { return Promise.all(['meta', 'rifiuti', 'eventi', 'trasporti', 'home', 'regole', 'allerta', 'meteo'].map(loadJSON).concat([loadAPI(), tuttiAvvisi()])); }).then(function (r) {
       const ctx = { meta: r[0], rifiuti: r[1], eventi: r[2], trasporti: r[3], home: r[4], regole: r[5], allerta: r[6], meteo: r[7], api: r[8], avvisi: r[9], iso: today() };
       const cfg = ctx.api && ctx.api.home;
       const scelta = scegliModo(ctx.home, cfg, ctx.allerta, ctx.iso, anteprima);
@@ -755,12 +820,15 @@
     else if (page === 'inverno') p = renderInverno();
     else if (page === 'info') p = renderInfo();
     else if (page === 'post') p = window.PA_POST ? window.PA_POST.render(API, r.item) : Promise.resolve('');
+    else if (['albo', 'consiglio', 'mappa', 'zona'].indexOf(page) !== -1) p = window.PA_COMUNE ? window.PA_COMUNE.render(page, API, r.item) : Promise.resolve('');
     else p = renderSection(section(page));
     return p.then(function (html) {
       view.innerHTML = html;
       document.title = (page === 'home' ? 'Positano.app · ' + t('app.tagline') : t('sec.' + page) + ' · Positano.app');
       if (page === 'rifiuti') fillGlossario();
       if (page === 'post' && window.PA_POST) window.PA_POST.init(API, r.item);
+      if (window.PA_COMUNE && window.PA_COMUNE.init) window.PA_COMUNE.init(page, API, r.item);
+      conta(page);
       const target = r.item && page !== 'home' && page !== 'post' && (document.getElementById('v-' + r.item) || document.getElementById(r.item));
       if (target) {
         target.classList.add('flash');
@@ -776,7 +844,25 @@
   }
 
   /* Funzioni condivise con gli altri moduli (crea post). */
-  const API = { esc: esc, pick: pick, icon: icon, t: t, loadJSON: loadJSON, tuttiAvvisi: tuttiAvvisi, avvisiAttivi: avvisiAttivi, today: today, dateLabel: dateLabel, sectionHeader: function (id) { return sectionHeader(section(id)); }, toast: toast };
+  const API = { esc: esc, pick: pick, icon: icon, t: t, loadJSON: loadJSON, loadAPI: loadAPI, tuttiAvvisi: tuttiAvvisi, avvisiAttivi: avvisiAttivi, today: today, dateLabel: dateLabel,
+    sectionHeader: function (id, sotto) { return sectionHeader(section(id), null, sotto); }, toast: toast, catStyle: catStyle, banda: banda, mapHref: mapHref, fonteLine: fonteLine,
+    shareBtn: shareBtn, relDay: relDay, reportLine: reportLine, miaZona: miaZona, setZona: setZona, norm: norm, O: O, getLang: getLang, route: route };
+
+  /* Statistiche senza cookie: un contatore per sezione e giorno, nient'altro (niente IP, niente identificativi). */
+  let ultimaContata = '';
+  function conta(page) {
+    if (page === ultimaContata || !navigator.sendBeacon || location.hostname === 'localhost') return;
+    ultimaContata = page;
+    try { navigator.sendBeacon('api/visita', JSON.stringify({ s: page, l: getLang() })); } catch (e) { /* ignora */ }
+  }
+  /* Registro errori: solo messaggio e pagina, per correggere i difetti senza aspettare che qualcuno li racconti. */
+  let erroriInviati = 0;
+  function segnalaErrore(msg, dove) {
+    if (erroriInviati++ > 5 || location.hostname === 'localhost') return;
+    try { fetch('api/errore', { method: 'POST', body: JSON.stringify({ m: String(msg || '').slice(0, 300), d: String(dove || location.hash || '#home').slice(0, 120), v: (cache.meta && cache.meta.versione) || '' }), keepalive: true }); } catch (e) { /* ignora */ }
+  }
+  window.addEventListener('error', function (e) { segnalaErrore(e.message, (e.filename || '').split('/').pop() + ':' + e.lineno + ' ' + location.hash); });
+  window.addEventListener('unhandledrejection', function (e) { segnalaErrore('promise: ' + (e.reason && e.reason.message || e.reason), location.hash); });
 
   /* ---------- eventi UI ---------- */
   document.addEventListener('click', function (ev) {
@@ -805,6 +891,9 @@
     }
     const a = ev.target.closest('a[href^="#"]');
     if (a && a.closest('#search')) closeSearch();
+  });
+  document.addEventListener('change', function (ev) {
+    if (ev.target.matches && ev.target.matches('[data-zona]')) { setZona(ev.target.value); route(); }
   });
   document.addEventListener('input', function (ev) {
     if (ev.target.id === 'rifiuti-search') fillGlossario();

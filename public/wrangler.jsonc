@@ -18,6 +18,12 @@
       "database_id": "2b105646-b4a1-4fe3-b7e0-fda542f7d5bd"
     }
   ],
+  "ai": {
+    "binding": "AI"
+  },
+  "triggers": {
+    "crons": ["23 */2 * * *"]
+  },
   "compatibility_flags": [
     "nodejs_compat"
   ]

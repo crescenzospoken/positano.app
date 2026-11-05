@@ -3,6 +3,24 @@
 Tutte le modifiche rilevanti a questo progetto sono documentate qui.
 Formato ispirato a [Keep a Changelog](https://keepachangelog.com/it/); versioning [SemVer](https://semver.org/lang/it/).
 
+## [0.4.0] · 2026-11-05
+
+### Aggiunto
+- **Collegamento con Super Agenda** (funzione `export-pubblico`, solo campi pubblici): Albo, Consiglio comunale, feste e post del Comune, copiati ogni 2 ore dal cron del Worker.
+- **Albo pretorio**: atti in pubblicazione divisi per tipo, oggetti leggibili e spiegazione breve automatica (segnalata), link all'Albo ufficiale.
+- **Consiglio comunale**: prossima seduta (dal pannello o dalla convocazione all'Albo) con ordine del giorno e diretta; decisioni delle ultime sedute; in home nei 14 giorni prima.
+- **Proposte dai post del Comune**: nel pannello i post Instagram recenti diventano bozze di avviso con l'AI (Workers AI); la redazione controlla e pubblica.
+- **Zone e servizi**: avvisi per frazione e per servizio (acqua, luce, gas, strade); la tua zona sul telefono; blocco «Acqua, luce e strade» in home.
+- **Notifiche push** senza account (Web Push standard, cifratura RFC 8291 verificata sul vettore ufficiale, VAPID); invio dal pannello a tutti o per zona.
+- **Canale WhatsApp del Comune** in home e nella pagina zona, modificabile dal pannello.
+- **Mappa offline** in SVG: punti dai nostri dati e, con il workflow settimanale, costa, strade, fermate, defibrillatori e farmacie da OpenStreetMap.
+- **Inglese automatico** per gli avvisi senza traduzione, segnalato nell'app; pulsante «Traduci ora» nel pannello.
+- **Statistiche senza cookie** (contatori per giorno, pagina e lingua) e **registro errori** dai telefoni, nel tab «Stato» del pannello.
+- **Carte per l'adozione** in `docs/adozione/`: delibera, redazione, informativa, accessibilità, messa a disposizione, registro dei trattamenti.
+
+### Cambiato
+- Eventi: le feste del calendario del Comune sostituiscono le date stimate.
+
 ## [0.3.1] · 2026-11-05
 
 ### Cambiato

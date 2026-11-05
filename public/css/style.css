@@ -276,3 +276,39 @@ h1:focus,h3:focus,article:focus{outline:none}
 .bottomnav .nav-sos .ic{color:var(--c-emergenze)}
 .toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 14px);transform:translateX(-50%);background:var(--ink);color:#fff;padding:.55rem 1rem;border-radius:var(--r);font-size:.9rem;z-index:50}
 @media print{.topbar,.bottomnav,.acts,.sos{display:none}body{padding:0}}
+
+/* v0.4 · zona, Albo, Consiglio, mappa, notifiche */
+.zone-riga{display:flex;flex-wrap:wrap;gap:.35rem .8rem;margin:.1rem 0 .3rem;font-size:.88rem;color:var(--ink2)}
+.zone-riga span{display:inline-flex;align-items:center;gap:.25rem}
+.zone-riga .ic{width:16px;height:16px}
+.chip-serv{font-weight:700;color:var(--ink)}
+.scegli-zona{display:flex;flex-direction:column;gap:.3rem;font-weight:600;font-size:.9rem;margin:0 0 1rem}
+.scegli-zona select{font:inherit;font-weight:500;min-height:44px;padding:.45rem .6rem;border:1.5px solid var(--bordo-forte);background:var(--carta);color:var(--ink);border-radius:var(--r);max-width:24rem}
+.atto{background:var(--carta);border:1px solid var(--bordo);border-left:4px solid var(--c-istituzionale);padding:.8rem 1rem;display:flex;flex-direction:column;gap:.35rem}
+.atto h3{font:600 16px/1.35 var(--sans)}
+.atto-meta{font:700 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--teal-scuro)}
+.breve{font-size:.95rem}
+.ai-tag{display:inline-block;font:700 12px/1.3 var(--sans);padding:1px 6px;margin-right:.2rem;background:#EEF4F5;color:var(--teal-scuro);border:1px solid #C9DDE1}
+.seduta{background:var(--carta);border:1px solid var(--bordo);margin-bottom:1rem}
+.seduta .occhiello{display:flex;justify-content:space-between;gap:.5rem;padding:6px 12px;font:700 12px/16px var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.seduta .filo{height:3px;background:var(--filo)}
+.seduta .corpo{padding:.9rem 1rem;display:flex;flex-direction:column;gap:.5rem}
+.seduta h2{font:700 21px/1.25 var(--sans)}
+.seduta h3{font:700 15px/1.3 var(--sans);margin-top:.3rem}
+.odg,.delibere{margin:0;padding-left:1.4rem;display:flex;flex-direction:column;gap:.35rem}
+.seduta-passata{background:var(--carta);border:1px solid var(--bordo);margin-bottom:.6rem}
+.seduta-passata summary{cursor:pointer;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.5rem .9rem}
+.seduta-passata summary small{color:var(--ink2)}
+.seduta-passata .delibere{padding:.2rem 1rem .9rem 2.4rem;font-size:.93rem}
+.mappa{margin:0 0 1rem;background:var(--carta);border:1px solid var(--bordo)}
+.mappa svg{display:block;width:100%;height:auto}
+.mappa figcaption{padding:.5rem .8rem;margin:0}
+.punto-m{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:.35rem;vertical-align:-1px;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.titolo-sez .punto-m{margin-right:0}
+.riga-mappa{flex-wrap:wrap}
+.riga-azioni{display:flex;gap:.4rem;flex-wrap:wrap;flex-basis:100%;padding-left:2.2rem}
+.act.piccolo{min-height:44px;padding:.3rem .6rem;font-size:.82rem}
+.scheda-z{background:var(--carta);border:1px solid var(--bordo);padding:1rem;margin-bottom:1rem;display:flex;flex-direction:column;gap:.6rem}
+.scheda-z h2{font:700 18px/1.25 var(--sans);display:flex;align-items:center;gap:.4rem}
+.scheda-z .btn{align-self:flex-start}
+.ok-riga{display:flex;align-items:center;gap:.4rem;font-weight:700;color:var(--verde-ok)}

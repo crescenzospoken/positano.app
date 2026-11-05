@@ -21,8 +21,10 @@
         "allerta",
         "sos",
         "avvisi",
+        "zona",
         "protezione",
         "chiamo",
+        "whatsapp",
         "sezioni"
       ]
     },
@@ -53,9 +55,11 @@
       },
       "blocchi": [
         "avvisi",
+        "zona",
         "eventi",
         "partenze",
         "sos",
+        "whatsapp",
         "sezioni"
       ]
     },
@@ -78,11 +82,14 @@
         "sos",
         "allerta",
         "avvisi",
+        "zona",
         "eventi",
         "inverno",
         "partenze",
         "rifiuti",
+        "consiglio",
         "servizi",
+        "whatsapp",
         "sezioni"
       ]
     },
@@ -105,11 +112,13 @@
         "sos",
         "allerta",
         "avvisi",
+        "zona",
         "mare",
         "partenze",
         "regole",
         "eventi",
         "rifiuti",
+        "whatsapp",
         "sezioni"
       ]
     },
@@ -132,12 +141,15 @@
         "sos",
         "allerta",
         "avvisi",
+        "zona",
         "inverno",
         "rifiuti",
         "partenze",
         "regole",
         "eventi",
+        "consiglio",
         "servizi",
+        "whatsapp",
         "sezioni"
       ]
     },
@@ -156,11 +168,14 @@
         "sos",
         "allerta",
         "avvisi",
+        "zona",
         "rifiuti",
         "partenze",
         "regole",
         "eventi",
+        "consiglio",
         "servizi",
+        "whatsapp",
         "sezioni"
       ]
     }
