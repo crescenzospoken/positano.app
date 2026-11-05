@@ -10,7 +10,7 @@ const SHELL = [
   'icons/icon.svg', 'icons/icon-192.png', 'fonts/montserrat-latin.woff2', 'fonts/cormorant-garamond-latin.woff2',
   'data/numeri-utili.json', 'data/trasporti.json', 'data/rifiuti.json', 'data/spiagge.json', 'data/sentieri.json',
   'data/eventi.json', 'data/luoghi.json', 'data/comune.json', 'data/avvisi.json', 'data/meta.json',
-  'data/servizi.json', 'data/chi-chiamo.json', 'data/regole.json', 'data/home.json', 'data/allerta.json', 'data/meteo.json', 'data/avvisi-comune.json'
+  'data/servizi.json', 'data/chi-chiamo.json', 'data/regole.json', 'data/home.json', 'data/allerta.json', 'data/meteo.json', 'data/avvisi-comune.json', 'data/mappa.json'
 ];
 
 self.addEventListener('install', function (ev) {

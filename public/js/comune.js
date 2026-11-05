@@ -144,9 +144,11 @@
   function renderMappa(A, item) {
     return Promise.all([A.loadJSON('mappa'), puntiNostri(A)]).then(function (r) {
       const esc = A.esc, t = A.t, osm = r[0];
+      const bb = [40.6178, 14.4705, 40.6372, 14.5125]; // Positano con Montepertuso, Nocelle e Laurito
+      const dentro = function (p) { return p.lat >= bb[0] && p.lat <= bb[2] && p.lon >= bb[1] && p.lon <= bb[3]; };
       let punti = r[1].concat(osm && osm.punti ? osm.punti.filter(function (p) { return p.tipo !== 'spiaggia' || !r[1].some(function (q) { return q.tipo === 'spiaggia' && Math.abs(q.lat - p.lat) < 0.002 && Math.abs(q.lon - p.lon) < 0.002; }); }) : []);
+      punti = punti.filter(dentro);
       const tipi = Object.keys(TIPI_MAPPA).filter(function (k) { return punti.some(function (p) { return p.tipo === k; }); });
-      const bb = osm && osm.bbox || [40.6155, 14.47, 40.642, 14.542];
       const W = 1000, kx = Math.cos(40.63 * Math.PI / 180), H = Math.round(W * (bb[2] - bb[0]) / ((bb[3] - bb[1]) * kx));
       const X = function (lon) { return ((lon - bb[1]) / (bb[3] - bb[1]) * W).toFixed(1); };
       const Y = function (lat) { return ((bb[2] - lat) / (bb[2] - bb[0]) * H).toFixed(1); };
@@ -155,10 +157,11 @@
       let h = A.sectionHeader('mappa', t('mappa.intro'));
       h += '<div class="filtri" role="group" aria-label="' + esc(t('mappa.filtra')) + '"><button type="button" class="filtro" data-filtro-mappa="" aria-pressed="' + (!filtroMappa) + '">' + esc(t('mappa.tutto')) + '</button>' +
         tipi.map(function (k) { return '<button type="button" class="filtro" data-filtro-mappa="' + k + '" aria-pressed="' + (filtroMappa === k) + '"><i class="punto-m" style="background:' + TIPI_MAPPA[k].c + '"></i>' + esc(t('mappa.t.' + k)) + '</button>'; }).join('') + '</div>';
-      h += '<figure class="mappa"><svg viewBox="0 0 ' + W + ' ' + H + '" role="group" aria-label="' + esc(t('mappa.svg')) + '"><rect width="' + W + '" height="' + H + '" fill="#DCEBF2"/>';
+      h += '<figure class="mappa"><svg viewBox="0 0 ' + W + ' ' + H + '" role="group" aria-label="' + esc(t('mappa.svg')) + '"><rect width="' + W + '" height="' + H + '" fill="#EFECE4"/>';
       if (osm && osm.costa) {
-        h += '<path d="' + osm.costa.map(linea).join('') + '" fill="none" stroke="#7FA9BC" stroke-width="3"/>';
-        h += (osm.strade || []).map(function (s) { return '<path d="' + linea(s.l) + '" fill="none" stroke="' + (s.k ? '#FFFFFF' : '#F5F2EC') + '" stroke-width="' + (s.k ? 7 : 3.5) + '" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>'; }).join('');
+        h += '<path d="' + osm.costa.map(linea).join('') + '" fill="none" stroke="#9CC6DA" stroke-width="22" stroke-linejoin="round"/><path d="' + osm.costa.map(linea).join('') + '" fill="none" stroke="#3F86A8" stroke-width="3"/>';
+        h += (osm.strade || []).map(function (s) { return '<path d="' + linea(s.l) + '" fill="none" stroke="#C9C3B6" stroke-width="' + (s.k ? 9 : 5) + '" stroke-linecap="round" stroke-linejoin="round"/>'; }).join('');
+        h += (osm.strade || []).map(function (s) { return '<path d="' + linea(s.l) + '" fill="none" stroke="#FFFFFF" stroke-width="' + (s.k ? 6 : 2.5) + '" stroke-linecap="round" stroke-linejoin="round"/>'; }).join('');
       }
       vis.forEach(function (p, i) {
         const tp = TIPI_MAPPA[p.tipo] || TIPI_MAPPA.luogo;
