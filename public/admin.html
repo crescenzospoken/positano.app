@@ -31,6 +31,20 @@
     .piccolo{font-size:.82rem;color:var(--ink2)}
     .registro td{padding:.35rem .5rem;border-top:1px solid var(--bordo);font-size:.85rem;vertical-align:top}
     .tabella{overflow-x:auto;background:var(--carta);border:1px solid var(--bordo)}
+    .proposte{display:grid;gap:.7rem}
+    .post-ig{display:flex;gap:.8rem;background:var(--carta);border:1px solid var(--bordo);padding:.7rem}
+    .post-ig img{width:120px;height:150px;object-fit:cover;flex:none;background:var(--fondo)}
+    .post-ig > div{display:flex;flex-direction:column;gap:.35rem;min-width:0}
+    .testo-ig{font-size:.88rem;color:var(--ink2);white-space:pre-line;overflow-wrap:anywhere}
+    @media (max-width:520px){.post-ig{flex-direction:column}.post-ig img{width:100%;height:220px}}
+    .zone-scelta{border:1px solid var(--bordo);padding:.5rem .7rem;display:flex;flex-wrap:wrap;gap:.3rem .9rem;font-size:.88rem}
+    .zone-scelta legend{font-weight:600;padding:0 .3rem}
+    .zone-scelta label{flex-direction:row !important;align-items:center;gap:.3rem !important;font-weight:400 !important}
+    .zone-scelta input{min-height:auto !important}
+    .barre{display:flex;align-items:flex-end;gap:3px;height:140px;background:var(--carta);border:1px solid var(--bordo);padding:.5rem}
+    .barre div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:2px}
+    .barre i{display:block;width:100%;background:var(--teal);min-height:2px}
+    .barre span{font-size:12px;color:var(--ink2)}
   </style>
 </head>
 <body>
@@ -64,7 +78,11 @@
       <nav class="tabs" role="tablist">
         <button role="tab" data-tab="aperture" aria-selected="true">Aperture invernali</button>
         <button role="tab" data-tab="avvisi" aria-selected="false">Avvisi</button>
+        <button role="tab" data-tab="proposte" aria-selected="false">Dai post del Comune</button>
+        <button role="tab" data-tab="notifiche" aria-selected="false">Notifiche</button>
+        <button role="tab" data-tab="comune" aria-selected="false">Consiglio e canali</button>
         <button role="tab" data-tab="home" aria-selected="false">Home</button>
+        <button role="tab" data-tab="stato" aria-selected="false">Stato</button>
         <button role="tab" data-tab="registro" aria-selected="false">Registro</button>
       </nav>
       <div id="tab"></div>

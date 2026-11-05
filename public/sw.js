@@ -4,9 +4,9 @@
      Se la rete non risponde entro 3 secondi si usa la copia: in spiaggia con una tacca non si aspetta. */
 'use strict';
 
-const VERSIONE = 'positano-v0.3.1';
+const VERSIONE = 'positano-v0.4.0';
 const SHELL = [
-  './', 'index.html', 'css/style.css', 'js/app.js', 'js/i18n.js', 'js/oggi.js', 'js/post.js', 'manifest.webmanifest',
+  './', 'index.html', 'css/style.css', 'js/app.js', 'js/i18n.js', 'js/oggi.js', 'js/post.js', 'js/comune.js', 'manifest.webmanifest',
   'icons/icon.svg', 'icons/icon-192.png', 'fonts/montserrat-latin.woff2', 'fonts/cormorant-garamond-latin.woff2',
   'data/numeri-utili.json', 'data/trasporti.json', 'data/rifiuti.json', 'data/spiagge.json', 'data/sentieri.json',
   'data/eventi.json', 'data/luoghi.json', 'data/comune.json', 'data/avvisi.json', 'data/meta.json',
@@ -56,4 +56,21 @@ self.addEventListener('fetch', function (ev) {
       return caches.match(chiave).then(function (cached) { return cached || rete; });
     })
   );
+});
+
+/* Notifiche push del Comune: titolo, testo e pagina dell'app da aprire. */
+self.addEventListener('push', function (ev) {
+  let d = {};
+  try { d = ev.data ? ev.data.json() : {}; } catch (e) { d = { titolo: ev.data ? ev.data.text() : '' }; }
+  ev.waitUntil(self.registration.showNotification(d.titolo || 'Positano.app', {
+    body: d.testo || '', icon: 'icons/icon-192.png', badge: 'icons/icon-192.png', tag: d.tag || 'positano', data: { url: d.url || '#avvisi' }, lang: 'it'
+  }));
+});
+self.addEventListener('notificationclick', function (ev) {
+  ev.notification.close();
+  const dest = new URL('./' + ((ev.notification.data && ev.notification.data.url) || ''), self.registration.scope).href;
+  ev.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (list) {
+    for (const c of list) { if ('focus' in c) { c.navigate(dest).catch(function () {}); return c.focus(); } }
+    return self.clients.openWindow(dest);
+  }));
 });

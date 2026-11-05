@@ -1,0 +1,34 @@
+name: Mappa offline
+
+# Una volta a settimana (e a mano): scarica da OpenStreetMap costa, strade e punti utili
+# e aggiorna public/data/mappa.json. Il telefono di chi usa l'app non contatta mai OpenStreetMap.
+on:
+  schedule:
+    - cron: '41 5 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aggiorna-dati
+  cancel-in-progress: false
+
+jobs:
+  mappa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/mappa.mjs
+      - name: Pubblica se cambiata
+        run: |
+          git config user.name "positano-app bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/mappa.json
+          if git diff --cached --quiet; then echo "Niente di nuovo"; exit 0; fi
+          git commit -m "dati: mappa offline da OpenStreetMap"
+          git pull --rebase origin main
+          git push

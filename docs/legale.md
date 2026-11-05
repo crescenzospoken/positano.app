@@ -13,9 +13,10 @@ Perché un'app civica come questa resta inattaccabile, oggi da progetto civico e
 - ⚖️ Se il Comune adotta l'app, una delibera di Giunta indica l'ufficio responsabile dei contenuti e chi può accedere al pannello (come per i social).
 
 ## 3. Privacy (GDPR)
-- Nessun account, nessun cookie, nessuna statistica per chi usa l'app. I caratteri sono ospitati nell'app (niente Google Fonts, che manda l'IP a Google: LG München, 20/1/2022). Meteo e allerte li scarica il server, non il telefono.
+- Nessun account e nessun cookie per chi usa l'app. Le statistiche (v0.4) sono solo contatori per giorno, sezione e lingua: niente IP, niente identificativi, niente cookie, quindi nessun consenso necessario (art. 122 Codice privacy, linee guida Garante 10/6/2021 sui cookie analitici anonimi). Il registro errori salva solo messaggio tecnico e pagina. I caratteri sono ospitati nell'app (niente Google Fonts, che manda l'IP a Google: LG München, 20/1/2022). Meteo e allerte li scarica il server, non il telefono.
 - L'IP della richiesta arriva comunque al server che ospita l'app (CGUE C-582/14, Breyer): l'informativa lo dice. Formula corretta: «non trattiamo dati personali conferiti dagli utenti».
 - Il pannello usa un solo cookie tecnico per chi accede; password salvate solo come hash (PBKDF2), blocco dopo 8 tentativi.
+- Notifiche push (v0.4): facoltative, chieste dal browser con il suo consenso esplicito. Si conservano solo l'indirizzo tecnico creato dal browser (pseudonimo) e la zona scelta; si cancellano con «Disattiva» o quando il servizio push le dà per scadute. Gli invii passano dai servizi push di Google, Apple o Mozilla (cifrati end-to-end, RFC 8291: loro non leggono il testo). ⚖️ Con l'adozione vanno nell'informativa e nel registro dei trattamenti (bozze in `docs/adozione/`).
 - Elenco dei locali aperti: dati di attività economiche comunicati da loro stesse; nessun cellulare personale.
 
 ## 4. Parità di trattamento
@@ -38,7 +39,13 @@ Perché un'app civica come questa resta inattaccabile, oggi da progetto civico e
 
 ## 9. Intelligenza artificiale (AI Act, art. 50)
 - Molti testi sono stati preparati con l'AI e sono rivisti da persone: l'app lo dichiara nella pagina «Il progetto». I contenuti pubblicati dal pannello li scrive e li firma chi accede.
+- v0.4 usa l'AI (Workers AI di Cloudflare, modello Llama aperto, nessun dato personale) in tre punti, sempre dichiarati: bozza di avviso da un post del Comune (la redazione controlla e pubblica: decide una persona), traduzione inglese quando manca («Traduzione automatica» sotto il testo), spiegazione breve degli atti dell'Albo («In breve (automatico)», con l'avvertenza che fa fede l'atto). Nessuna decisione automatizzata su persone (art. 22 GDPR non si applica).
 
 ## 10. Stemma
 - Lo stemma è un segno del Comune: nell'app firma solo i contenuti dell'ente e il generatore di post per i canali del Comune. Non è il marchio dell'app finché un atto non la adotta.
 - Nota: lo stemma del sito istituzionale ha lo scudo argento; quello dei preset Canva lo ha rosso. Va scelta la versione ufficiale (statuto comunale).
+
+## 11. Collegamento con Super Agenda (v0.4)
+- Albo, Consiglio, feste e post del Comune arrivano da Super Agenda tramite la funzione `export-pubblico` (codice in `integrazioni/superagenda/`), che espone solo campi già pubblici, scelti uno per uno: atti in pubblicazione (esclusi matrimoni, depositi alla casa comunale, elenchi abusi e determinazioni, che possono contenere nomi di privati), delibere e convocazioni del Consiglio, titoli e date delle feste, post pubblici del Comune. Niente descrizioni interne, niente persone.
+- Gli atti dell'Albo compaiono solo finché sono in pubblicazione: l'app non crea un archivio parallelo di dati personali oltre i termini (art. 124 TUEL, linee guida Garante 2014 sulla trasparenza).
+- ⚖️ Neutralità: Super Agenda è lo strumento del gruppo di maggioranza. I dati che passano sono pubblici e istituzionali, ma con l'adozione la fonte va resa istituzionale: lettura diretta dell'Albo e dei canali del Comune, oppure un'istanza del ponte intestata al Comune. Il codice è già separato per farlo senza toccare l'app.
