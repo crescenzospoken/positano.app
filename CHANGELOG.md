@@ -3,6 +3,14 @@
 Tutte le modifiche rilevanti a questo progetto sono documentate qui.
 Formato ispirato a [Keep a Changelog](https://keepachangelog.com/it/); versioning [SemVer](https://semver.org/lang/it/).
 
+## [0.5.0] · 2026-11-05
+
+### Cambiato
+- **Niente più collegamento con Super Agenda**: l'app usa solo fonti istituzionali o link sostituibili.
+- **Osservatore dell'Albo pretorio** dentro l'app: il Worker legge la pagina pubblica del portale del Comune ogni 2 ore e conserva un archivio proprio dei metadati (niente allegati, niente categorie con nomi di privati). Albo e Consiglio vengono da lì.
+- **Calendari pubblici** di feste ed eventi collegati con un link .ics inserito e sostituibile dal pannello.
+- **Proposte**: dagli avvisi del sito del Comune o da un testo incollato (post, comunicati), con bozza AI da approvare.
+
 ## [0.4.0] · 2026-11-05
 
 ### Aggiunto

@@ -249,37 +249,43 @@
     }).catch(errore);
   }
 
-  /* ---------- proposte dai post Instagram del Comune ---------- */
+  /* ---------- proposte: avvisi del sito del Comune e testi incollati ---------- */
   function tabProposte() {
     Promise.all([api('GET', 'proposte'), api('GET', 'config')]).then(function (r) {
       const d = r[0]; dati.config = r[1]; dati.post = d.post;
       const nuovi = d.post.filter(function (p) { return !p.gestita; }), fatti = d.post.filter(function (p) { return p.gestita; });
-      let h = '<p class="note" style="margin-bottom:.8rem">I post del Comune degli ultimi 45 giorni (da Super Agenda). Per ognuno: «Prepara l\'avviso» scrive una bozza ' +
-        (d.ai ? 'con l\'intelligenza artificiale' : '(AI non disponibile ora: parte dal titolo del post)') + ', che controlli e pubblichi tu; oppure «Non serve».</p><div id="form-a"></div>';
-      h += '<h2 class="titolo-sez">Da guardare · ' + nuovi.length + '</h2>' + (nuovi.length ? '<div class="proposte">' + nuovi.map(cardPost).join('') + '</div>' : '<p class="note">Niente di nuovo.</p>');
+      let h = '<p class="note" style="margin-bottom:.8rem">Da qui un testo del Comune diventa un avviso dell\'app con zone e servizio. «Prepara l\'avviso» scrive una bozza ' +
+        (d.ai ? 'con l\'intelligenza artificiale' : '(AI non disponibile ora: parte dal titolo)') + ', che controlli e pubblichi tu.</p><div id="form-a"></div>';
+      h += '<form class="scheda" id="f-incolla"><h2 class="titolo-sez" style="margin-top:0">Da un testo</h2><p class="piccolo">Incolla un post, un comunicato o un messaggio del Comune.</p>' +
+        '<label>Testo<textarea name="testo" rows="5" maxlength="5000" required></textarea></label><label>Link all\'originale (facoltativo)<input name="link" maxlength="500" placeholder="https://…"></label>' +
+        '<div class="post-azioni"><button class="btn" type="submit">Prepara l\'avviso</button></div><p id="inc-msg" class="errore" role="alert"></p></form>';
+      h += '<h2 class="titolo-sez">Dal sito del Comune · da guardare ' + nuovi.length + '</h2>' + (nuovi.length ? '<div class="elenco">' + nuovi.map(rigaSito).join('') + '</div>' : '<p class="note">Niente di nuovo.</p>');
       if (fatti.length) h += '<details style="margin-top:1rem"><summary style="cursor:pointer;font-weight:600;min-height:44px">Già trattati · ' + fatti.length + '</summary><div class="elenco">' + fatti.map(function (p) {
-        return '<div class="riga-l"><div><strong>' + esc(p.titolo || p.testo.slice(0, 80)) + '</strong><small>' + dataIt(p.quando.slice(0, 10)) + ' · ' + (p.gestita.esito === 'avviso' ? 'diventato avviso' : 'non serviva') + ' · ' + esc(p.gestita.chi) + '</small></div>' +
+        return '<div class="riga-l"><div><strong>' + esc(p.titolo) + '</strong><small>' + dataIt(p.quando) + ' · ' + (p.gestita.esito === 'avviso' ? 'diventato avviso' : 'non serviva') + ' · ' + esc(p.gestita.chi) + '</small></div>' +
           '<button class="btn secondario" data-ripristina="' + esc(p.id) + '">Rimetti tra i nuovi</button></div>';
       }).join('') + '</div></details>';
       $('tab').innerHTML = h;
-      document.querySelectorAll('[data-prepara]').forEach(function (b) { b.onclick = function () { prepara(b.getAttribute('data-prepara'), b); }; });
+      $('f-incolla').onsubmit = function (e) {
+        e.preventDefault();
+        const fd = new FormData(this), btn = this.querySelector('button');
+        prepara({ id: 'testo', titolo: '', testo: fd.get('testo'), link: fd.get('link'), quando: oggi() }, btn, null);
+      };
+      document.querySelectorAll('[data-prepara]').forEach(function (b) { b.onclick = function () { prepara(dati.post.find(function (x) { return x.id === b.getAttribute('data-prepara'); }), b, true); }; });
       document.querySelectorAll('[data-ignora]').forEach(function (b) { b.onclick = function () { api('POST', 'proposte/' + b.getAttribute('data-ignora') + '/ignora', {}).then(tabProposte).catch(errore); }; });
       document.querySelectorAll('[data-ripristina]').forEach(function (b) { b.onclick = function () { api('POST', 'proposte/' + b.getAttribute('data-ripristina') + '/ripristina', {}).then(tabProposte).catch(errore); }; });
     }).catch(errore);
   }
-  function cardPost(p) {
-    return '<article class="post-ig">' + (p.foto ? '<img src="' + esc(p.foto) + '" alt="' + esc(p.alt || '') + '" loading="lazy" width="120" height="150">' : '') +
-      '<div><p class="piccolo">' + esc(new Date(p.quando).toLocaleString('it-IT', { timeZone: 'Europe/Rome', dateStyle: 'medium', timeStyle: 'short' })) + ' · <a href="' + esc(p.permalink) + '" target="_blank" rel="noopener">apri il post</a></p>' +
-      '<strong>' + esc(p.titolo || '') + '</strong><p class="testo-ig">' + esc(p.testo.slice(0, 280)) + (p.testo.length > 280 ? '…' : '') + '</p>' +
-      '<div class="post-azioni"><button class="btn" data-prepara="' + esc(p.id) + '">Prepara l\'avviso</button><button class="btn secondario" data-ignora="' + esc(p.id) + '">Non serve</button></div></div></article>';
+  function rigaSito(p) {
+    return '<div class="riga-l"><div><strong>' + esc(p.titolo) + '</strong><small>' + dataIt(p.quando) + ' · <a href="' + esc(p.link) + '" target="_blank" rel="noopener">apri sul sito</a></small></div>' +
+      '<div class="post-azioni"><button class="btn" data-prepara="' + esc(p.id) + '">Prepara l\'avviso</button><button class="btn secondario" data-ignora="' + esc(p.id) + '">Non serve</button></div></div>';
   }
-  function prepara(id, b) {
-    const p = dati.post.find(function (x) { return x.id === id; });
+  function prepara(p, b, sito) {
+    const testoB = b.textContent;
     b.disabled = true; b.textContent = 'Preparo la bozza…';
-    api('POST', 'proposte/' + id + '/prepara', { quando: p.quando, titolo: p.titolo, testo: p.testo, testo_immagine: p.testo_immagine }).then(function (z) {
-      formAvviso(Object.assign({ stato: 'attivo', priorita: 0, visibile: true, aggiornamenti: [], fonte_nome: 'Instagram del Comune di Positano', fonte_url: p.permalink, ig_id: p.id }, z), tabProposte);
-      $('f-a').insertAdjacentHTML('afterbegin', '<p class="callout">' + (z.ai ? 'Bozza scritta in automatico dal post: <strong>controlla date, zone e testo</strong> prima di pubblicare.' : 'Bozza dal titolo del post: completa testo e date.') + '</p>');
-    }).catch(function (err) { toast(err.message); }).then(function () { b.disabled = false; b.textContent = 'Prepara l\'avviso'; });
+    api('POST', 'proposte/' + p.id + '/prepara', { quando: p.quando, titolo: p.titolo, testo: p.testo || '', link: p.link || '' }).then(function (z) {
+      formAvviso(Object.assign({ stato: 'attivo', priorita: 0, visibile: true, aggiornamenti: [], fonte_nome: sito ? 'Sito del Comune di Positano' : 'Comune di Positano', fonte_url: p.link || '', ig_id: sito ? p.id : null }, z), tabProposte);
+      $('f-a').insertAdjacentHTML('afterbegin', '<p class="callout">' + (z.ai ? 'Bozza scritta in automatico: <strong>controlla date, zone e testo</strong> prima di pubblicare.' : 'Bozza dal titolo: completa testo e date.') + '</p>');
+    }).catch(function (err) { toast(err.message); }).then(function () { b.disabled = false; b.textContent = testoB; });
   }
 
   /* ---------- notifiche ---------- */
@@ -325,7 +331,7 @@
       dati.config = c;
       const cs = c.consiglio || {}, pr = cs.prossima || {}, ca = c.canali || {};
       $('tab').innerHTML = '<form class="scheda" id="f-cons"><h2 class="titolo-sez" style="margin-top:0">Prossimo Consiglio comunale</h2>' +
-        '<p class="piccolo">Compare nella pagina Consiglio e, nei 14 giorni prima, anche in home. Le convocazioni e le delibere arrivano da sole dall\'Albo (tramite Super Agenda).</p>' +
+        '<p class="piccolo">Compare nella pagina Consiglio e, nei 14 giorni prima, anche in home. Le convocazioni e le delibere arrivano da sole dall\'Albo pretorio.</p>' +
         '<div class="due"><label>Data<input type="date" name="data" value="' + esc(pr.data || '') + '"></label><label>Ora<input type="time" name="ora" value="' + esc(pr.ora || '') + '"></label>' +
         '<label>Luogo<input name="luogo" maxlength="120" value="' + esc(pr.luogo || 'Sala consiliare «Andrea Milano»') + '"></label></div>' +
         '<label>Ordine del giorno (un punto per riga)<textarea name="odg" rows="5" maxlength="1500">' + esc(pr.odg || '') + '</textarea></label>' +
@@ -336,6 +342,9 @@
         '<label>Link del canale<input name="whatsapp" maxlength="200" value="' + esc(ca.whatsapp || '') + '" placeholder="https://whatsapp.com/channel/…"></label>' +
         '<label>Testo del riquadro (facoltativo)<input name="nome_whatsapp" maxlength="80" value="' + esc(ca.nome_whatsapp || '') + '" placeholder="Gli avvisi ufficiali, direttamente su WhatsApp"></label>' +
         '<div class="post-azioni"><button class="btn" type="submit">Salva</button></div><p id="can-msg" class="errore" role="alert"></p></form>' +
+        '<form class="scheda" id="f-cal"><h2 class="titolo-sez" style="margin-top:0">Calendari pubblici (feste ed eventi)</h2><p class="piccolo">Un calendario per riga: <code>Nome | link .ics</code>. Funziona con qualsiasi calendario pubblico (Google Calendar: Impostazioni del calendario › «Indirizzo pubblico in formato iCal»). Per cambiarlo basta sostituire il link. Le date entrano negli Eventi e sostituiscono quelle stimate.</p>' +
+        '<label>Calendari<textarea name="cal" rows="4" placeholder="Feste positanesi | https://calendar.google.com/calendar/ical/…/public/basic.ics">' + esc((c.calendari || []).map(function (x) { return x.nome + ' | ' + x.url; }).join('\n')) + '</textarea></label>' +
+        '<div class="post-azioni"><button class="btn" type="submit">Salva</button></div><p id="cal-msg" class="errore" role="alert"></p></form>' +
         '<form class="scheda" id="f-zone"><h2 class="titolo-sez" style="margin-top:0">Zone del paese</h2><p class="piccolo">Usate per gli avvisi e per le notifiche per zona. Una per riga. Cambiare un nome stacca gli iscritti da quella zona.</p>' +
         '<label>Zone<textarea name="zone" rows="8">' + esc((c.zone || []).join('\n')) + '</textarea></label><div class="post-azioni"><button class="btn" type="submit">Salva</button></div><p id="z-msg" class="errore" role="alert"></p></form>';
       const salvaCons = function (senzaSeduta) {
@@ -348,6 +357,16 @@
       $('f-can').onsubmit = function (e) {
         e.preventDefault(); const fd = new FormData(this);
         api('PUT', 'config/canali', { whatsapp: fd.get('whatsapp'), nome_whatsapp: fd.get('nome_whatsapp') }).then(function () { toast('Salvato'); }).catch(function (err) { $('can-msg').textContent = err.message; });
+      };
+      $('f-cal').onsubmit = function (e) {
+        e.preventDefault(); const fd = new FormData(this);
+        const cal = String(fd.get('cal') || '').split('\n').map(function (r) { return r.trim(); }).filter(Boolean).map(function (r) {
+          const i = r.lastIndexOf('|'); return i > 0 ? { nome: r.slice(0, i).trim(), url: r.slice(i + 1).trim() } : { nome: 'Calendario', url: r };
+        });
+        api('PUT', 'config/calendari', { calendari: cal }).then(function () { return api('POST', 'fonti/aggiorna', {}); }).then(function (r) {
+          const ko = (r.calendari.esiti || []).filter(function (x) { return !x.ok; });
+          toast(ko.length ? 'Salvato, ma non leggo: ' + ko.map(function (x) { return x.nome + ' (' + x.errore + ')'; }).join(', ') : 'Salvato: ' + r.calendari.eventi + ' eventi letti');
+        }).catch(function (err) { $('cal-msg').textContent = err.message; });
       };
       $('f-zone').onsubmit = function (e) {
         e.preventDefault(); const fd = new FormData(this);
@@ -363,7 +382,8 @@
       let h = '<p class="note" style="margin-bottom:.8rem">Contatori anonimi degli ultimi 30 giorni: quante volte è stata aperta ogni pagina. Nessun cookie, nessun indirizzo IP, nessun identificativo.</p>';
       h += '<div class="due"><div class="scheda"><strong>' + tot + '</strong> pagine aperte<br><span class="piccolo">' + s.lingue.map(function (l) { return (l.lingua === 'en' ? 'inglese ' : 'italiano ') + l.n; }).join(' · ') + '</span></div>' +
         '<div class="scheda"><strong>' + s.iscritti + '</strong> iscritti alle notifiche</div>' +
-        '<div class="scheda">Super Agenda: ' + (s.superagenda ? 'letto ' + esc(new Date(s.superagenda.letto).toLocaleString('it-IT', { timeZone: 'Europe/Rome' })) + ' · ' + s.superagenda.albo + ' atti, ' + s.superagenda.feste + ' feste' : 'mai letto') +
+        '<div class="scheda">Albo pretorio: ' + (s.albo.letto ? 'letto ' + esc(new Date(s.albo.letto).toLocaleString('it-IT', { timeZone: 'Europe/Rome' })) + ' · ' + s.albo.righe + ' righe, ' + s.albo.conservati + ' atti utili' : 'mai letto') + ' · archivio: ' + s.albo.archivio + ' atti' +
+        '<br>Calendari: ' + (s.calendari ? s.calendari.esiti.map(function (c) { return esc(c.nome) + (c.ok ? ' ' + c.eventi + ' eventi' : ' <b>errore</b> ' + esc(c.errore)); }).join(' · ') || 'nessun link' : 'mai letti') +
         '<br><button class="btn secondario" id="sa-ora" style="margin-top:.4rem">Aggiorna ora</button></div>' +
         '<div class="scheda">Intelligenza artificiale: ' + (s.ai ? 'disponibile' : 'non disponibile') + '</div></div>';
       if (s.giorni.length) h += '<h2 class="titolo-sez">Per giorno</h2><div class="barre">' + s.giorni.map(function (g) { return '<div title="' + esc(g.giorno) + ': ' + g.n + '"><i style="height:' + Math.round(g.n / max * 100) + '%"></i><span>' + Number(g.giorno.slice(8)) + '</span></div>'; }).join('') + '</div>';
@@ -374,7 +394,7 @@
       $('tab').innerHTML = h;
       $('sa-ora').onclick = function () {
         const b = this; b.disabled = true; b.textContent = 'Aggiorno…';
-        api('POST', 'superagenda/aggiorna', {}).then(function (r) { toast('Aggiornato: ' + r.albo + ' atti, ' + r.feste + ' feste, ' + r.spiegati + ' spiegazioni nuove'); tabStato(); }).catch(function (err) { toast(err.message); b.disabled = false; b.textContent = 'Aggiorna ora'; });
+        api('POST', 'fonti/aggiorna', {}).then(function (r) { toast(r.albo.errore ? 'Albo: ' + r.albo.errore : 'Albo: ' + r.albo.conservati + ' atti, ' + r.albo.spiegati + ' spiegazioni nuove'); tabStato(); }).catch(function (err) { toast(err.message); b.disabled = false; b.textContent = 'Aggiorna ora'; });
       };
     }).catch(errore);
   }

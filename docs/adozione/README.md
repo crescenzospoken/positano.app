@@ -16,7 +16,7 @@ Bozze di lavoro, **da verificare con il Segretario comunale, il DPO e il respons
 ## Cose tecniche da fare all'adozione (mezza giornata)
 - Trasferire il repository GitHub a un'organizzazione del Comune (la licenza EUPL resta).
 - Spostare l'hosting su un servizio cloud qualificato ACN, o qualificare quello in uso (vedi `legale.md` § 7).
-- Rendere istituzionale la fonte di Albo, Consiglio e feste (oggi passa da Super Agenda: `legale.md` § 11).
+- Collegare nel pannello i calendari pubblici del Comune (link .ics) per feste ed eventi (`legale.md` § 11).
 - Dominio dell'ente (per esempio un sottodominio del sito comunale): da decidere.
 - Creare gli account della redazione dal pannello e togliere quelli personali di sviluppo.
 - Pubblicare in Amministrazione trasparente l'atto di adozione e la dichiarazione sul conflitto d'interessi.

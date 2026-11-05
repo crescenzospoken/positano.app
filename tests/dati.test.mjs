@@ -9,7 +9,7 @@ const load = f => JSON.parse(readFileSync(new URL(f, dir), 'utf8'));
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 const ISO_ORA = /^\d{4}-\d{2}-\d{2}(T[\d:.]+Z)?$/;
 // File scritti dalle automazioni: titoli presi tali e quali dalle fonti (solo italiano), date con l'ora.
-const GENERATI = ['avvisi-comune.json', 'allerta.json', 'meteo.json'];
+const GENERATI = ['avvisi-comune.json', 'allerta.json', 'meteo.json', 'mappa.json'];
 const TESTO = ['nome', 'titolo', 'nota', 'sottotitolo', 'testo', 'intro', 'orari', 'luogo', 'voce', 'dove', 'esposizione', 'avviso', 'da'];
 
 function walk(x, path, out) {

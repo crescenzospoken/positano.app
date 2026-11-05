@@ -284,14 +284,14 @@
     list = unisciFeste(list, (cache._api && cache._api.feste) || [], iso);
     return list.sort(function (a, b) { return a._da.localeCompare(b._da); });
   }
-  /* Feste dal calendario del Comune in Super Agenda: date vere al posto di quelle stimate, senza doppioni. */
+  /* Feste dai calendari pubblici collegati nel pannello (link .ics): date vere al posto di quelle stimate, senza doppioni. */
   const PAROLE_VUOTE = ['festa', 'della', 'delle', 'dello', 'chiesa', 'nuova', 'martire', 'apostolo', 'madonna', 'santa', 'santo', 'maria'];
   function paroleChiave(s) { return norm(s).replace(/[^a-z ]/g, ' ').split(/\s+/).filter(function (w) { return w.length > 4 && PAROLE_VUOTE.indexOf(w) === -1; }); }
   function unisciFeste(list, feste, iso) {
     feste.forEach(function (f) {
       if (!f.inizio) return;
-      const da = O.isoRome(new Date(f.inizio));
-      let a = f.fine ? O.isoRome(new Date(new Date(f.fine).getTime() - (f.tutto_il_giorno ? 1000 : 0))) : da;
+      const da = String(f.inizio).slice(0, 10);
+      let a = f.fine ? String(f.fine).slice(0, 10) : da;
       if (a < da) a = da;
       if (a < iso) return;
       const pc = paroleChiave(f.titolo);
@@ -299,7 +299,7 @@
       if (simile && !simile._stimata) return;
       const ev = { id: simile ? simile.id : 'sa-' + norm(f.titolo).replace(/[^a-z0-9]+/g, '-').slice(0, 40), titolo: simile ? simile.titolo : { it: f.titolo }, luogo: simile ? simile.luogo : (f.luogo ? { it: f.luogo } : null),
         coord: simile && simile.coord, nota: simile && simile.nota, web: simile && simile.web, _da: da, _a: a, _stimata: false,
-        fonte: { nome: { it: 'Calendario delle feste del Comune', en: 'Town feast calendar' } } };
+        fonte: { nome: f.calendario || 'Calendario pubblico' } };
       if (simile) list.splice(list.indexOf(simile), 1);
       list.push(ev);
     });
