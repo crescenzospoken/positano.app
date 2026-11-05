@@ -3,6 +3,12 @@
 Tutte le modifiche rilevanti a questo progetto sono documentate qui.
 Formato ispirato a [Keep a Changelog](https://keepachangelog.com/it/); versioning [SemVer](https://semver.org/lang/it/).
 
+## [0.2.2] · 2026-11-05
+
+### Cambiato
+- Orari invernali: bus interni Mobility Amalfi Coast dal 1° novembre, SITA dal 2 novembre; Travelmar confermato fino a metà novembre.
+- Carabinieri: numero confermato (089 875011).
+
 ## [0.2.1] · 2026-10-08
 
 ### Aggiunto
