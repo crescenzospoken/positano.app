@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-10-08",
+  "aggiornato": "2026-11-05",
   "intro": {
     "it": "Positano si gira a piedi e a scale. Per arrivare e ripartire: bus, traghetto, taxi. L'auto è l'ultima scelta.",
     "en": "Positano is explored on foot and up steps. To arrive and leave: bus, ferry, taxi. A car is the last resort."
@@ -25,7 +25,7 @@
         "18:30"
       ],
       "dal": "2026-10-01",
-      "al": "2026-10-31",
+      "al": "2026-11-15",
       "link": "#muoversi/travelmar",
       "fonte": {
         "nome": "Travelmar, orario dal 1° ottobre",
@@ -42,20 +42,20 @@
         "en": "Last SITA bus to Sorrento"
       },
       "da": {
-        "it": "fermata Chiesa Nuova",
-        "en": "Chiesa Nuova stop"
+        "it": "fermata Sponda",
+        "en": "Sponda stop"
       },
       "orari": [
-        "22:20"
+        "19:40"
       ],
       "soloUltima": true,
-      "dal": "2026-09-14",
-      "al": "2026-10-31",
+      "dal": "2026-11-02",
+      "al": "2026-12-31",
       "link": "#muoversi/sita",
       "fonte": {
-        "nome": "SITA Sud, orario dal 14/9/2026",
-        "url": "https://sitasudtrasporti.it/campania/orari",
-        "data": "2026-09-14"
+        "nome": "SITA Sud, orario invernale dal 2/11/2026",
+        "url": "https://sitasudtrasporti.it/campania/avvisi/orari-costiera-sita-dal-02-11-2026/",
+        "data": "2026-11-02"
       },
       "verificato": true,
       "tipo": "bus"
@@ -76,27 +76,22 @@
         "08:00",
         "09:20",
         "10:20",
-        "11:20",
         "12:20",
         "13:20",
         "14:20",
-        "15:20",
-        "16:20",
+        "15:30",
         "17:20",
         "18:20",
         "19:20",
-        "20:20",
-        "21:20",
-        "22:20",
-        "23:20"
+        "21:20"
       ],
-      "dal": "2026-10-01",
-      "al": "2026-10-31",
+      "dal": "2026-11-01",
+      "al": "2026-12-23",
       "link": "#muoversi/bus-interno",
       "fonte": {
-        "nome": "Mobility Amalfi Coast, orari in vigore dall'1 al 31 ottobre 2026",
-        "url": "https://holidaycoast.it/wp-content/uploads/2024/04/mobility-2-8.jpg",
-        "data": "2026-10-01"
+        "nome": "Mobility Amalfi Coast, orario in vigore dal 1° novembre 2026 (locandine ripubblicate da holidaycoast.it)",
+        "url": "https://holidaycoast.it/positano-gli-orari-del-trasporto-interno-mobility-amalfi-coast-in-vigore-dal-1-novembre-2026/",
+        "data": "2026-11-01"
       },
       "verificato": true
     },
@@ -113,7 +108,6 @@
       },
       "orari": [
         "07:40",
-        "08:30",
         "09:00",
         "09:30",
         "10:00",
@@ -121,37 +115,28 @@
         "11:00",
         "11:30",
         "12:00",
-        "12:30",
         "13:00",
         "13:30",
         "14:00",
         "14:30",
         "15:00",
-        "15:30",
         "16:00",
         "16:30",
         "17:00",
-        "17:30",
         "18:00",
         "18:30",
         "19:00",
         "19:30",
-        "20:00",
         "20:30",
-        "21:00",
-        "21:30",
-        "22:00",
-        "22:30",
-        "23:00",
-        "23:30"
+        "21:00"
       ],
-      "dal": "2026-10-01",
-      "al": "2026-10-31",
+      "dal": "2026-11-01",
+      "al": "2026-12-23",
       "link": "#muoversi/bus-interno",
       "fonte": {
-        "nome": "Mobility Amalfi Coast, orari in vigore dall'1 al 31 ottobre 2026",
-        "url": "https://holidaycoast.it/wp-content/uploads/2024/04/mobility-2-8.jpg",
-        "data": "2026-10-01"
+        "nome": "Mobility Amalfi Coast, orario in vigore dal 1° novembre 2026 (locandine ripubblicate da holidaycoast.it)",
+        "url": "https://holidaycoast.it/positano-gli-orari-del-trasporto-interno-mobility-amalfi-coast-in-vigore-dal-1-novembre-2026/",
+        "data": "2026-11-01"
       },
       "verificato": true
     },
@@ -168,26 +153,17 @@
       },
       "orari": [
         "08:10",
-        "09:10",
-        "10:40",
         "11:40",
-        "12:50",
-        "13:50",
-        "15:40",
         "16:50",
-        "18:50",
-        "19:50",
-        "21:40",
-        "22:50",
-        "23:50"
+        "19:50"
       ],
-      "dal": "2026-10-01",
-      "al": "2026-10-31",
+      "dal": "2026-11-01",
+      "al": "2026-12-23",
       "link": "#muoversi/bus-interno",
       "fonte": {
-        "nome": "Mobility Amalfi Coast, orari in vigore dall'1 al 31 ottobre 2026",
-        "url": "https://holidaycoast.it/wp-content/uploads/2024/04/mobility-2-8.jpg",
-        "data": "2026-10-01"
+        "nome": "Mobility Amalfi Coast, orario in vigore dal 1° novembre 2026 (locandine ripubblicate da holidaycoast.it)",
+        "url": "https://holidaycoast.it/positano-gli-orari-del-trasporto-interno-mobility-amalfi-coast-in-vigore-dal-1-novembre-2026/",
+        "data": "2026-11-01"
       },
       "verificato": true
     }
@@ -290,16 +266,16 @@
           },
           "dettagli": [
             {
-              "it": "Ogni 15-30 min nelle ore centrali",
-              "en": "Every 15-30 min in the daytime"
+              "it": "Orario invernale dal 2 novembre",
+              "en": "Winter timetable from 2 November"
             },
             {
-              "it": "Per Sorrento: 7:10-22:20",
-              "en": "To Sorrento: 7:10am-10:20pm"
+              "it": "Per Sorrento: 7:00-19:40 da Sponda",
+              "en": "To Sorrento: 7am-7:40pm from Sponda"
             },
             {
-              "it": "Per Amalfi: dalle 6:25, ultimo verso le 20:25",
-              "en": "To Amalfi: from 6:25am, last around 8:25pm"
+              "it": "Per Amalfi: 6:15-20:00 da Sponda",
+              "en": "To Amalfi: 6:15am-8pm from Sponda"
             }
           ],
           "punti": [
@@ -320,10 +296,10 @@
               "en": "In summer buses often leave full: board at the terminus or set off early."
             }
           ],
-          "web": "https://sitasudtrasporti.it/campania/orari",
+          "web": "https://sitasudtrasporti.it/campania/wp-content/uploads/sites/3/2026/10/ORARI-SITA-COSTIERA_INVERNO.pdf",
           "webLabel": {
-            "it": "Orari completi",
-            "en": "Full timetable"
+            "it": "Orario invernale (PDF)",
+            "en": "Winter timetable (PDF)"
           },
           "coord": [
             40.62881,
@@ -331,11 +307,15 @@
           ],
           "cerca": "bus pullman sita amalfi sorrento biglietto unicocampania costierasita",
           "fonte": {
-            "nome": "SITA Sud, orario dal 14/9/2026",
-            "url": "https://sitasudtrasporti.it/campania/orari",
-            "data": "2026-09-14"
+            "nome": "SITA Sud, orario invernale dal 2/11/2026",
+            "url": "https://sitasudtrasporti.it/campania/avvisi/orari-costiera-sita-dal-02-11-2026/",
+            "data": "2026-11-02"
           },
-          "verificato": true
+          "verificato": true,
+          "nota": {
+            "it": "Circa un'ora fino a Sorrento, 40 minuti fino ad Amalfi. Alcune corse solo nei feriali, nei festivi o nei giorni di scuola: controlla l'orario completo.",
+            "en": "About one hour to Sorrento, 40 minutes to Amalfi. Some runs only on weekdays, holidays or school days: check the full timetable."
+          }
         },
         {
           "id": "bus-interno",
@@ -344,15 +324,15 @@
             "en": "Positano local buses (Mobility Amalfi Coast)"
           },
           "sottotitolo": {
-            "it": "Tre linee, tutte da Piazza dei Mulini · orario di ottobre 2026",
-            "en": "Three lines, all from Piazza dei Mulini · October 2026 timetable"
+            "it": "Tre linee, tutte da Piazza dei Mulini · orario invernale dal 1° novembre 2026",
+            "en": "Three lines, all from Piazza dei Mulini · winter timetable from 1 November 2026"
           },
           "periodo": {
-            "dal": "2026-10-01",
-            "al": "2026-10-31",
+            "dal": "2026-11-01",
+            "al": "2026-12-23",
             "testo": {
-              "it": "orario valido fino al 31 ottobre",
-              "en": "timetable valid until 31 October"
+              "it": "orario invernale; il 24, 25 e 31 dicembre si chiude prima",
+              "en": "winter timetable; earlier last runs on 24, 25 and 31 December"
             }
           },
           "dettagli": [
@@ -371,24 +351,24 @@
           ],
           "punti": [
             {
-              "it": "Montepertuso e Nocelle: dai Mulini alle 7:10, 8:00, poi ogni ora ai :20 dalle 9:20 alle 23:20. Da Nocelle alle 6:50, 7:40, 8:30, poi ogni ora ai :50 dalle 9:50 alle 23:50 (fino al Terminal Prisco). Fermate: Sponda, Chiesa Nuova, Piazza Cappella (Montepertuso).",
-              "en": "Montepertuso and Nocelle: from Mulini at 7:10, 8:00, then hourly at :20 from 9:20 to 23:20. From Nocelle at 6:50, 7:40, 8:30, then hourly at :50 from 9:50 to 23:50 (to Terminal Prisco). Stops: Sponda, Chiesa Nuova, Piazza Cappella (Montepertuso)."
+              "it": "Montepertuso e Nocelle: dai Mulini 7:10, 8:00, 9:20, 10:20, 12:20, 13:20, 14:20, 15:30, 17:20, 18:20, 19:20, 21:20. Da Nocelle 6:50, 7:40, 8:30, 9:50, 10:50, 12:50, 13:50, 14:50, 16:00, 17:50, 18:50, 19:50, 21:50 (fino al Terminal Prisco). Fermate: Sponda, Chiesa Nuova, Piazza Cappella (Montepertuso).",
+              "en": "Montepertuso and Nocelle: from Mulini 7:10, 8:00, 9:20, 10:20, 12:20, 13:20, 14:20, 15:30, 17:20, 18:20, 19:20, 21:20. From Nocelle 6:50, 7:40, 8:30, 9:50, 10:50, 12:50, 13:50, 14:50, 16:00, 17:50, 18:50, 19:50, 21:50 (to Terminal Prisco). Stops: Sponda, Chiesa Nuova, Piazza Cappella (Montepertuso)."
             },
             {
-              "it": "Interno (Mulini, Sponda, Chiesa Nuova, Fornillo, Terminal Prisco): 7:40, 8:30, poi ogni mezz'ora dalle 9:00 alle 23:30, ultima a mezzanotte.",
-              "en": "Town loop (Mulini, Sponda, Chiesa Nuova, Fornillo, Terminal Prisco): 7:40, 8:30, then every 30 min from 9:00 to 23:30, last at midnight."
+              "it": "Interno (Mulini, Sponda, Chiesa Nuova, Fornillo, Terminal Prisco): 7:40, poi quasi ogni mezz'ora dalle 9:00 alle 21:00 (pause alle 12:30, 15:30, 17:30, 20:00).",
+              "en": "Town loop (Mulini, Sponda, Chiesa Nuova, Fornillo, Terminal Prisco): 7:40, then roughly every 30 min from 9:00 to 21:00 (gaps at 12:30, 15:30, 17:30, 20:00)."
             },
             {
-              "it": "Praiano (via Arienzo e Laurito): dai Mulini 8:10, 9:10, 10:40, 11:40, 12:50, 13:50, 15:40, 16:50, 18:50, 19:50, 21:40, 22:50, 23:50. Da Praiano (San Luca) 7:15, 8:29, 9:29, 10:59, 11:59, 13:09, 14:09, 15:59, 17:09, 19:09, 20:09, 21:59, 23:09.",
-              "en": "Praiano (via Arienzo and Laurito): from Mulini 8:10, 9:10, 10:40, 11:40, 12:50, 13:50, 15:40, 16:50, 18:50, 19:50, 21:40, 22:50, 23:50. From Praiano (San Luca) 7:15, 8:29, 9:29, 10:59, 11:59, 13:09, 14:09, 15:59, 17:09, 19:09, 20:09, 21:59, 23:09."
+              "it": "Praiano (via Arienzo e Laurito): dai Mulini 8:10, 11:40, 16:50, 19:50. Da Praiano (San Luca) 8:29, 11:59, 17:09, 20:09.",
+              "en": "Praiano (via Arienzo and Laurito): from Mulini 8:10, 11:40, 16:50, 19:50. From Praiano (San Luca) 8:29, 11:59, 17:09, 20:09."
             },
             {
               "it": "Il biglietto si compra prima, nei locali col marchio Mobility Amalfi Coast. Il COSTIERASITA 24 ore vale anche su questi bus.",
               "en": "Buy your ticket beforehand at shops showing the Mobility Amalfi Coast sign. The COSTIERASITA 24-hour ticket is also valid on these buses."
             },
             {
-              "it": "È il bus per chi finisce il Sentiero degli Dei a Nocelle. A novembre l'orario cambia (l'inverno scorso la linea per Praiano aveva 4 corse).",
-              "en": "This is the bus for hikers finishing the Path of the Gods in Nocelle. The timetable changes in November (last winter the Praiano line had 4 runs)."
+              "it": "È il bus per chi finisce il Sentiero degli Dei a Nocelle. Il 24 e 31 dicembre le ultime corse sono verso le 19, il 25 a mezzogiorno.",
+              "en": "This is the bus for hikers finishing the Path of the Gods in Nocelle. On 24 and 31 December last runs are around 7pm, on the 25th around noon."
             }
           ],
           "web": "https://www.facebook.com/Mobilityamalficoast",
@@ -402,9 +382,9 @@
           ],
           "cerca": "navetta bus interno montepertuso nocelle praiano arienzo laurito fornillo mobility mulini",
           "fonte": {
-            "nome": "Mobility Amalfi Coast, orari in vigore dall'1 al 31 ottobre 2026",
-            "url": "https://holidaycoast.it/wp-content/uploads/2024/04/mobility-2-8.jpg",
-            "data": "2026-10-01"
+            "nome": "Mobility Amalfi Coast, orario in vigore dal 1° novembre 2026 (locandine ripubblicate da holidaycoast.it)",
+            "url": "https://holidaycoast.it/positano-gli-orari-del-trasporto-interno-mobility-amalfi-coast-in-vigore-dal-1-novembre-2026/",
+            "data": "2026-11-01"
           },
           "verificato": true
         }
@@ -446,8 +426,8 @@
             }
           ],
           "nota": {
-            "it": "In ottobre da Positano: 9:55, 11:30, 12:00, 13:30, 15:30, 17:00, 18:30. Per Minori, Maiori, Cetara e Vietri con cambio.",
-            "en": "In October from Positano: 9:55, 11:30, 12:00, 13:30, 15:30, 17:00, 18:30. Minori, Maiori, Cetara and Vietri with a change."
+            "it": "Da Positano: 9:55, 11:30, 12:00, 13:30, 15:30, 17:00, 18:30 (orario dal 1° ottobre, ancora valido a inizio novembre: l'anno scorso è stato ridotto a metà novembre). Per Minori, Maiori, Cetara e Vietri con cambio ad Amalfi.",
+            "en": "From Positano: 9:55, 11:30, 12:00, 13:30, 15:30, 17:00, 18:30 (timetable from 1 October, still valid in early November: last year it was reduced in mid-November). Minori, Maiori, Cetara and Vietri with a change in Amalfi."
           },
           "tel": [
             {
