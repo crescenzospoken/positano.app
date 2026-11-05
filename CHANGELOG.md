@@ -3,6 +3,12 @@
 Tutte le modifiche rilevanti a questo progetto sono documentate qui.
 Formato ispirato a [Keep a Changelog](https://keepachangelog.com/it/); versioning [SemVer](https://semver.org/lang/it/).
 
+## [0.3.1] · 2026-11-05
+
+### Cambiato
+- Leggibilità: titoli, schede, avvisi e date in Montserrat grassetto senza maiuscolo forzato; Cormorant Garamond resta solo nel marchio in alto e nei post 4:5 generati.
+- Etichette maiuscole portate ad almeno 12 px; testi secondari, badge e barra in basso leggermente più grandi.
+
 ## [0.3.0] · 2026-11-05
 
 ### Aggiunto
