@@ -29,7 +29,7 @@
    a. trasferire il codice sorgente in un repository intestato al Comune, mantenendo la licenza EUPL-1.2;
    b. assicurare l'ospitalità su infrastruttura conforme al Regolamento ACN sul cloud;
    c. pubblicare la dichiarazione di accessibilità entro i termini di legge;
-   d. rendere istituzionali le fonti dei dati automatici (Albo, Consiglio, eventi);
+   d. collegare i calendari pubblici del Comune per feste ed eventi;
 5. di dare mandato al titolare del trattamento, con il supporto del DPO, di aggiornare l'informativa e il registro dei trattamenti;
 6. di dare atto che l'adozione non comporta impegno di spesa;
 7. di pubblicare la presente in Amministrazione trasparente, unitamente alla dichiarazione del curatore del progetto sull'assenza di conflitto d'interessi;

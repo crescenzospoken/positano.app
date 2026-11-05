@@ -49,12 +49,12 @@ export const CATEGORIE = ['emergenze', 'viabilita', 'cultura', 'sanita', 'sport'
 
 export async function bozzaAvviso(env, post, oggiIso, zone) {
   return chiedi(env,
-    'Sei la redazione dell\'app civica di Positano. Da un post Instagram del Comune prepara la BOZZA di un avviso breve e chiaro. ' +
-    'Usa solo informazioni presenti nel post; se una data non c\'è usa per «dal» la data del post e per «al» la stessa data o pochi giorni dopo. ' +
+    'Sei la redazione dell\'app civica di Positano. Da un testo del Comune (avviso del sito, comunicato o post social) prepara la BOZZA di un avviso breve e chiaro. ' +
+    'Usa solo informazioni presenti nel testo; se una data non c\'è usa per «dal» la data del testo e per «al» la stessa data o pochi giorni dopo. ' +
     'Date in formato AAAA-MM-GG. Titolo massimo 90 caratteri, testo massimo 400. «servizio»: acqua, luce, gas, strade oppure stringa vuota. ' +
     '«zone»: solo nomi presi da questo elenco se il post li cita, altrimenti elenco vuoto: ' + zone.join(', ') + '. ' +
     '«categoria» una di: ' + CATEGORIE.join(', ') + '. Rispondi solo con il JSON.',
-    'Oggi: ' + oggiIso + '\nData del post: ' + String(post.quando || '').slice(0, 10) + '\nTitolo: ' + (post.titolo || '') +
-    '\nDidascalia: ' + String(post.testo || '').slice(0, 2500) + '\nTesto nell\'immagine: ' + String(post.testo_immagine || '').slice(0, 1200),
+    'Oggi: ' + oggiIso + '\nData del testo: ' + String(post.quando || '').slice(0, 10) + '\nTitolo: ' + (post.titolo || '') +
+    '\nTesto: ' + String(post.testo || '').slice(0, 2500) + '\nTesto nell\'immagine: ' + String(post.testo_immagine || '').slice(0, 1200),
     S({ titolo_it: STR, testo_it: STR, titolo_en: STR, testo_en: STR, categoria: STR, dal: STR, al: STR, servizio: STR, zone: { type: 'array', items: STR } }), 900);
 }

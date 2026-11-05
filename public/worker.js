@@ -4,10 +4,12 @@
    - Ogni modifica finisce nel registro (chi, cosa, quando, prima e dopo).
    Nessun dato personale dei visitatori: niente cookie per chi legge l'app; statistiche solo come contatori
    per giorno e sezione, senza IP né identificativi. Notifiche push: solo l'indirizzo tecnico del browser.
-   Ogni 2 ore (cron) copia i dati pubblici di Super Agenda (Albo, Consiglio, feste). */
+   Ogni 2 ore (cron) legge l'Albo pretorio del Comune e i calendari pubblici collegati con un link .ics.
+   Nessuna dipendenza da sistemi privati o di parte: solo fonti istituzionali e link sostituibili. */
 import { nuoveChiaviVapid, invia as inviaPush, endpointValido } from './server/push.js';
 import { disponibile as aiDisponibile, traduci, bozzaAvviso } from './server/ai.js';
-import { sincronizza, leggiExport } from './server/superagenda.js';
+import { sincronizzaAlbo, ALBO_URL } from './server/albo.js';
+import { sincronizzaCalendari } from './server/calendari.js';
 
 const SESSIONE_ORE = 12;
 const TENTATIVI_MAX = 8;          // per 15 minuti, per indirizzo
@@ -33,7 +35,8 @@ export default {
   },
   async scheduled(evento, env, ctx) {
     ctx.waitUntil((async function () {
-      try { console.log('superagenda', JSON.stringify(await sincronizza(env))); } catch (e) { console.error('superagenda', e && e.message); }
+      try { console.log('albo', JSON.stringify(await sincronizzaAlbo(env))); } catch (e) { console.error('albo', e && e.message); }
+      try { console.log('calendari', JSON.stringify(await sincronizzaCalendari(env))); } catch (e) { console.error('calendari', e && e.message); }
       try {
         await env.DB.prepare("DELETE FROM visite WHERE giorno < date('now', '-400 day')").run();
         await env.DB.prepare('DELETE FROM errori WHERE firma NOT IN (SELECT firma FROM errori ORDER BY ultimo DESC LIMIT 300)').run();
@@ -107,14 +110,14 @@ async function api(req, env, url) {
   if (r && m === 'DELETE') return elimina(env, utente, 'avvisi', Number(r[1]));
 
   if (p === '/api/config' && m === 'GET') {
-    const c = await Promise.all(['stagione', 'home', 'canali', 'consiglio', 'zone'].map(function (k) { return leggiConfig(env, k); }));
-    return json({ stagione: c[0], home: c[1], canali: c[2] || {}, consiglio: c[3] || {}, zone: c[4] || ZONE_BASE, servizi: SERVIZI.slice(1) });
+    const c = await Promise.all(['stagione', 'home', 'canali', 'consiglio', 'zone', 'calendari'].map(function (k) { return leggiConfig(env, k); }));
+    return json({ stagione: c[0], home: c[1], canali: c[2] || {}, consiglio: c[3] || {}, zone: c[4] || ZONE_BASE, calendari: c[5] || [], servizi: SERVIZI.slice(1) });
   }
-  r = p.match(/^\/api\/config\/(stagione|home|canali|consiglio|zone)$/);
+  r = p.match(/^\/api\/config\/(stagione|home|canali|consiglio|zone|calendari)$/);
   if (r && m === 'PUT') return salvaConfig(req, env, utente, r[1]);
 
-  if (p === '/api/proposte' && m === 'GET') return proposte(env);
-  r = p.match(/^\/api\/proposte\/(\d{5,30})\/(prepara|ignora|ripristina)$/);
+  if (p === '/api/proposte' && m === 'GET') return proposte(env, url);
+  r = p.match(/^\/api\/proposte\/([a-z0-9-]{1,80})\/(prepara|ignora|ripristina)$/);
   if (r && m === 'POST') return proposta(req, env, utente, r[1], r[2]);
   if (p === '/api/traduci' && m === 'POST') {
     const b = await leggiJSON(req), campi = {};
@@ -128,10 +131,11 @@ async function api(req, env, url) {
   r = p.match(/^\/api\/notifiche\/(\d+)\/blocco$/);
   if (r && m === 'POST') return bloccoInvio(req, env, Number(r[1]), url.origin);
   if (p === '/api/stato' && m === 'GET') return stato(env);
-  if (p === '/api/superagenda/aggiorna' && m === 'POST') {
-    let esito;
-    try { esito = await sincronizza(env, { maxSpiegazioni: 12 }); } catch (e) { fail('Super Agenda non risponde: ' + (e && e.message), 502); }
-    await registra(env, utente, 'aggiorna', 'superagenda', null, esito);
+  if (p === '/api/fonti/aggiorna' && m === 'POST') {
+    const esito = {};
+    try { esito.albo = await sincronizzaAlbo(env, { maxSpiegazioni: 12 }); } catch (e) { esito.albo = { errore: String(e && e.message) }; }
+    try { esito.calendari = await sincronizzaCalendari(env); } catch (e) { esito.calendari = { errore: String(e && e.message) }; }
+    await registra(env, utente, 'aggiorna', 'fonti automatiche', null, esito);
     return json(esito);
   }
 
@@ -142,20 +146,24 @@ async function api(req, env, url) {
 
 /* ---------- lettura pubblica ---------- */
 async function pubblico(env) {
-  const [locali, avvisi, stagione, home, sa, canali, consiglio, zone, brevi] = await Promise.all([
+  const [locali, avvisi, stagione, home, cal, canali, consiglio, zone, brevi, albo, convocazioni, delibere, alboStato] = await Promise.all([
     env.DB.prepare('SELECT id, nome, categoria, zona, indirizzo, telefono, nota, periodi, aggiornato FROM locali WHERE visibile = 1 ORDER BY nome COLLATE NOCASE').all(),
     env.DB.prepare("SELECT * FROM avvisi WHERE visibile = 1 AND al >= date('now', '-30 day') ORDER BY priorita DESC, dal DESC").all(),
     leggiConfig(env, 'stagione'),
     leggiConfig(env, 'home'),
-    leggiConfig(env, 'superagenda'),
+    leggiConfig(env, 'calendari_eventi'),
     leggiConfig(env, 'canali'),
     leggiConfig(env, 'consiglio'),
     leggiConfig(env, 'zone'),
-    env.DB.prepare('SELECT registro, it, en FROM albo_breve').all()
+    env.DB.prepare("SELECT b.registro, b.it, b.en FROM albo_breve b JOIN albo a ON a.registro = b.registro WHERE a.pub_a >= date('now')").all(),
+    env.DB.prepare("SELECT albo_id, registro, oggetto, categoria, data_atto, pub_da, pub_a FROM albo WHERE pub_a >= date('now') AND categoria NOT LIKE 'CONVOCAZIONE%' ORDER BY pub_da DESC, albo_id DESC LIMIT 150").all(),
+    env.DB.prepare("SELECT albo_id, registro, oggetto, pub_da, pub_a FROM albo WHERE categoria LIKE 'CONVOCAZIONE CONSIGLIO%' ORDER BY pub_da DESC, albo_id DESC LIMIT 3").all(),
+    env.DB.prepare("SELECT albo_id, registro, oggetto, data_atto, pub_da FROM albo WHERE categoria = 'Delibere di Consiglio' ORDER BY pub_da DESC, registro DESC LIMIT 40").all(),
+    leggiConfig(env, 'albo_stato')
   ]);
   const breve = {};
   brevi.results.forEach(function (b) { breve[b.registro] = { it: b.it, en: b.en }; });
-  const s = sa || {};
+  const ev = cal || {};
   return json({
     generato: ora(),
     aperture: { stagione: stagione, locali: locali.results.map(locale) },
@@ -163,10 +171,10 @@ async function pubblico(env) {
     home: home,
     zone: zone || ZONE_BASE,
     canali: canali || {},
-    albo: (s.albo || []).map(function (a) { return Object.assign({}, a, { breve: breve[a.registro] || null }); }),
-    consiglio: { redazione: consiglio || {}, convocazioni: (s.consiglio && s.consiglio.convocazioni) || [], delibere: (s.consiglio && s.consiglio.delibere) || [] },
-    feste: s.feste || [],
-    superagenda: s.letto ? { generato: s.generato, letto: s.letto } : null
+    albo: albo.results.map(function (a) { return Object.assign({}, a, { breve: breve[a.registro] || null }); }),
+    consiglio: { redazione: consiglio || {}, convocazioni: convocazioni.results, delibere: delibere.results },
+    feste: ev.eventi || [],
+    fonti: { albo: alboStato ? alboStato.letto : null, albo_url: ALBO_URL, calendari: ev.letto || null }
   }, 200, { 'cache-control': 'public, max-age=60', 'access-control-allow-origin': '*' });
 }
 
@@ -349,7 +357,7 @@ async function salvaAvviso(req, env, u, id) {
     titolo_it: testo(b.titolo_it, 140), titolo_en: testo(b.titolo_en, 140), testo_it: testo(b.testo_it, 1200), testo_en: testo(b.testo_en, 1200),
     categoria: String(b.categoria || ''), dal: String(b.dal || ''), al: String(b.al || ''), stato: String(b.stato || 'attivo'),
     fonte_nome: testo(b.fonte_nome, 120), fonte_url: urlSicuro(b.fonte_url), priorita: b.priorita ? 1 : 0, visibile: b.visibile === false ? 0 : 1,
-    servizio: String(b.servizio || ''), ig_id: b.ig_id ? String(b.ig_id).replace(/\D/g, '').slice(0, 30) || null : null, tradotto_auto: b.tradotto_auto ? 1 : 0
+    servizio: String(b.servizio || ''), ig_id: b.ig_id ? String(b.ig_id).toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 80) || null : null, tradotto_auto: b.tradotto_auto ? 1 : 0
   };
   const zoneOk = (await leggiConfig(env, 'zone')) || ZONE_BASE;
   v.zone = JSON.stringify((Array.isArray(b.zone) ? b.zone : []).map(String).filter(function (z) { return zoneOk.indexOf(z) !== -1; }));
@@ -405,6 +413,12 @@ async function salvaConfig(req, env, u, chiave) {
     if (pr.ora && !/^\d{2}:\d{2}$/.test(pr.ora)) fail('Ora della seduta non valida (es. 17:30)');
     v = { prossima: pr.data ? { data: pr.data, ora: pr.ora || '', luogo: testo(pr.luogo, 120), odg: testo(pr.odg, 1500), odg_url: urlSicuro(pr.odg_url) } : null,
       diretta_url: urlSicuro(b.diretta_url), nota: testo(b.nota, 300) };
+  } else if (chiave === 'calendari') {
+    v = (Array.isArray(b.calendari) ? b.calendari : []).slice(0, 8).map(function (c) {
+      const u = urlSicuro(c && c.url);
+      if (!u) fail('Ogni calendario ha bisogno del link .ics (https://…)');
+      return { nome: testo(c.nome, 60) || 'Calendario', url: u };
+    });
   } else if (chiave === 'zone') {
     v = (Array.isArray(b.zone) ? b.zone : []).map(function (z) { return testo(z, 40); }).filter(Boolean).slice(0, 30);
     if (!v.length) fail('Serve almeno una zona');
@@ -513,37 +527,57 @@ async function bloccoInvio(req, env, id, origine) {
   return json({ fine: fine, prossimo: righe.length ? righe[righe.length - 1].endpoint : dopo, inviati: righe.length, ok: ok, rimossi: rimossi });
 }
 
-/* ---------- proposte dai post del Comune ---------- */
-async function proposte(env) {
-  let d;
-  try { d = await leggiExport(); } catch (e) { fail('Super Agenda non risponde ora: riprova tra poco', 502); }
+/* ---------- proposte: avvisi del sito del Comune e testi incollati (post, comunicati) ---------- */
+function idProposta(link) { return 'sito-' + String(link || '').split('/').filter(Boolean).pop().toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 70); }
+
+async function proposte(env, url) {
+  const r = await env.ASSETS.fetch(new Request(url.origin + '/data/avvisi-comune.json'));
+  const d = r.ok ? await r.json() : { avvisi: [] };
   const gestite = {};
-  (await env.DB.prepare('SELECT * FROM proposte').all()).results.forEach(function (r) { gestite[r.ig_id] = r; });
-  return json({ ai: aiDisponibile(env), zone: (await leggiConfig(env, 'zone')) || ZONE_BASE,
-    post: d.instagram.map(function (p) { return Object.assign({}, p, { gestita: gestite[p.id] || null }); }) });
+  (await env.DB.prepare('SELECT * FROM proposte').all()).results.forEach(function (x) { gestite[x.ig_id] = x; });
+  return json({ ai: aiDisponibile(env), zone: (await leggiConfig(env, 'zone')) || ZONE_BASE, aggiornato: d.aggiornato || null,
+    post: (d.avvisi || []).map(function (a) {
+      const id = idProposta(a.link);
+      return { id: id, titolo: (a.titolo && a.titolo.it) || '', quando: a.data, link: a.link, categoria: a.categoria, gestita: gestite[id] || null };
+    }) });
 }
 
-async function proposta(req, env, u, igId, azione) {
+/* Testo principale di una pagina del sito del Comune, per dare all'AI più del solo titolo. */
+async function testoPagina(link, titolo) {
+  if (!/^https:\/\/comune\.positano\.sa\.it\//.test(link || '')) return '';
+  try {
+    const r = await fetch(link, { headers: { 'user-agent': 'positano.app (+https://github.com/crescenzospoken/positano.app)' } });
+    if (!r.ok) return '';
+    const t = (await r.text()).replace(/<(script|style|nav|header|footer)[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&[a-z]+;/gi, ' ').replace(/\s+/g, ' ');
+    const i = titolo ? t.toLowerCase().lastIndexOf(String(titolo).toLowerCase().slice(0, 40)) : -1;
+    return t.slice(i > 0 ? i : 0, (i > 0 ? i : 0) + 3000);
+  } catch (e) { return ''; }
+}
+
+async function proposta(req, env, u, id, azione) {
   if (azione === 'ignora' || azione === 'ripristina') {
-    if (azione === 'ignora') await env.DB.prepare('INSERT OR REPLACE INTO proposte (ig_id, esito, quando, chi) VALUES (?,?,?,?)').bind(igId, 'ignorata', ora(), u.email).run();
-    else await env.DB.prepare('DELETE FROM proposte WHERE ig_id = ?').bind(igId).run();
-    await registra(env, u, azione, 'post instagram ' + igId, null, null);
+    if (azione === 'ignora') await env.DB.prepare('INSERT OR REPLACE INTO proposte (ig_id, esito, quando, chi) VALUES (?,?,?,?)').bind(id, 'ignorata', ora(), u.email).run();
+    else await env.DB.prepare('DELETE FROM proposte WHERE ig_id = ?').bind(id).run();
+    await registra(env, u, azione, 'proposta ' + id, null, null);
     return json({ ok: true });
   }
   const b = await leggiJSON(req);
-  const post = { quando: testo(b.quando, 40), titolo: testo(b.titolo, 300), testo: String(b.testo || '').slice(0, 4000), testo_immagine: String(b.testo_immagine || '').slice(0, 2000) };
+  const post = { quando: testo(b.quando, 40), titolo: testo(b.titolo, 300), testo: String(b.testo || '').slice(0, 5000), testo_immagine: '' };
+  const link = String(b.link || '');
+  if (!post.testo && link) post.testo = await testoPagina(link, post.titolo);
+  if (!post.titolo && !post.testo) fail('Incolla il testo da cui partire');
   const zone = (await leggiConfig(env, 'zone')) || ZONE_BASE;
   const oggi = ora().slice(0, 10);
   const r = await bozzaAvviso(env, post, oggi, zone);
   const dataPost = ISO.test(post.quando.slice(0, 10)) ? post.quando.slice(0, 10) : oggi;
-  // Senza AI (o se risponde male) la bozza parte comunque dal titolo del post: la redazione completa a mano.
+  // Senza AI (o se risponde male) la bozza parte comunque dal titolo: la redazione completa a mano.
   const z = r || {};
   const dal = ISO.test(z.dal || '') ? z.dal : dataPost;
   let al = ISO.test(z.al || '') ? z.al : dal;
   if (al < dal) al = dal;
   return json({
     ai: !!r,
-    titolo_it: String(z.titolo_it || post.titolo || '').slice(0, 140), testo_it: String(z.testo_it || '').slice(0, 1200),
+    titolo_it: String(z.titolo_it || post.titolo || post.testo.slice(0, 120)).slice(0, 140), testo_it: String(z.testo_it || '').slice(0, 1200),
     titolo_en: String(z.titolo_en || '').slice(0, 140), testo_en: String(z.testo_en || '').slice(0, 1200),
     categoria: CATEGORIE_AVVISI.indexOf(z.categoria) !== -1 ? z.categoria : 'comunicati', dal: dal, al: al,
     servizio: SERVIZI.indexOf(z.servizio) !== -1 ? z.servizio : '', zone: (Array.isArray(z.zone) ? z.zone : []).filter(function (x) { return zone.indexOf(x) !== -1; }),
@@ -569,15 +603,18 @@ async function errore(env, b) {
 }
 
 async function stato(env) {
-  const [giorni, sezioni, lingue, errori, sa, iscritti] = await Promise.all([
+  const [giorni, sezioni, lingue, errori, alboStato, iscritti, cal, nAlbo] = await Promise.all([
     env.DB.prepare("SELECT giorno, SUM(n) AS n FROM visite WHERE giorno >= date('now', '-30 day') GROUP BY giorno ORDER BY giorno").all(),
     env.DB.prepare("SELECT sezione, SUM(n) AS n FROM visite WHERE giorno >= date('now', '-30 day') GROUP BY sezione ORDER BY n DESC").all(),
     env.DB.prepare("SELECT lingua, SUM(n) AS n FROM visite WHERE giorno >= date('now', '-30 day') GROUP BY lingua").all(),
     env.DB.prepare('SELECT * FROM errori ORDER BY ultimo DESC LIMIT 50').all(),
-    leggiConfig(env, 'superagenda'),
-    env.DB.prepare('SELECT COUNT(*) AS n FROM iscrizioni').first()
+    leggiConfig(env, 'albo_stato'),
+    env.DB.prepare('SELECT COUNT(*) AS n FROM iscrizioni').first(),
+    leggiConfig(env, 'calendari_eventi'),
+    env.DB.prepare('SELECT COUNT(*) AS n FROM albo').first()
   ]);
   return json({ giorni: giorni.results, sezioni: sezioni.results, lingue: lingue.results, errori: errori.results,
-    superagenda: sa ? { generato: sa.generato, letto: sa.letto, albo: (sa.albo || []).length, feste: (sa.feste || []).length } : null,
+    albo: alboStato ? Object.assign({ archivio: nAlbo.n }, alboStato) : { archivio: nAlbo.n },
+    calendari: cal ? { letto: cal.letto, esiti: cal.esiti || [], eventi: (cal.eventi || []).length } : null,
     ai: aiDisponibile(env), iscritti: iscritti.n });
 }

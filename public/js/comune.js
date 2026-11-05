@@ -1,5 +1,5 @@
 /* Positano.app · pagine «Albo pretorio», «Consiglio comunale», «Mappa» e «La tua zona e notifiche».
-   Albo, Consiglio e feste arrivano da Super Agenda (solo dati pubblici) tramite /api/pubblico.
+   Albo e Consiglio arrivano dall'osservatore dell'Albo pretorio del Comune (Worker, ogni 2 ore) tramite /api/pubblico.
    Fa sempre fede l'atto pubblicato sul sito del Comune: qui ci sono sintesi e collegamenti. */
 (function () {
   'use strict';
@@ -32,8 +32,8 @@
     return { data: m[3] + '-' + m[2].padStart(2, '0') + '-' + m[1].padStart(2, '0'), ora: h ? h[1].padStart(2, '0') + ':' + h[2] : '' };
   }
   function fonteSA(A, api) {
-    if (!api || !api.superagenda) return '';
-    return '<p class="src">' + A.esc(A.t('albo.fonte')) + ' · ' + A.esc(A.t('common.checked')) + ' ' + A.esc(A.dateLabel(A.O.isoRome(new Date(api.superagenda.letto)), { month: 'short' })) + '</p>';
+    if (!api || !api.fonti || !api.fonti.albo) return '';
+    return '<p class="src">' + A.esc(A.t('albo.fonte')) + ' · ' + A.esc(A.t('common.checked')) + ' ' + A.esc(A.dateLabel(A.O.isoRome(new Date(api.fonti.albo)), { month: 'short' })) + '</p>';
   }
 
   /* ---------- Albo ---------- */
