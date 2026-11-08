@@ -3,6 +3,15 @@
 Tutte le modifiche rilevanti a questo progetto sono documentate qui.
 Formato ispirato a [Keep a Changelog](https://keepachangelog.com/it/); versioning [SemVer](https://semver.org/lang/it/).
 
+## [0.5.1] · 2026-11-05
+
+### Aggiunto
+- **Calendari .ics: eventi ricorrenti** (ogni giorno, settimana, mese o anno, con INTERVAL, COUNT, UNTIL, EXDATE e occorrenze spostate). Le feste patronali, segnate una volta con «ogni anno», ora compaiono tutte.
+- Collegato il calendario pubblico «Feste positanesi»: 11 feste nei prossimi 13 mesi.
+
+### Rimosso
+- Ultimi file del ponte con Super Agenda rimasti nel repository (`integrazioni/superagenda/`, `public/server/superagenda.js` e il suo test), non più usati dalla v0.5.0.
+
 ## [0.5.0] · 2026-11-05
 
 ### Cambiato
