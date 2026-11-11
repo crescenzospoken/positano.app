@@ -1,48 +1,48 @@
 {
- "aggiornato": "2026-11-10T20:48:44.624Z",
+ "aggiornato": "2026-11-11T01:55:39.183Z",
  "fonte": {
   "nome": "Open-Meteo (CC BY 4.0)",
   "url": "https://open-meteo.com/"
  },
  "ora": {
-  "temperatura": 18.6,
-  "percepita": 19.9,
-  "pioggia": 0.4,
+  "temperatura": 19,
+  "percepita": 20.4,
+  "pioggia": 0.2,
   "codice": 95,
-  "vento": 9,
-  "raffiche": 38.2
+  "vento": 9.2,
+  "raffiche": 41
  },
  "giorni": [
   {
-   "data": "2026-11-10",
-   "codice": 95,
-   "max": 19.2,
-   "min": 16.1,
-   "pioggia_prob": 90,
-   "vento_max": 16.8,
-   "onde_max": 0.9
-  },
-  {
    "data": "2026-11-11",
-   "codice": 95,
+   "codice": 96,
    "max": 20.5,
-   "min": 18.7,
+   "min": 18.8,
    "pioggia_prob": 95,
-   "vento_max": 11.6,
-   "onde_max": 0.88
+   "vento_max": 13.2,
+   "onde_max": 1.04
   },
   {
    "data": "2026-11-12",
-   "codice": 95,
-   "max": 22.1,
-   "min": 19,
-   "pioggia_prob": 91,
-   "vento_max": 27,
+   "codice": 80,
+   "max": 22.3,
+   "min": 19.3,
+   "pioggia_prob": 75,
+   "vento_max": 27.6,
    "onde_max": 1.64
+  },
+  {
+   "data": "2026-11-13",
+   "codice": 95,
+   "max": 19.7,
+   "min": 17.7,
+   "pioggia_prob": 100,
+   "vento_max": 25.4,
+   "onde_max": 2.32
   }
  ],
  "mare": {
-  "onde": 0.9,
+  "onde": 0.98,
   "acqua": 20.4
  }
 }
