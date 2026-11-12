@@ -1,6 +1,19 @@
 {
- "aggiornato": "2026-11-12T09:50:02.719Z",
+ "aggiornato": "2026-11-12T18:19:14.512Z",
  "avvisi": [
+  {
+   "id": "cavviso-pubblico-assegnazione-di-abbonamentibiglietti-del-ser",
+   "titolo": {
+    "it": "AVVISO PUBBLICO PER ASSEGNAZIONE DI ABBONAMENTI/BIGLIETTI DEL SERVIZIO BUS DI LINEA INTERNA"
+   },
+   "categoria": "istituzionale",
+   "data": "2026-11-12",
+   "link": "https://comune.positano.sa.it/novita/avvisi/avviso-pubblico-assegnazione-di-abbonamentibiglietti-del-servizio-bus-di-linea",
+   "fonte": {
+    "nome": "Sito del Comune di Positano",
+    "url": "https://comune.positano.sa.it/novita/avvisi/avviso-pubblico-assegnazione-di-abbonamentibiglietti-del-servizio-bus-di-linea"
+   }
+  },
   {
    "id": "cdisciplina-e-calendario-le-operazioni-di-combustione-cd-bruc",
    "titolo": {
