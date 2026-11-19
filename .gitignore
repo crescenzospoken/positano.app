@@ -7,3 +7,6 @@ Thumbs.db
 
 controlli.md
 .wrangler/
+
+# Claude Code: approvazioni locali, possono contenere token
+.claude/settings.local.json
