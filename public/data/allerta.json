@@ -1,22 +1,22 @@
 {
- "aggiornato": "2026-11-24T04:47:50.021Z",
- "bollettino": "20261123_1431",
+ "aggiornato": "2026-11-24T17:42:40.951Z",
+ "bollettino": "20261124_1515",
  "fonte": {
   "nome": "Dipartimento della Protezione Civile, bollettino di criticità (CC BY 4.0)",
   "url": "https://mappe.protezionecivile.gov.it/it/mappe-rischi/bollettino-di-criticita"
  },
  "giorni": {
-  "2026-11-23": {
+  "2026-11-24": {
    "zona": "Penisola sorrentino-amalfitana, Monti di Sarno e Monti Picentini",
    "complessivo": "verde",
    "idrogeologico": "verde",
    "idraulico": "verde",
    "temporali": "verde"
   },
-  "2026-11-24": {
+  "2026-11-25": {
    "zona": "Penisola sorrentino-amalfitana, Monti di Sarno e Monti Picentini",
-   "complessivo": "verde",
-   "idrogeologico": "verde",
+   "complessivo": "giallo",
+   "idrogeologico": "giallo",
    "idraulico": "verde",
    "temporali": "verde"
   }
