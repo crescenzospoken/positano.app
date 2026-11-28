@@ -16,31 +16,76 @@ function giorno(v) {
 }
 function meno1(iso) { const a = iso.split('-').map(Number); return new Date(Date.UTC(a[0], a[1] - 1, a[2] - 1)).toISOString().slice(0, 10); }
 
-export function leggiIcs(testo, nome) {
-  const righe = String(testo).replace(/\r\n[ \t]/g, '').replace(/\n[ \t]/g, '').split(/\r?\n/);
+function giorni(a, b) { return Math.round((Date.parse(b) - Date.parse(a)) / 864e5); }
+function sposta(iso, freq, n) {
+  const a = iso.split('-').map(Number);
+  let d;
+  if (freq === 'DAILY') d = new Date(Date.UTC(a[0], a[1] - 1, a[2] + n));
+  else if (freq === 'WEEKLY') d = new Date(Date.UTC(a[0], a[1] - 1, a[2] + 7 * n));
+  else if (freq === 'MONTHLY') d = new Date(Date.UTC(a[0], a[1] - 1 + n, a[2]));
+  else d = new Date(Date.UTC(a[0] + n, a[1] - 1, a[2]));
+  // 31 del mese o 29 febbraio che non esistono: l'occorrenza si salta (RFC 5545)
+  if (d.getUTCDate() !== a[2] && freq !== 'DAILY' && freq !== 'WEEKLY') return null;
+  return d.toISOString().slice(0, 10);
+}
+
+/* Ricorrenze semplici (ogni giorno/settimana/mese/anno, con INTERVAL, COUNT, UNTIL, EXDATE).
+   Regole con BYDAY, BYMONTHDAY ecc. non si espandono: resta la prima data. */
+function espandi(ev, da, a, salta) {
+  const r = {};
+  String(ev.rrule).split(';').forEach(function (p) { const i = p.indexOf('='); if (i > 0) r[p.slice(0, i).toUpperCase()] = p.slice(i + 1); });
+  const freq = r.FREQ;
+  if (!/^(DAILY|WEEKLY|MONTHLY|YEARLY)$/.test(freq) || Object.keys(r).some(function (k) { return /^BY/.test(k); })) return [ev.inizio];
+  const passo = Math.max(1, parseInt(r.INTERVAL, 10) || 1), quante = parseInt(r.COUNT, 10) || Infinity, fino = r.UNTIL ? giorno(r.UNTIL) : null;
+  const durata = Math.max(0, giorni(ev.inizio, ev.fine));
   const out = [];
+  for (let n = 0, fatte = 0; n < 2000 && fatte < quante; n++) {
+    const g = sposta(ev.inizio, freq, n * passo);
+    if (!g) continue;
+    if ((fino && g > fino) || g > a) break;
+    fatte++;
+    if (salta.has(g)) continue;
+    if (sposta(g, 'DAILY', durata) >= da) out.push(g);
+  }
+  return out;
+}
+
+/* da/a (AAAA-MM-GG, facoltativi): finestra in cui espandere gli eventi ricorrenti. */
+export function leggiIcs(testo, nome, da, a) {
+  const righe = String(testo).replace(/\r\n[ \t]/g, '').replace(/\n[ \t]/g, '').split(/\r?\n/);
+  const grezzi = [];
   let ev = null;
   righe.forEach(function (r) {
-    if (r === 'BEGIN:VEVENT') { ev = {}; return; }
-    if (r === 'END:VEVENT') {
-      if (ev && ev.inizio && ev.titolo && ev.stato !== 'CANCELLED' && !ev.privato) {
-        let fine = ev.fine || ev.inizio;
-        if (ev.tutto && ev.fine && ev.fine > ev.inizio) fine = meno1(ev.fine); // DTEND di un giorno intero è esclusivo
-        out.push({ titolo: ev.titolo.slice(0, 160), inizio: ev.inizio, fine: fine < ev.inizio ? ev.inizio : fine, luogo: (ev.luogo || '').slice(0, 120), tutto_il_giorno: !!ev.tutto, calendario: nome, ricorrente: !!ev.rrule });
-      }
-      ev = null; return;
-    }
+    if (r === 'BEGIN:VEVENT') { ev = { exdate: [] }; return; }
+    if (r === 'END:VEVENT') { if (ev && ev.inizio) grezzi.push(ev); ev = null; return; }
     if (!ev) return;
     const i = r.indexOf(':');
     if (i < 0) return;
     const chiave = r.slice(0, i), val = r.slice(i + 1), nomeK = chiave.split(';')[0].toUpperCase();
     if (nomeK === 'SUMMARY') ev.titolo = sfuggi(val);
     else if (nomeK === 'LOCATION') ev.luogo = sfuggi(val);
+    else if (nomeK === 'UID') ev.uid = val.trim();
     else if (nomeK === 'DTSTART') { ev.inizio = giorno(val); ev.tutto = /VALUE=DATE(?!-)/i.test(chiave) || /^\d{8}$/.test(val); }
     else if (nomeK === 'DTEND') ev.fine = giorno(val);
     else if (nomeK === 'STATUS') ev.stato = val.trim().toUpperCase();
     else if (nomeK === 'CLASS') ev.privato = /PRIVATE|CONFIDENTIAL/i.test(val);
     else if (nomeK === 'RRULE') ev.rrule = val;
+    else if (nomeK === 'EXDATE') val.split(',').forEach(function (x) { const g = giorno(x); if (g) ev.exdate.push(g); });
+    else if (nomeK === 'RECURRENCE-ID') ev.ricId = giorno(val);
+  });
+  // Le occorrenze modificate o annullate una per una (RECURRENCE-ID) prendono il posto di quella della serie.
+  const sostituite = {};
+  grezzi.forEach(function (e) { if (e.ricId && e.uid) (sostituite[e.uid] = sostituite[e.uid] || new Set()).add(e.ricId); });
+  const out = [];
+  grezzi.forEach(function (e) {
+    if (!e.titolo || e.stato === 'CANCELLED' || e.privato) return;
+    let fine = e.fine || e.inizio;
+    if (e.tutto && e.fine && e.fine > e.inizio) fine = meno1(e.fine); // DTEND di un giorno intero è esclusivo
+    if (fine < e.inizio) fine = e.inizio;
+    const base = { titolo: e.titolo.slice(0, 160), luogo: (e.luogo || '').slice(0, 120), tutto_il_giorno: !!e.tutto, calendario: nome, ricorrente: !!(e.rrule || e.ricId) };
+    const date = (e.rrule && !e.ricId && da && a) ? espandi({ inizio: e.inizio, fine: fine, rrule: e.rrule }, da, a, new Set(e.exdate.concat(Array.from(sostituite[e.uid] || [])))) : [e.inizio];
+    const durata = giorni(e.inizio, fine);
+    date.forEach(function (g) { out.push({ titolo: base.titolo, inizio: g, fine: sposta(g, 'DAILY', durata), luogo: base.luogo, tutto_il_giorno: base.tutto_il_giorno, calendario: nome, ricorrente: base.ricorrente }); });
   });
   return out;
 }
@@ -56,7 +101,7 @@ export async function sincronizzaCalendari(env) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       const t = await r.text();
       if (t.indexOf('BEGIN:VCALENDAR') === -1) throw new Error('non è un calendario .ics');
-      const ev = leggiIcs(t, c.nome).filter(function (e) { return e.fine >= oggi && e.inizio <= limite; });
+      const ev = leggiIcs(t, c.nome, oggi, limite).filter(function (e) { return e.fine >= oggi && e.inizio <= limite; });
       ev.forEach(function (e) { eventi.push(e); });
       esiti.push({ nome: c.nome, ok: true, eventi: ev.length });
     } catch (e) { esiti.push({ nome: c.nome, ok: false, errore: String(e && e.message || e).slice(0, 120) }); }
